@@ -1,0 +1,40 @@
+*{
+	font-family: Ebrima;
+	font-size: 20px;
+}
+#menu{
+	padding: 0;
+	text-align: center;
+}
+#menu li{
+	display: inline;
+}
+#menu li a{
+	font-family: Bastion;
+	font-size: 30px;
+	text-decoration: none;
+	
+	padding: 10px;
+	background-color: #3045FF;
+	color: white;
+}
+#menu li a:hover {
+	background-color: #119EFF;
+}
+
+nav {
+	border: 0;
+	background-color: #3045FF;
+	padding: 5px 0;
+
+	height:300px;
+	left: 0;
+	right: 0;
+	top: 0;
+	position: fixed;
+} 
+
+body {
+	background-color: #52B9FF;
+	padding-top: 320px;
+}
