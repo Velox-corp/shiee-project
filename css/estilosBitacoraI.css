@@ -1,0 +1,42 @@
+
+section{
+	width: 97%;
+	padding: 1rem;
+}
+h1{
+	text-align: center;
+}
+.imagensota{
+	width: 100%;
+	background-color: rgb(205,200,205);
+}
+hr{
+	border: 1px solid black;
+	margin-top: 2.5rem;
+}
+.info-extra1, .info-extra2{
+	margin-top: 2.5rem;
+	margin-bottom: 5rem;
+	width: 47.5%;
+	padding-right: 1%;
+	padding-left: 1%;
+	background-color: rgb(25,250,250);
+	float: 	left;	
+	text-align: center
+}
+.info-extra1{
+	border-right: 2px solid black;
+}
+.info-extra2{
+	border-left: 2px solid black;
+}
+.boton{
+	clear: both;
+	text-align: center;
+	width: 30%;
+	margin-right: 35%;
+	margin-left: 35%;
+	border: 5px solid black;
+	background-color: rgb(15,159,240);
+	border-radius: 40px;
+}
