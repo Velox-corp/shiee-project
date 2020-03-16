@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Psicologos</title>
+	<link rel="stylesheet" type="text/css" href="css/estilosAdministrador.css">
+</head>
+<body>
+	<script type="text/javascript" src="js/busqueda.js"></script>
+	<!--Aquí debe de ir el nav-->
+	<div id="titulo"><h2>Psicologos Registrados</h2></div>
+	<div class="barraBusqueda">
+		<form name="barraBusqueda" method="post">
+			<table border="0">
+				<tr>
+					<td id="barra"><input type="text" name="buscar_paciente" ></td>
+					<td id="boton"><input type="button" value="BUSCAR"></td>
+					<td id="espacio"></td>
+					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.html'" name="volver"></td>
+				</tr> 
+			</table>
+		</form>
+	</div>
+	<div class="contenedor">
+		<div class="usuario">
+			<img src="img/user.png" id="imgUser">
+			<div id="textoUser">
+				<h1>Psicologo ejemplo</h1>
+				<p>correoElectronico.psicologo@ejemplo.com</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
