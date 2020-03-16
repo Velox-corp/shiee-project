@@ -11,10 +11,10 @@
 
 .menu .si {
 	display: block;
-	padding: 2rem;
+	padding: 1rem;
 	background-color: #EAF2E3;
 	font-family: 'Cormorant Infant', serif;
-	color: #6BBAA7;
+	color: rgb(42, 77, 68);
 
 	text-decoration: none;
 }
@@ -51,9 +51,7 @@
 nav {
 	border: 0;
 	background-color: #EAF2E3;
-	
-
-	height:200px;
+	height: 155px;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -67,7 +65,7 @@ nav {
 
 body {
 	background-color: #EAF2E3;
-	padding-top: 210px;
+	padding-top: 160px;
 }
 
 #col_res {
