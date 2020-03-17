@@ -9,6 +9,9 @@ comunes */
 /**Nota: Es una mejor idea que todos los estilos que tengamos
  de css esten agrupados en un solo css, esto evitara que el servidor sea lento**/
 
+
+/**TODO corregir z-index del header**/
+
 * {
     font-family: Ebrima;
     font-size: 20px;

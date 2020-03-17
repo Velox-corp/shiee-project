@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <center><img src="img/prueba.jpg" width="320" height="210"></center>
+            <ul>
+                <!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que está en body dentro de estilo.css  y tambien el height del nav en el css -->
+
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="">Información</a></li>
+                <li><a href=""> Servicios </a>
+                    <ul id="submenu">
+                        <li><a href="BitácoraInicio.html">Bitacora</a></li>
+                        <li><a href="test.html">Test</a></li>
+                    </ul>
+                </li>
+                <li><a href=""> Directorio </a></li>
+                <li><a href=""> Nosotros</a></li>
+                <li><a href="">Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-block btn-lg btn-outline-primary">
+                    <a href="bitacora_ver.html">Ver regristros</a>
+			    </button>
+                <button type="button" class="btn btn-block btn-outline-primary btn-lg">
+                    <a href="bitacora_editar.html">Editar regristro</a>
+			    </button>
+                <button type="button" class="btn btn-block btn-lg btn-outline-primary">
+                    <a href="bitacora_nuevo.html">Nuevo regristro</a>
+			    </button>
+                <button type="button" class="btn btn-block btn-lg btn-outline-primary">
+                    <a href="">Eliminar regristros</a>
+			    </button>
+            </div>
+            <div class="col-md-8">
+                <h3>
+                    Bitacora
+                </h3>
+                <div id="card-230654">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regrsitro ejemplo</a>
+                        </div>
+                        <div id="card-element-866869" class="collapse">
+                            <div class="card-body">
+                                <h5>Notas</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, doloribus. Nam, laboriosam corporis et quo obcaecati nobis, labore iste praesentium esse placeat optio numquam aperiam blanditiis porro similique officia
+                                    eum.
+                                </p>
+                                <img src="img/prueba.jpg" width="320" height="210">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-873647">Regristro ejemplo</a>
+                        </div>
+                        <div id="card-element-873647" class="collapse">
+                            <div class="card-body">
+                                Prueba
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
