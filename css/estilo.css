@@ -9,19 +9,20 @@ comunes */
 /**Nota: Es una mejor idea que todos los estilos que tengamos
  de css esten agrupados en un solo css, esto evitara que el servidor sea lento**/
 
-
-/**TODO corregir z-index del header**/
-
 * {
     font-family: Ebrima;
     font-size: 20px;
 }
+
+
+/*hago esto para evitar que el menu se unda*/
 
 .menu ul {
     display: flex;
     padding: 0;
     margin: 0;
     list-style: none;
+    z-index: 100;
 }
 
 .menu .si {
