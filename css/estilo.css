@@ -169,10 +169,6 @@ img.imagen {
     font-family: 'Cormorant Infant', serif;
 }
 
-.why{
-    position: relative;
-    z-index: -10;
-}
 
 /*Esta es la configuración para los botones de la bitacora*/
 .btn-outline-primary:hover{
@@ -188,7 +184,29 @@ img.imagen {
     border-color: #66B9BF;
 }
 
+.btn-success{
+    color: #fff;
+    background-color: #57bc90;
+    border-color: #57bc90;
+}
+.btn-success:hover{
+    color: #fff;
+    background-color: #56ad9a;
+    border-color: #4ba092;
+}
 
 .card-header a{
     color: #66B9BF;
+}
+
+/*Configuracion iconos de la bitacora*/
+.fa-times::before {
+    content: "\f00d";
+    color: #66B9BF;
+    font-size: 1.2rem;
+}
+
+.section-eliminar{
+    justify-content: space-between;
+    align-items: baseline;
 }
