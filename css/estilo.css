@@ -99,6 +99,11 @@ table {
     width: 900px;
 }
 
+header{
+    position: sticky;
+    z-index: 100;
+}
+
 #seccion {
     margin: 1rem;
     padding: 1rem;
@@ -162,4 +167,28 @@ img.imagen {
 
 .cuerpo {
     font-family: 'Cormorant Infant', serif;
+}
+
+.why{
+    position: relative;
+    z-index: -10;
+}
+
+/*Esta es la configuración para los botones de la bitacora*/
+.btn-outline-primary:hover{
+    color: #fff;
+    background-color: #66B9BF;
+    border-color: #66B9BF;
+}
+
+.btn-outline-primary {
+    color: #66B9BF;
+    background-image: none;
+    background-color: transparent;
+    border-color: #66B9BF;
+}
+
+
+.card-header a{
+    color: #66B9BF;
 }

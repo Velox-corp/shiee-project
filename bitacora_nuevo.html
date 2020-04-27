@@ -48,48 +48,43 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <button type="button" class="btn btn-block btn-lg btn-outline-primary">
-                    <a href="bitacora_ver.html">Ver regristros</a>
-			    </button>
-                <button type="button" class="btn btn-block btn-outline-primary btn-lg">
-                    <a href="bitacora_editar.html">Editar regristro</a>
-			    </button>
-                <button type="button" class="btn btn-block btn-lg btn-outline-primary">
-                    <a href="bitacora_nuevo.html">Nuevo regristro</a>
-			    </button>
-                <button type="button" class="btn btn-block btn-lg btn-outline-primary">
-                    <a href="">Eliminar regristros</a>
-			    </button>
+                <a href="bitacora_ver.html" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
+                <a href="bitacora_editar.html" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
+                <a href="bitacora_nuevo.html" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
+                <a href="bitacora_eliminar.html" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
             <div class="col-md-8">
                 <h3>
-                    Escriba y mande
+                    Escriba su bitacora o mande sus fotografias
                 </h3>
-                <form role="form">
+                <form role="form" method="POST">
                     <div class="form-group">
                         <label for="exampleInputFile">
                             Imagen
                         </label>
-                        <input type="file" class="form-control-file" id="exampleInputFile" />
+                        <div id=imagenes-bitacora>
+                            
+                        </div>
+                        <button id="btn-mas-img" class="btn btn-outline-primary btn-sm">Añadir imagen</button>
                         <p class="help-block">
-                            Example block-level help text here.
+                            Elija su fotografía
                         </p>
                         <label for="text-area">
                             Texto
                         </label>
-                        <textarea id="text-area"></textarea>
+                        <textarea id="text-area" name="textarea"></textarea>
                     </div>
+                    <button id="boton-n-bitacora" type="button" class="btn btn-success btn-lg">
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-lg btn-success">
+                        Cancel
+                    </button>
                 </form>
-                <button type="button" class="btn btn-success btn-lg">
-                    Save
-                </button>
-                <button type="button" class="btn btn-lg btn-success">
-                    Cancel
-                </button>
             </div>
         </div>
     </div>
-
+    <script src="js/bitacora_nuevo.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
