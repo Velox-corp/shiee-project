@@ -10,7 +10,7 @@ comunes */
  de css esten agrupados en un solo css, esto evitara que el servidor sea lento**/
 
 * {
-    font-family: Ebrima;
+    font-family: 'Cormorant Infant', serif;;
     font-size: 20px;
 }
 
@@ -23,17 +23,20 @@ comunes */
     margin: 0;
     list-style: none;
     z-index: 100;
-    justify-content: stretch;
+    justify-content: center;
 }
 
 .menu .si {
     display: block;
     padding: 1rem;
-    background-color: #EAF2E3;
     font-family: 'Cormorant Infant', serif;
     color: #6BBAA7;
     text-decoration: none;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 8px -1px;
+    justify-content: center;
+
+    background-color: #EAF2E3;
+    transition: background-color 150ms linear;
 }
 
 .menu .si:hover {
