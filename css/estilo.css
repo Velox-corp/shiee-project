@@ -23,6 +23,7 @@ comunes */
     margin: 0;
     list-style: none;
     z-index: 100;
+    justify-content: stretch;
 }
 
 .menu .si {
@@ -32,6 +33,7 @@ comunes */
     font-family: 'Cormorant Infant', serif;
     color: #6BBAA7;
     text-decoration: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .menu .si:hover {
