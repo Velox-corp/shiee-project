@@ -1,0 +1,217 @@
+/***SECCIÓN DE LA PAGINA PRINCIPAL***/
+
+
+/*Generealidades: En esta van a haber elementos globales y a la
+vez importantes, esto hara que todos tengamos fuentes y estilos 
+comunes */
+
+
+/**Nota: Es una mejor idea que todos los estilos que tengamos
+ de css esten agrupados en un solo css, esto evitara que el servidor sea lento**/
+
+* {
+    font-family: 'Cormorant Infant', serif;;
+    font-size: 20px;
+}
+
+
+/*hago esto para evitar que el menu se unda*/
+
+.menu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 100;
+    justify-content: center;
+}
+
+.menu .si {
+    display: block;
+    padding: 1rem;
+    font-family: 'Cormorant Infant', serif;
+    color: #6BBAA7;
+    text-decoration: none;
+    box-shadow: 2px 2px 8px -1px;
+    justify-content: center;
+
+    background-color: #EAF2E3;
+    transition: background-color 150ms linear;
+}
+
+.menu .si:hover {
+    background-color: #66B9BF;
+    color: #EAF2E3;
+}
+
+.menu ul li ul {
+    display: none;
+}
+
+.menu ul li .si:hover+ul,
+.menu ul li ul:hover {
+    display: block;
+}
+
+.imagen_inicio {
+    background-color: #66B9BF;
+}
+
+.menu .esto_no {
+    font-family: 'Lora', serif;
+    color: #FFFFFF;
+    background-color: #66B9BF;
+    float: right;
+    margin: 5px;
+}
+
+.no {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+nav {
+    border: 0;
+    background-color: #EAF2E3;
+    height: 155px;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+}
+
+#titulo {
+    color: black;
+    font-size: 30px;
+}
+
+body {
+    background-color: #EAF2E3;
+    padding-top: 165px;
+}
+
+#col_res {
+    width: 80px;
+    text-align: center;
+    align-items: center;
+}
+
+.entrada {
+    width: 900px;
+}
+
+table {
+    width: 900px;
+}
+
+header{
+    position: sticky;
+    z-index: 100;
+}
+
+#seccion {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#izquierda,
+#derecha {
+    display: inline-table;
+    width: 45%;
+    border: solid black;
+    margin: 1rem;
+    height: 500px;
+}
+
+img.imagen {
+    float: left;
+    margin: 12px;
+}
+
+.vision {
+    float: right;
+}
+
+.mi,
+.vi,
+.con {
+    border: solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.col {
+    border: solid black;
+    padding: 2rem;
+    margin: 1rem;
+    display: inline-table;
+    width: 10%;
+}
+
+.seccion_inicio {
+    height: 200px;
+    background-color: #57bc90;
+}
+
+.titulo_seccion {
+    text-align: center;
+    color: #52658F;
+    margin: 5px;
+    font-family: 'IBM Plex Sans Condensed';
+    font-size: 30px;
+}
+
+.se_te {
+    background-color: #91E7BE;
+}
+
+.mide {
+    color: #52658F;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.cuerpo {
+    font-family: 'Cormorant Infant', serif;
+}
+
+
+/*Esta es la configuración para los botones de la bitacora*/
+.btn-outline-primary:hover{
+    color: #fff;
+    background-color: #66B9BF;
+    border-color: #66B9BF;
+}
+
+.btn-outline-primary {
+    color: #66B9BF;
+    background-image: none;
+    background-color: transparent;
+    border-color: #66B9BF;
+}
+
+.btn-success{
+    color: #fff;
+    background-color: #57bc90;
+    border-color: #57bc90;
+}
+.btn-success:hover{
+    color: #fff;
+    background-color: #56ad9a;
+    border-color: #4ba092;
+}
+
+.card-header a{
+    color: #66B9BF;
+}
+
+/*Configuracion iconos de la bitacora*/
+.fa-times::before {
+    content: "\f00d";
+    color: #66B9BF;
+    font-size: 1.2rem;
+}
+
+.section-eliminar{
+    justify-content: space-between;
+    align-items: baseline;
+}
