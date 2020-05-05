@@ -14,6 +14,7 @@ public class Psicologo {
     
     public boolean RegistrarPsicologo(String nombre,String appat, String apmat, String fecha_nac, int cedula, String usuario_pi, String contra_pi, String cont_veri){
         boolean registro = false;
+        System.out.println("InicioRegistro");
         try{
             //Primero verificar las entradas, pero de momento solo podré el de la contraseña
             if(!contra_psi.equals(cont_veri)){
