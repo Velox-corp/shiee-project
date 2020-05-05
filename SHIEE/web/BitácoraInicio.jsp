@@ -1,21 +1,16 @@
-
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Inicio de Sesión</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="css/estilosRegistro.css">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>Bitácora</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/estilosBitacoraI.css">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <nav class="menu">
-            <div class="imagen_inicio">
+	<header>
+		<nav class="menu">
+			<div class="imagen_inicio">
                 <img src="img/Shiee.png" width="90" height="90">
                 <div class="esto_no">
                     <%
@@ -43,31 +38,25 @@
                 <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
                 <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
             </ul>
-        </nav>
-    </header>
-    <script type="text/javascript" src="js/validacionInicioSes.js"></script>
-    <div class="registro">
-        <div class="titulo">
-            <h1>INICIO DE SESIÓN<img src="img/user.png" id="imagen"></h1>
-        </div>
-        <form name="iniciarSes" method="post" action="SInicioSesion">
-            <table border="0">
-                <tr>
-                    <td>Usuario:</td>
-                    <td><input name="usuario" type="text" onchange="validarUser(this)"></td>
-                </tr>
-                <tr>
-                    <td>Contraseña:</td>
-                    <td><input type="password" name="password" onchange="validarPass(this)"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Iniciar Sesion" ></td>
-                    <td><input type="button" value="Registrarse" onclick="window.location.href='Registro.jsp'"></td>
-                </tr>
-            </table>
-        </form>
-
-    </div>
+		</nav>
+	</header>
+	<section>
+		<div class="imagensota">
+			Aquí se supone va ir una imagen toda recia con información de acompañamiento
+		</div>
+		<hr>
+		<div class="info-extra1">
+			<h2>Supervisión del psicologo</h2>
+			<p>Información</p>
+		</div>
+		<div class="info-extra2">
+			<h2>Manejo del estres</h2>
+			<p>Más información</p>
+		</div>
+		<div class="boton">
+			<a href="bitacora_ver.html"><img src="img/botonIrBitacora.png"></a>
+		</div>
+	</section>
+	<footer></footer>
 </body>
-
 </html>

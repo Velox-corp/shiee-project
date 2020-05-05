@@ -20,10 +20,11 @@ public class Psicologo {
                 System.out.println("Contraseñas diferentes");
                 return false;
             }
+            System.out.println("Un saludo");
            con = Conexion.getConnection();
            //Por el momento usare un satatement por que no se si esto se pueda hacer con un preparedStatement
            
-           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_pi, Contra_pi ) "
+           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_pac, Contra_pi ) "
                    + "values ( ?, ?, ?, ?, ?, ?, ? )";
            pr = con.prepareStatement(q);
            
@@ -34,8 +35,9 @@ public class Psicologo {
            pr.setInt(5, cedula);
            pr.setString(6, usuario_pi);
            pr.setString(7, contra_pi);
-           
+           System.out.println(q);
            if(pr.executeUpdate()==1){
+               System.out.println("C ha registrado");
                registro=true;
            }
            
@@ -62,7 +64,7 @@ public class Psicologo {
         Psicologo psi = null;
         try{
             con = Conexion.getConnection();
-            q = "SELECT * FROM Psicologo WHERE Usuario_pi = ? AND Contra_pi = ?";
+            q = "SELECT * FROM Psicologo WHERE Usuario_pac = ? AND Contra_pi = ?";
             
             pr = con.prepareStatement(q);
             
@@ -80,7 +82,7 @@ public class Psicologo {
                 psi.setApmat_psi(rs.getString("Apmat_psi"));
                 psi.setFecha_nac_psi(rs.getString("fechaNac_psi"));
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
-                psi.setUsuario_psi(rs.getString("Usuario_pi"));
+                psi.setUsuario_psi(rs.getString("Usuario_pac"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
                 break;
             }

@@ -50,6 +50,7 @@ public class registrar extends HttpServlet {
                 case "Psicologo":
                     Psicologo psi = new Psicologo();
                     int cedula = Integer.parseInt(request.getParameter("cedula"));
+                    System.out.println(cedula);
                     estado = psi.RegistrarPsicologo(nombre, appat, apmat, fecha_nac, cedula, usuario, contraseña, contraseña_veri);
                     break;
             }            

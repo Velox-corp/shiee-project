@@ -44,6 +44,7 @@ public class SInicioSesion extends HttpServlet {
             try{
             i2 = i2.inicioSesionPsicologo(username, password); //O un psicologo
             }catch(NullPointerException nEx){
+                System.out.println("No funciono, un saludo");
                 i2 = null;
             }
             System.out.println("ver como psicologo ocurrio");
@@ -56,11 +57,11 @@ public class SInicioSesion extends HttpServlet {
                 System.out.println("Es un estudiante");
                 HttpSession sesion = request.getSession(true);
                 sesion.setAttribute("usuario", i1);
-                response.sendRedirect("test.html");
+                response.sendRedirect("test.jsp");
             //Es psicologo
             }else if(i1 == null && i2 != null){
                 System.out.println("Es un psicologo");
-                response.sendRedirect("index.html");
+                response.sendRedirect("estudiantes.jsp");
                 HttpSession sesion = request.getSession(true);
                 sesion.setAttribute("usuario", i2);
             }else{
