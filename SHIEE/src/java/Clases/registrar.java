@@ -1,3 +1,5 @@
+package Clases;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,13 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import java.util.*;
 /**
  *
  * @author maste
  */
-public class SInicioSesion extends HttpServlet {
+public class registrar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,57 +31,47 @@ public class SInicioSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         try (PrintWriter out = response.getWriter()) {
-            String username = request.getParameter("usuario");
-            System.out.println(username);
-            String password = request.getParameter("password");
-            System.out.println(password);
-            Paciente i1 = new Paciente();
-            Psicologo i2 = new Psicologo();
-            
-            i1 = i1.inicioSesionPaciente(username,password); //Si es un paciente
-            
-            try{
-            i2 = i2.inicioSesionPsicologo(username, password); //O un psicologo
-            }catch(NullPointerException nEx){
-                System.out.println("No funciono, un saludo");
-                i2 = null;
-            }
-            System.out.println("ver como psicologo ocurrio");
-            //No es niguno de los 2
-            if(i1== null && i2 == null){
-                System.out.println("No existe");
-                response.sendRedirect("InicioSesion.jsp");
-            //Es paciente
-            }else if(i1 != null && i2 == null){
-                System.out.println("Es un estudiante");
-                HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("usuario", i1);
-                response.sendRedirect("test.jsp");
-            //Es psicologo
-            }else if(i1 == null && i2 != null){
-                System.out.println("Es un psicologo");
-                response.sendRedirect("estudiantes.jsp");
-                HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("usuario", i2);
-            }else{
-                //Meter página de errores
-            }
             /* TODO output your page here. You may use following sample code. */
+            String nombre, appat, apmat,fecha_nac, usuario, contraseña, contraseña_veri, tipo_user;
+            nombre = request.getParameter("nombre");
+            appat = request.getParameter("appat");
+            apmat = request.getParameter("apmat");
+            fecha_nac = request.getParameter("fechaNac");
+            usuario = request.getParameter("nombreUsuario");
+            contraseña = request.getParameter("password");
+            contraseña_veri = request.getParameter("password_verificar");
+            boolean estado = false;
+            tipo_user = request.getParameter("tipoUser");
+            System.out.println(tipo_user);
+            switch(tipo_user){
+                case "Estudiante":
+                    Paciente p = new Paciente();
+                    estado = p.RegistrarPaciente(nombre, appat, apmat, fecha_nac, usuario, contraseña, contraseña_veri);
+                    break;
+                case "Psicologo":
+                    Psicologo psi = new Psicologo();
+                    int cedula = Integer.parseInt(request.getParameter("cedula"));
+                    System.out.println(cedula);
+                    estado = psi.RegistrarPsicologo(nombre, appat, apmat, fecha_nac, cedula, usuario, contraseña, contraseña_veri);
+                    break;
+            }            
+            if(estado){
+                System.out.println("C registró");
+                response.sendRedirect("InicioSesion.jsp");
+            }else{
+                System.out.println("No se registro"); 
+                response.sendRedirect("Registro.jsp");
+            }
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SInicioSesion</title>");            
+            out.println("<title>Servlet registrar</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SInicioSesion at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registrar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        }catch(NullPointerException ex){
-            System.out.println("Peto de alguna forma con un nulo");
-            ex.printStackTrace();
-            ex.getMessage();
         }
     }
 

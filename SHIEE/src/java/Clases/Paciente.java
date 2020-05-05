@@ -1,3 +1,5 @@
+package Clases;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -114,6 +116,88 @@ public class Paciente {
                 System.out.println("Ten, Te regreso un nulo");
             }
             return p;
+        }
+    }
+    
+    public ArrayList<Paciente> obtenerTodosPacientes(){
+        ArrayList<Paciente> listaPacientes = new ArrayList<Paciente>();
+        try{
+            con = Conexion.getConnection();
+            q = "SELECT * FROM Paciente";
+            pr = con.prepareStatement(q);
+            rs = pr.executeQuery();
+            while(rs.next()){
+                Paciente p = new Paciente();
+                p.setId_pac(rs.getInt("id_pac"));
+                p.setNombre_pac(rs.getString("Nombre_pac"));
+                p.setAppat_pac(rs.getString("Appat_pac"));
+                p.setApmat_pac(rs.getString("Apmat_pac"));
+                p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
+                p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
+                p.setResTest(rs.getString("resTest"));
+                p.setUsuario_pac(rs.getString("Usuario_pac"));
+                p.setContra_pac("Contra_pac");
+                listaPacientes.add(p);
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Tu sql hace que sea nulo");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+        }finally{
+            try{
+                con.close();
+                pr.close();
+                rs.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+            return listaPacientes;
+        }
+        
+    }
+    
+    public ArrayList<Paciente> obtenerPacientesPsicologo(int psicologo_id){
+        ArrayList<Paciente> listaPacientesPsicologo = new ArrayList<>();
+        try{
+            con = Conexion.getConnection();
+            q = "SELECT * FROM Paciente WHERE psicologo_id_FK = ?";
+            pr = con.prepareStatement(q);
+            pr.setInt(1, psicologo_id);
+            rs = pr.executeQuery();
+            while(rs.next()){
+                Paciente p = new Paciente();
+                p.setId_pac(rs.getInt("id_pac"));
+                p.setNombre_pac(rs.getString("Nombre_pac"));
+                p.setAppat_pac(rs.getString("Appat_pac"));
+                p.setApmat_pac(rs.getString("Apmat_pac"));
+                p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
+                p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
+                p.setResTest(rs.getString("resTest"));
+                p.setUsuario_pac(rs.getString("Usuario_pac"));
+                p.setContra_pac("Contra_pac");
+                listaPacientesPsicologo.add(p);
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Tu sql hace que sea nulo");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+        }finally{
+            try{
+                con.close();
+                pr.close();
+                rs.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+            return listaPacientesPsicologo;
         }
     }
 

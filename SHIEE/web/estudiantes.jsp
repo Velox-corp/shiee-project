@@ -1,4 +1,4 @@
-<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" import="java.sql.*,Clases.Paciente,java.util.ArrayList" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,23 +47,30 @@
 	<div class="barraBusqueda">
 		<form name="barraBusqueda" method="post">
 			<table border="0">
-				<tr>
-					<td id="barra"><input type="text" name="buscar_paciente" ></td>
-					<td id="boton"><input type="button" value="BUSCAR" ></td>
+				<tr><!--
+                                    <td id="barra"><input type="search" name="buscar_paciente" ></td>
+					<td id="boton"><input type="button" value="BUSCAR" ></td>-->
 					<td id="espacio"></td>
-					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.html'" name="volver"></td>
+					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.jsp'" name="volver"></td>
 				</tr> 
 			</table>
 		</form>
 	</div>
 	<div class="contenedor">
+            <%
+            Paciente pac = new Paciente();
+            ArrayList<Paciente> pacientes = pac.obtenerTodosPacientes();
+            for(Paciente p: pacientes){
+            %>
 		<div class="usuario">
 			<img src="img/user.png" id="imgUser">
 			<div id="textoUser">
-				<h1>Estudiante ejemplo</h1>
+				<h1><%=p.getNombre_pac() +" " + p.getAppat_pac() +" " + p.getApmat_pac()%></h1>
 				<p>correoElectronico.estudiante@ejemplo.com</p>
 			</div>
 		</div>
+                <br>
+            <%}%>
 	</div>
 </body>
 </html>

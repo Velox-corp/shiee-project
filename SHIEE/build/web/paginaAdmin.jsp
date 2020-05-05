@@ -1,3 +1,5 @@
+<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -9,34 +11,41 @@
 <body>
 	<header>
 		<nav class="menu">
-			<div class="imagen_inicio">
-				<img src="img/Shiee.png" width="90" height="90">
-				<div class="esto_no">
-					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-				</div>
-			</div>
-			<ul>
-				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que está en body dentro de estilo.css  y tambien el height del nav en el css -->
-				
-				<li><a class="si" href="index.html">Inicio</a></li>
-				<li><a class="si" href="">Información</a></li>
-				<li><a class="si" href=""> Servicios </a>
-					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.html">Bitacora</a></li>
-						<li><a class="si" href="test.html">Test</a></li>
-					</ul>
-				</li>
-				<li><a class="si" href="directorio.html"> Directorio </a></li>
-				<li><a class="si" href="nosotros.html"> Nosotros</a></li>
-				<li><a class="si" href="paginaAdmin.html">Sesión</a></li>
-			</ul>
+                    <div class="imagen_inicio">
+                    <img src="img/Shiee.png" width="90" height="90">
+                    <div class="esto_no">
+                        <%
+                            HttpSession sesionOk = request.getSession();
+                            if(sesionOk.getAttribute("usuario")==null){
+                        %>
+                        <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                        <%  }else{%>
+                        <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                        <%}%>
+                    </div>
+                </div>
+                <ul>
+                    <!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
+
+                    <li><a class="si" href="index.jsp">Inicio</a></li>
+                    <li><a class="si" href="">Información</a></li>
+                    <li><a class="si" href=""> Servicios </a>
+                        <ul id="submenu">
+                            <li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+                            <li><a class="si" href="test.jsp">Test</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="si" href="directorio.jsp"> Directorio </a></li>
+                    <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
+                    <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+                </ul>
 		</nav>
 	</header>
-	<!--Aquí va a ir el nav de siempre-->
+	<!--AquÃ­ va a ir el nav de siempre-->
 	<div id="titulo"><h2>Página de administrador</h2></div>
 	<div class="acomodo">
 		<div class="seleccionEst">
-			<a href="estudiantes.html"><div id="est"></div></a>
+			<a href="estudiantes.jsp"><div id="est"></div></a>
 		</div>
 
 		<div class="seleccionPsi">
