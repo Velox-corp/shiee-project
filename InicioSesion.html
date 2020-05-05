@@ -44,14 +44,14 @@
             <table border="0">
                 <tr>
                     <td>Usuario:</td>
-                    <td><input name="usuario" type="text"></td>
+                    <td><input name="usuario" type="text" onchange="validarUser(this)"></td>
                 </tr>
                 <tr>
                     <td>Contraseña:</td>
-                    <td><input type="password" name="contraseña"></td>
+                    <td><input type="password" name="contraseña" onchange="validarPass(this)"></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="Iniciar Sesion" onclick="iniciarSesion()"></td>
+                    <td><input type="button" value="Iniciar Sesion" onclick=""></td>
                     <td><input type="button" value="Registrarse" onclick="window.location.href='Registro.html'"></td>
                 </tr>
             </table>

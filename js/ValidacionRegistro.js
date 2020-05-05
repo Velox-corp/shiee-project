@@ -1,41 +1,25 @@
 //Aquí va ir el ingreso adecuado de los datos
-function validarRegistro (formulario) {
-	// primero, a obtener todo
-	var nombre = formulario.nombre.value
-	var appat = formulario.appat.value
-	var apmat = formulario.apmat.value
-	var fechaNac = formulario.fechaNac.value
-	var nombreUser = formulario.nombreUsuario.value
-	var contraseña = formulario.contraseña.value
-	var contraseña_verificar = formulario.contraseña_verificar.valu
-	var correo = formulario.correo.value
-	//Ver que no esten vacios:
+//como se va a mandar a java, cada validacion va a ser una función diferente
+function estaVacio (element) {
+	var ingreso = element.value
+	var nombreElement= element.name
 	var patronCadenasEspacio= /[A-Za-z,\n]/
-	if(!patronCadenasEspacio.test(nombre)){
-		alert("Debe llenar adecuadamente el campo de Nombre")
-		formulario.nombre.focus()
+	if(!patronCadenasEspacio.test(ingreso)){
+		alert("Debe llenar adecuadamente el campo:" +nombreElement)
+		element.focus()
 		return false
 	}
-	var patronCadenasSolas= /[A-Za-z]/
-	if(!patronCadenasSolas.test(appat)){
-		alert("Debe llenar adecuadamente el campo de Apellido paterno")
-		formulario.appat.focus()
-		return false
-	}
-	if(!patronCadenasSolas.test(apmat)){
-		alert("Debe llenar adecuadamente el campo de Apellido materno")
-		formulario.apmat.focus()
-		return false
-	}
-	//El de la fecha aun no, espera
+}
+function validarFecha(element){
+	let fechaNac = element.value
 	//Primero, ver que sea una fecha
 	var patronfechaGuiones= /^\d{4}\-\d{1,2}\-\d{1,2}$/;
 	if(!patronfechaGuiones.test(fechaNac) || fechaNac==''){
 		alert("Ingreso de fecha incorrecto")
-		formulario.fechaNac.focus()
+		element.focus()
 		return false
 	}
-	//Ahora, vamos a ver si, por alguna razón, mete mamadas, aunque no me valuda nada, efe
+	//Ahora, vamos a ver si, por alguna razón
 	fechadiv= fechaNac.split("-")
 	año=fechadiv[0]
 	mes = fechadiv[1]
@@ -54,62 +38,55 @@ function validarRegistro (formulario) {
 		|| (dia >28 && mes==2 && (año % 4 !=0) )
 		|| (dia >29 && mes==2 && (año % 4 ==0))){
 		alert("Fecha Invalida")
-	formulario.fechaNac.focus()
+	element.focus()
 		return false
 	}
-	var patronAfanumerico= /[A-Za-z0-9]{8,20}/
+}
+//Un patrón global para ver que pex
+var patronAfanumerico= /[A-Za-z0-9]{8,20}/
+function validarUser(element){
+	nombreUser = element.value
 	if(!patronAfanumerico.test(nombreUser)||nombreUser.length>20 || nombreUser==''){
 		alert("Debe llenar adecuadamente el campo de Usuario")
-		formulario.nombreUsuario.focus()
+		element.focus()
 		return false
 	}
+}
+function validarCont(element){
+	var contraseña = element.value
 	if(!patronAfanumerico.test(contraseña)||contraseña.length>20 || contraseña==''){
 		alert("Debe llenar adecuadamente el campo de contraseña")
-		formulario.nombreUsuario.focus()
+		element.focus()
 		return false
 	}
+}
+function validarContVeri(element){
+	var contraseña_verificar = element.value
 	if(!patronAfanumerico.test(contraseña_verificar)||contraseña_verificar.length>20 || contraseña_verificar==''){
 		alert("Debe llenar adecuadamente el campo de verificar contraseña")
-		formulario.nombreUsuario.focus()
+		element.focus()
 		return false
 	}
+}
+function validarCorreo(element){
+	var correo = element.value
 	var patronCorreo= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 	if(!patronCorreo.test(correo)){
 		alert("Correo electronico invalido")
-		formulario.correo.focus()
+		element.focus()
 		return false
 	}
-	//Ya que estamos, que las contraseñas sean iguales
-	if(contraseña!=contraseña_verificar){
-		alert("Las contraseñas no coinciden")
-		return false
-	}
-	var indice = document.registroUsuarios.tipoUser.selectedIndex;
-	var tipoUser = document.registroUsuarios.tipoUser.options[indice].value
-	if(tipoUser=="Sin_especificar"){
-		alert("Debe ingresar un tipo de usuario")
-		formulario.tipoUser.focus()
-	}
-	else if(tipoUser=="Psicologo"){
-		var cedula = formulario.cedula.value
+}
+
+function verificarCedula(element){
+		var cedula = element.value
 		var patron_cedulas = /[\d]/
-		if(!patron_cedulas.test(cedula) && (decula.length>8)){
+		if(!patron_cedulas.test(cedula) && (cedula.length>8)){
 			alert("Cedula invalida, ingresar de nuevo")
-			formulario.cedula.focus()
+			element.focus()
 			return false
 		}
 
-	}
-	//Aquí debería haver algo que valide a partir de la base de datos
-	/*
-
-	*/
-	//Ahora, se supóne que ya está:
-	alert("Se ha reigstrado su Usuario con exito")
-	window.location="InicioSesion.html"
-
-	return true
-	//mover a otra página html
 }
 
 function verTipoUser () {
@@ -120,7 +97,7 @@ function verTipoUser () {
 	var inputOculto = document.getElementById('cedula_ocult_input')
 	//if temporal para ver si funciona
 	if(tipoUser=="Sin_especificar"){
-		//alert("Debe ingresar un tipo de usuario")
+		alert("Debe ingresar un tipo de usuario")
 		cedulaOculta.style.opacity=0;
 		inputOculto.style.opacity=0;
 	}

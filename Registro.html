@@ -38,53 +38,53 @@
 		<!--Titulo-->
 		<div class="titulo"><h1>REGISTRO DE USUARIOS<img src="img/user.png" id="imagen"></h1></div>
 		<!--Formulario-->
-		<form name="registroUsuarios" method="post" onsubmit="return validarRegistro(this)">
+		<form name="registroUsuarios" method="post" id='formulario' onsubmit="return validarRegistro(this)">
 			<table border="0">
 				<!--Cada tr, va a ser un ingreso-->
 				<tr>
-					<td id="id_ingreso">Nombre:</td>
-					<td><input type="text" name="nombre"></td>
+					<td>Nombre:</td>
+					<td><input type="text" name="nombre" onchange="estaVacio(this)"></td>
 				</tr>
 
 				<tr>
-					<td id="id_ingreso">Apellido Paterno:</td>
-					<td><input type="text" name="appat"></td>
+					<td>Apellido Paterno:</td>
+					<td><input type="text" name="appat" onchange="estaVacio(this)"></td>
 				</tr>
 
 				<tr>
-					<td id="id_ingreso">Apellido Materno:</td>
-					<td><input type="text" name="apmat"></td>
+					<td>Apellido Materno:</td>
+					<td><input type="text" name="apmat" onchange="estaVacio(this)"></td>
 				</tr>
 
 				<tr>
-					<td id="id_ingreso">Fecha de Nacimiento:</td>
-					<td><input type="date" name="fechaNac"></td>
+					<td >Fecha de Nacimiento:</td>
+					<td><input type="date" name="fechaNac" onchange="validarFecha(this)"></td>
 				</tr>
 				<tr>
-					<td id="id_ingreso">Usuario:</td>
-					<td><input type="text" name="nombreUsuario"></td>
+					<td>Usuario:</td>
+					<td><input type="text" name="nombreUsuario" onchange="validarUser(this)"></td>
 				</tr>
 
 				<tr>
-					<td colspan="2" id="nota">El nombre de Usuario debe tener de 8 a 20 caracteres</td>
+					<td colspan="2" id="nota">El nombre de Usuario debe tener un maximo de 15 caracteres</td>
 				</tr>
 				<tr>
-					<td id="id_ingreso">Contraseña:</td>
-					<td><input type="password" name="contraseña"></td>
+					<td>Contraseña:</td>
+					<td><input type="password" name="contraseña" onchange="validarCont(this)"></td>
 				</tr
-				<tr><td colspan="2" id="nota">La contraseña solo acepta letras y números, de 8 a 20 caracteres</td></tr>
+				<tr><td colspan="2" id="nota">La contraseña solo acepta letras y números, de 8 a 15 caracteres</td></tr>
 
 				<tr>
-					<td id="id_ingreso">Verificar Contraseña:</td>
-					<td><input type="password" name="contraseña_verificar"></td>
+					<td>Verificar Contraseña:</td>
+					<td><input type="password" name="contraseña_verificar" onchange="validarContVeri(this)"></td>
 				</tr>
 				<tr>
-					<td id="id_ingreso">Correo Electrónico:</td>
-					<td><input type="email" name="correo"></td>
+					<td>Correo Electrónico:</td>
+					<td><input type="email" name="correo" onchange="validarCorreo(this)"></td>
 				</tr>
 				<!--Aqui va a ir el combobox y su formulario extra-->
 				<tr>
-					<td id="id_ingreso">Tipo de Usuario</td>
+					<td>Tipo de Usuario</td>
 					<td>
 						<select name="tipoUser" class="tipoUser" onchange="verTipoUser()">			  
 							<option value="Sin_especificar">Ingrese su tipo de usuario</option>
@@ -95,7 +95,7 @@
 				</tr>
 				<tr>
 					<td id="cedula_ocult_td">Cédula Profesional:</td>
-					<td><input type="text" name="cedula" id="cedula_ocult_input"></td>
+					<td><input type="text" name="cedula" id="cedula_ocult_input" onchange="validarCedula(this)"></td>
 				</tr>
 				<tr>
 					<td><input id="boton" type="submit" value="Registrarse" name="mandarRegistro"></td>
