@@ -1,5 +1,5 @@
 
-<%@page language="java" session="true" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +18,14 @@
             <div class="imagen_inicio">
                 <img src="img/Shiee.png" width="90" height="90">
                 <div class="esto_no">
+                    <%
+                        HttpSession sesionOk = request.getSession();
+                        if(sesionOk.getAttribute("usuario")==null){
+                    %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <%  }else{%>
+                    <a class="no " href="InicioSesion.jsp">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <%}%>
                 </div>
             </div>
             <ul>
@@ -28,7 +35,7 @@
                 <li><a class="si" href="">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
-                        <li><a class="si" href="BitÃ¡coraInicio.html">Bitácora</a></li>
+                        <li><a class="si" href="BitácoraInicio.html">Bitácora</a></li>
                         <li><a class="si" href="test.html">Test</a></li>
                     </ul>
                 </li>
@@ -51,7 +58,7 @@
                 </tr>
                 <tr>
                     <td>Contraseña:</td>
-                    <td><input type="password" name="contraseÃ±a" onchange="validarPass(this)"></td>
+                    <td><input type="password" name="password" onchange="validarPass(this)"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Iniciar Sesion" ></td>

@@ -72,13 +72,13 @@
 				</tr>
 				<tr>
 					<td>Contraseña:</td>
-					<td><input type="password" name="contraseña" onchange="validarCont(this)"></td>
+					<td><input type="password" name="password" onchange="validarCont(this)"></td>
 				</tr
 				<tr><td colspan="2" id="nota">La contraseña solo acepta letras y números, de 8 a 15 caracteres</td></tr>
 
 				<tr>
 					<td>Verificar Contraseña:</td>
-					<td><input type="password" name="contraseña_verificar" onchange="validarContVeri(this)"></td>
+					<td><input type="password" name="password_verificar" onchange="validarContVeri(this)"></td>
 				</tr>
                                 <!--
 				<tr>

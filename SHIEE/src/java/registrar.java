@@ -37,8 +37,8 @@ public class registrar extends HttpServlet {
             apmat = request.getParameter("apmat");
             fecha_nac = request.getParameter("fechaNac");
             usuario = request.getParameter("nombreUsuario");
-            contraseña = request.getParameter("contraseña");
-            contraseña_veri = request.getParameter("contraseña_verificar");
+            contraseña = request.getParameter("password");
+            contraseña_veri = request.getParameter("password_verificar");
             boolean estado = false;
             tipo_user = request.getParameter("tipoUser");
             System.out.println(tipo_user);

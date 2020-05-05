@@ -28,19 +28,21 @@ public class Paciente {
         boolean registro = false;
         try{
             //Primero verificar las entradas, pero de momento solo podré el de la contraseña
-            if(contra_pac != cont_veri){
+            if(!contra_pac.equals(cont_veri)){
+                System.out.println("Contraseñas diferentes");
                 return false;
             }
+            System.out.println(contra_pac);
            con = Conexion.getConnection();
-           q = "INSERT INTO Paciente ( Nombre_pac, Appat_pac, Apmat_pac, fechaNac_pac, Usuario_pac, Contra_pac ) "
+           q = "INSERT INTO Paciente ( Nombre_pac, Appat_pac, Apmat_pac, fechaNac_pac,Contra_pac, Usuario_pac ) "
                    + "values ( ?, ?, ?, ?, ?, ? )";
            pr = con.prepareStatement(q);
            pr.setString(1,nombre);
            pr.setString(2, appat);
            pr.setString(3, apmat);
            pr.setString(4, fecha_nac);
-           pr.setString(5, usuario_pac);
-           pr.setString(6, contra_pac);
+           pr.setString(5, contra_pac);
+           pr.setString(6, usuario_pac);
            
            if(pr.executeUpdate()==1){
                registro = true;
@@ -78,6 +80,7 @@ public class Paciente {
             rs = pr.executeQuery();
             
             while(rs.next()){
+                System.out.println("Encontro un paciente");
                 p = new Paciente();
                 p.setId_pac(rs.getInt("id_pac"));
                 p.setNombre_pac(rs.getString("Nombre_pac"));
@@ -91,20 +94,25 @@ public class Paciente {
                 break;
             }
         }catch(SQLException sqlex){
+            System.out.println("Tu sql hace que sea nulo");
             sqlex.printStackTrace();
             sqlex.getMessage();
             p = null;
         }catch (ClassNotFoundException cnfex) {
             cnfex.getMessage();
             cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
             p= null;
         }finally{
             try{
                 con.close();
                 pr.close();
-                rs.close();              
+                rs.close();
+                System.out.println(p +" ... Si dice nulo, tons no encotre tu usuario si es que no te dije antes por que fue");
             }catch(SQLException sqle){
                 sqle.printStackTrace();
+            }if(p==null){
+                System.out.println("Ten, Te regreso un nulo");
             }
             return p;
         }

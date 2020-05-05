@@ -63,6 +63,7 @@ public class Psicologo {
         try{
             con = Conexion.getConnection();
             q = "SELECT * FROM Psicologo WHERE Usuario_pi = ? AND Contra_pi = ?";
+            
             pr = con.prepareStatement(q);
             
             pr.setString(1, nombre_usuario);

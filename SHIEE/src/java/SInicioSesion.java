@@ -17,33 +17,31 @@ import javax.servlet.http.HttpSession;
  * @author maste
  */
 public class SInicioSesion extends HttpServlet {
-  
 
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         try (PrintWriter out = response.getWriter()) {
-            
             String username = request.getParameter("usuario");
-            String password = request.getParameter("contraseña");
-            Paciente i1 = null;
+            System.out.println(username);
+            String password = request.getParameter("password");
+            System.out.println(password);
+            Paciente i1 = new Paciente();
             Psicologo i2 = null;
             i1 = i1.inicioSesionPaciente(username,password); //Si es un paciente
-            System.out.println("Ver como paciente ocurrio");
-            i2 = i2.inicioSesionPsicologo(username, password); //O un psicologo
-            System.out.println("ver como psicologo ocurrio");
+            System.out.println(i1.getNombre_pac());
+            //i2 = i2.inicioSesionPsicologo(username, password); //O un psicologo
+            //System.out.println("ver como psicologo ocurrio");
             //No es niguno de los 2
             if(i1== null && i2 == null){
                 System.out.println("No existe");
@@ -63,18 +61,50 @@ public class SInicioSesion extends HttpServlet {
             }else{
                 //Meter página de errores
             }
-            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Error Inicio de sesión</title>");            
+            out.println("<title>Servlet SInicioSesion</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SInicioSesion at Peto</h1>");
+            out.println("<h1>Servlet SInicioSesion at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+        }catch(NullPointerException ex){
+            System.out.println("Peto de alguna forma con un nulo");
+            ex.printStackTrace();
+            ex.getMessage();
         }
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**
@@ -84,7 +114,7 @@ public class SInicioSesion extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Este servel obtiene el usuarioy contraseña enviado, busca el usario entre los tipos de usuario y redirecciona a la página indicada a aprtir del tipo de usuario";
+        return "Short description";
     }// </editor-fold>
 
 }
