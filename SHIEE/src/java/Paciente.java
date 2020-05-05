@@ -87,7 +87,7 @@ public class Paciente {
                 p.setAppat_pac(rs.getString("Appat_pac"));
                 p.setApmat_pac(rs.getString("Apmat_pac"));
                 p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
-                p.setId_pac_psi(rs.getInt("id_psicologo"));
+                p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
                 p.setResTest(rs.getString("resTest"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");

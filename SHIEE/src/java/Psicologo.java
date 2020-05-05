@@ -72,6 +72,7 @@ public class Psicologo {
             rs = pr.executeQuery();
             
             while(rs.next()){
+                System.out.println("Psicologo encontrado");
                 psi = new Psicologo();
                 psi.setId_psi(rs.getInt("id_psi"));
                 psi.setNombre_psi(rs.getString("Nombre_psi"));
@@ -84,21 +85,23 @@ public class Psicologo {
                 break;
             }
         }catch(SQLException sqlex){
+            System.out.println("Error SQL lo hace nulo");
             sqlex.printStackTrace();
             sqlex.getMessage();
             psi = null;
         }catch (ClassNotFoundException cnfex) {
+            System.out.println("Error en la clase lo hace nulo");
             cnfex.getMessage();
             cnfex.printStackTrace();
             psi= null;
-        }catch(Exception ex){
-            System.out.println("Fallo la tabla");
-            psi = null;
         }finally{
             try{
                 con.close();
                 pr.close();
-                rs.close();              
+                rs.close();   
+                if(psi==null){
+                    System.out.println("Si no te he dicho nada pero me estas leyendo, significa que no encontre tu usuario");
+                }
             }catch(SQLException sqle){
                 sqle.printStackTrace();
             }
