@@ -14,14 +14,12 @@ public class Psicologo {
     
     public boolean RegistrarPsicologo(String nombre,String appat, String apmat, String fecha_nac, int cedula, String usuario_pi, String contra_pi, String cont_veri){
         boolean registro = false;
-        System.out.println("InicioRegistro");
         try{
             //Primero verificar las entradas, pero de momento solo podré el de la contraseña
-            if(!contra_psi.equals(cont_veri)){
+            if(!contra_pi.equals(cont_veri)){
                 System.out.println("Contraseñas diferentes");
                 return false;
             }
-            System.out.println("Un saludo");
            con = Conexion.getConnection();
            //Por el momento usare un satatement por que no se si esto se pueda hacer con un preparedStatement
            
@@ -36,15 +34,14 @@ public class Psicologo {
            pr.setInt(5, cedula);
            pr.setString(6, usuario_pi);
            pr.setString(7, contra_pi);
-           System.out.println(q);
            if(pr.executeUpdate()==1){
-               System.out.println("C ha registrado");
                registro=true;
            }
            
         }catch(SQLException sqlex){
             sqlex.printStackTrace();
             sqlex.getMessage();
+            System.out.println("ERROR SQL");
             registro = false;
         }catch (ClassNotFoundException cnfex) {
             cnfex.getMessage();
@@ -77,7 +74,7 @@ public class Psicologo {
             while(rs.next()){
                 System.out.println("Psicologo encontrado");
                 psi = new Psicologo();
-                psi.setId_psi(rs.getInt("id_psi"));
+                psi.setId_psi(rs.getInt("id_psicologo"));
                 psi.setNombre_psi(rs.getString("Nombre_psi"));
                 psi.setAppat_psi(rs.getString("Appat_psi"));
                 psi.setApmat_psi(rs.getString("Apmat_psi"));

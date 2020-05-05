@@ -108,7 +108,6 @@ public class Paciente {
                 con.close();
                 pr.close();
                 rs.close();
-                System.out.println(p +" ... Si dice nulo, tons no encotre tu usuario si es que no te dije antes por que fue");
             }catch(SQLException sqle){
                 sqle.printStackTrace();
             }if(p==null){
