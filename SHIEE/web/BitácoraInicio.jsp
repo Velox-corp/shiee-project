@@ -40,24 +40,24 @@
             </ul>
 		</nav>
 	</header>
-	<section>
+	<section class="seccion">
 		<div class="imagensota">
 			Aquí se supone va ir una imagen toda recia con información de acompañamiento
 		</div>
 		<hr>
 		<div class="info-extra1">
-			<h2>Supervisión del psicologo</h2>
-			<p>Con la bitácora podrás almacenar de manera sencilla las actividades asignadas por el psicologo, ya sea  apartir de texto, o, siendo más optimo, elhacerlo a mano e insertar imagenes de tus escritos</p>
+			<h2 class="titulo">Supervisión del psicologo</h2>
+			<p class="info">Con la bitácora podrás almacenar de manera sencilla las actividades asignadas por el psicologo, ya sea  apartir de texto, o, siendo más optimo, elhacerlo a mano e insertar imagenes de tus escritos</p>
 		</div>
 		<div class="info-extra2">
-			<h2>Manejo del estres</h2>
-			<p></p>
+			<h2 class="titulo">Manejo del estres</h2>
+			<p class="info"></p>
 		</div>
                 <br>
                 <hr>
                 <a href="bitacora_ver.jsp">
 		<div class="boton">
-                    Inicie ahora
+                    <button class="botont2" style="color: #F2F2F2">¡Iniciar Ahora!</button>
 		</div>
                 </a>
 	</section>
