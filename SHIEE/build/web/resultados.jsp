@@ -30,7 +30,7 @@
 				<li><a class="si" href="">Información</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+						<li><a class="si" href="VerificarSesion">Bitácora</a></li>
 						<li><a class="si" href="test.jsp">Test</a></li>
 					</ul>
 				</li>

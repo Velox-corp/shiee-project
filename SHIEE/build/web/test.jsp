@@ -30,7 +30,7 @@
 				<li><a class="si" href="">Información</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+						<li><a class="si" href="VerificarSesion">Bitácora</a></li>
 						<li><a class="si" href="test.jsp">Test</a></li>
 					</ul>
 				</li>
@@ -41,6 +41,7 @@
 		</nav>
 	</header>
 	<section class="se_te">
+                <br>
 		<center><h1 class="mide">MIDE TU NIVEL DE ESTRÉS CON ESTE SIMPLE TEST</h1></center>
 		<p class="cuerpo">
 			El vídeo proporciona una manera eficaz para ayudarle a demostrar el punto. Cuando haga clic en Vídeo en línea, puede pegar el código para insertar del vídeo que desea agregar. También puede escribir una palabra clave para buscar en línea el vídeo que mejor se adapte a su documento.
@@ -48,7 +49,9 @@
 			Los temas y estilos también ayudan a mantener su documento coordinado. Cuando haga clic en Diseño y seleccione un tema nuevo, cambiarán las imágenes, gráficos y gráficos SmartArt para que coincidan con el nuevo tema. Al aplicar los estilos, los títulos cambian para coincidir con el nuevo tema. <br>
 			Ahorre tiempo en Word con nuevos botones que se muestran donde se necesiten. Para cambiar la forma en que se ajusta una imagen en el documento, haga clic y aparecerá un botón de opciones de diseño junto a la imagen. Cuando trabaje en una tabla, haga clic donde desee agregar una fila o columna y, a continuación, haga clic en el signo más.
 		</p>
-		<center><a href="cuestionario.html"><img src="img/button_iniciar-test.png"></a></center>
+		<br>
+		<center><a href="cuestionario.jsp"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
+		<br>
 	</section>
 </body>
 </html>

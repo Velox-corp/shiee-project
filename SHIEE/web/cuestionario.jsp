@@ -20,10 +20,10 @@
 				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 				
 				<li><a class="si" href="index.jsp">Inicio</a></li>
-				<li><a class="si" href="">Información</a></li>
+				<li><a class="si" href="">Informaci�n</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.jsp">Bitacora</a></li>
+						<li><a class="si" href="VerificarSesion">Bitacora</a></li>
 						<li><a class="si" href="test.jsp">Test</a></li>
 					</ul>
 				</li>

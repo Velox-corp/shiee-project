@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Necesita Inciar Sesion</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/estilosAdministrador.css">
     <link rel="icon" href="img/Shiee.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
@@ -49,7 +50,14 @@
             </ul>
             </nav>
         </header>
-        <h1>Necesita iniciar sesiñon Para poder acceder a este módulo</h1>
-        <a href='InicioSesion.jsp'>Iniciar Sesión</a>
+        <div class="mensaje">
+            <p class="upps">¡LO SIENTO!</p>
+            <p>Necesitas iniciar sesión para acceder a esté modulo.</p>
+            <a href='InicioSesion.jsp'>
+                <div class="btn">
+                    Iniciar Sesión
+                </div>
+            </a>
+        </div>
     </body>
 </html>

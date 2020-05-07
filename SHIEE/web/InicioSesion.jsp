@@ -35,13 +35,13 @@
                 <li><a class="si" href="">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
-                        <li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+                        <li><a class="si" href="VerificarSesion">Bitácora</a></li>
                         <li><a class="si" href="test.jsp">Test</a></li>
                     </ul>
                 </li>
                 <li><a class="si" href="directorio.jsp"> Directorio </a></li>
                 <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-                <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+                <li><a class="si" href="sesion.jsp">Sesión</a></li>
             </ul>
         </nav>
     </header>

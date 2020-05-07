@@ -4,7 +4,8 @@
 	<title>TEST</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header>
@@ -16,29 +17,30 @@
 				</div>
 			</div>
 			<ul>
-				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que está en body dentro de estilo.css  y tambien el height del nav en el css -->
+				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 				
-				<li><a class="si" href="index.html">Inicio</a></li>
-				<li><a class="si" href="">Información</a></li>
+				<li><a class="si" href="index.jsp">Inicio</a></li>
+				<li><a class="si" href="">Informaci�n</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.html">Bitacora</a></li>
-						<li><a class="si" href="test.html">Test</a></li>
+						<li><a class="si" href="VerificarSesion">Bitacora</a></li>
+						<li><a class="si" href="test.jsp">Test</a></li>
 					</ul>
 				</li>
-				<li><a class="si" href="directorio.html"> Directorio </a></li>
-				<li><a class="si" href="nosotros.html"> Nosotros</a></li>
-				<li><a class="si" href="paginaAdmin.html">Sesión</a></li>
+				<li><a class="si" href="directorio.jsp"> Directorio </a></li>
+				<li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
+				<li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
 			</ul>
 		</nav>
 	</header>
-	<section>
-		<center><h1 id="titulo">TEST DEL ESTRÉS</h1>
-		<h2>Responde de la forma mas honesta que puedas. Gracias.</h2>
-		<p><strong>I - NIVEL DE INTENSIDAD</strong> Contesta las siguientes preguntas</p>
-		<p>Utilizando una escala del 1 al 5, donde 1 es poco y 5 es mucho</p>
+	<section style="background-color: #B4DBC0">
+		<br>
+		<center><h1 id="titulo">TEST DEL ESTRÉS</h1><br>
+		<h2 class="margen"><b>Responde de forma honesta el test por favor</b></h2><br>
+		<p class="margen"><h2 class="margen"><b class="subt">I - Nivel De Intesidad</b></h2></p>
+		<p class="margen"><br>Contesta las siguientes preguntas utilizando una escala del 1 al 5, donde 1 representa poco y 5 representa mucho</p><br>
 		<form>
-			<table>
+			<table class="tabla_t">
 				<tr>
 					<th>Pregunta</th>
 					<th colspan="5 ">Respuesta</th>
@@ -52,7 +54,7 @@
 					<td id="col_res">5</td>
 				</tr>
 				<tr>
-					<td>¿Como calificarias el nivel de preocupación o nerviosismo durante el semestre?</td>
+					<td>¿Cómo calificarias el nivel de preocupación o nerviosismo durante el semestre?</td>
 					<td id="col_res"><input type="radio" name="s1_p1"></td>
 					<td id="col_res"><input type="radio" name="s1_p1"></td>
 					<td id="col_res"><input type="radio" name="s1_p1"></td>
@@ -74,10 +76,12 @@
 			</table>
 		</form>
 		<!-- aqui va la seccion dos xDDD -->
-		<p><strong>II - ESTRESORES</strong> Señala con que frecuencia te inquietaron las siguientes situaciones</p>
-		<p>N - Nunca R - Rara vez A - Algunas veces C - Casi siempre S - Siempre</p>
+		<br>
+		<p class="margen"><h2 class="margen"><b class="subt">II - Estresores</b></h2></p><br>
+		<p class="margen"><br>Señala con que frecuencia te inquietaron las siguientes situaciones</p><br>
+		<p class="margen">N - Nunca R - Rara vez A - Algunas veces C - Casi siempre S - Siempre</p><br>
 		<form>
-			<table>
+			<table class="tabla_t">
 				<tr>
 					<th>Pregunta</th>
 					<th colspan="5">Respuestas</th>
@@ -212,16 +216,18 @@
 		</form>
 
 		<!-- aqui va la seccion 3 -->
-		<p><strong>III - INDICADORES</strong> Señala con que frecuencia tuviste las siguientes reacciones fisicas, psicológicas y comportamentales cunado estabas preocupado o nervioso</p>
-		<p>N - Nunca R - Rara vez A - Algunas veces C - Casi siempre S - Siempre</p>
+		<br>
+		<p class="margen"><h2 class="margen"><b class="subt">III - Indicadores</b></h2></p><br>
+		<p class="margen"><br>Señala con que frecuencia tuviste las siguientes reacciones fisicas, psicológicas y comportamentales cunado estabas preocupado o nervioso</p><br>
+		<p class="margen">N - Nunca R - Rara vez A - Algunas veces C - Casi siempre S - Siempre</p><br>
 		<form>
-			<table>
+			<table class="tabla_t">
 				<tr>
 					<th>Pregunta</th>
 					<th colspan="6">Respuesta</th>
 				</tr>
 				<tr>
-					<td>I - REACCIONES FÍSICAS</td>
+					<td style="color: gray"><b>I - Reacciones Físicas</b></td>
 					<td id="col_res">N</td>
 					<td id="col_res">R</td>
 					<td id="col_res">A</td>
@@ -278,7 +284,7 @@
 				</tr>
 				<tr><td></td></tr>
 				<tr>
-					<td colspan="6">II - Reacciones psicológicas</td>
+					<td colspan="6" style="color: gray"><b>II - Reacciones psicológicas</b></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
@@ -339,7 +345,7 @@
 				</tr>
 				<tr><td></td></tr>
 				<tr>
-					<td colspan="6">III - Reacciones comportamentales</td>
+					<td colspan="6" style="color: gray"><b>III - Reacciones comportamentales</b></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
@@ -351,7 +357,7 @@
 					<td id="col_res"><input type="radio" name="s3_p14"></td>
 				</tr>
 				<tr>
-					<td>Aislamiento de los demás</td>
+					<td>Aislamiento de los demÃ¡s</td>
 					<td id="col_res"><input type="radio" name="s3_p15"></td>
 					<td id="col_res"><input type="radio" name="s3_p15"></td>
 					<td id="col_res"><input type="radio" name="s3_p15"></td>
@@ -375,7 +381,7 @@
 					<td id="col_res"><input type="radio" name="s3_p17"></td>
 				</tr>
 				<tr>
-					<td>Aumento o reducción del consumo de alimentos</td>
+					<td>Aumento o reducciÃ³n del consumo de alimentos</td>
 					<td id="col_res"><input type="radio" name="s3_p18"></td>
 					<td id="col_res"><input type="radio" name="s3_p18"></td>
 					<td id="col_res"><input type="radio" name="s3_p18"></td>
@@ -392,10 +398,12 @@
 		</form>
 
 		<!-- aqui va la ultima seccion siuuuuuuuuuuuuuuuu -->
-		<p><strong>IV - ESTRATEGIAS DE AFRONTAMIENTO</strong> Señala con que frecuencia utilizaste las siguientes estrategias para enfrentar la situación que te causaba preocupación o nerviosismo</p>
-		<p>N - Nunca R - Rara vez A - Algunas veces C - Casi siempre S - Siempre</p>
+		<br>
+		<p class="margen"><h2 class="margen"><b class="subt">IV - Estrategias De Afrontamiento</b></h2></p><br>
+		<p class="margen"><br>Señala con que frecuencia utilizaste las siguientes estrategias para enfrentar la situación que te causaba preocupación o nerviosismo</p>
+		<p class="margen"><br>N - Nunca R - Rara vez A - Algunas veces C - Casi siempre S - Siempre</p><br>
 		<form>
-			<table>
+                    <table class="tabla_t">
 				<tr>
 					<th>Pregunta</th>
 					<th colspan="5">Respuesta</th>
@@ -409,7 +417,7 @@
 					<td id="col_res">S</td>
 				</tr>
 				<tr>
-					<td>Habilidad asertiva (defender nuestras preferencias e ideas o sentimientos  sin dañar a otros)</td>
+					<td>Habilidad asertiva (defender nuestras preferencias e ideas o sentimientos  sin daÃ±ar a otros)</td>
 					<td id="col_res"><input type="radio" name="s4_p1"></td>
 					<td id="col_res"><input type="radio" name="s4_p1"></td>
 					<td id="col_res"><input type="radio" name="s4_p1"></td>
@@ -417,7 +425,7 @@
 					<td id="col_res"><input type="radio" name="s4_p1"></td>
 				</tr>
 				<tr>
-					<td>Elaboración de un plan y ejecución de sus tareas</td>
+					<td>ElaboraciÃ³n de un plan y ejecuciÃ³n de sus tareas</td>
 					<td id="col_res"><input type="radio" name="s4_p2"></td>
 					<td id="col_res"><input type="radio" name="s4_p2"></td>
 					<td id="col_res"><input type="radio" name="s4_p2"></td>
@@ -425,7 +433,7 @@
 					<td id="col_res"><input type="radio" name="s4_p2"></td>
 				</tr>
 				<tr>
-					<td>Tomar la situación con sentido del humor</td>
+					<td>Tomar la situaciÃ³n con sentido del humor</td>
 					<td id="col_res"><input type="radio" name="s4_p3"></td>
 					<td id="col_res"><input type="radio" name="s4_p3"></td>
 					<td id="col_res"><input type="radio" name="s4_p3"></td>
@@ -433,7 +441,7 @@
 					<td id="col_res"><input type="radio" name="s4_p3"></td>
 				</tr>
 				<tr>
-					<td>Elogios a sí mismo</td>
+					<td>Elogios a sÃ­ mismo</td>
 					<td id="col_res"><input type="radio" name="s4_p4"></td>
 					<td id="col_res"><input type="radio" name="s4_p4"></td>
 					<td id="col_res"><input type="radio" name="s4_p4"></td>
@@ -441,7 +449,7 @@
 					<td id="col_res"><input type="radio" name="s4_p4"></td>
 				</tr>
 				<tr>
-					<td>Distracción evasiva</td>
+					<td>DistracciÃ³n evasiva</td>
 					<td id="col_res"><input type="radio" name="s4_p5"></td>
 					<td id="col_res"><input type="radio" name="s4_p5"></td>
 					<td id="col_res"><input type="radio" name="s4_p5"></td>
@@ -457,7 +465,7 @@
 					<td id="col_res"><input type="radio" name="s4_p6"></td>
 				</tr>
 				<tr>
-					<td>Busqueda de información sobre la situación</td>
+					<td>Busqueda de informaciÃ³n sobre la situaciÃ³n</td>
 					<td id="col_res"><input type="radio" name="s4_p7"></td>
 					<td id="col_res"><input type="radio" name="s4_p7"></td>
 					<td id="col_res"><input type="radio" name="s4_p7"></td>
@@ -465,7 +473,7 @@
 					<td id="col_res"><input type="radio" name="s4_p7"></td>
 				</tr>
 				<tr>
-					<td>Ventilación y confidencias (verbalización de la situación que preocupa)</td>
+					<td>VentilaciÃ³n y confidencias (verbalizaciÃ³n de la situaciÃ³n que preocupa)</td>
 					<td id="col_res"><input type="radio" name="s4_p8"></td>
 					<td id="col_res"><input type="radio" name="s4_p8"></td>
 					<td id="col_res"><input type="radio" name="s4_p8"></td>
@@ -484,8 +492,10 @@
 	</section>
 	<br>
 	<br>
-	<center>
-		<a href="resultados.html"><img src="img/button_finalizar.png"></a> <a href=""><img src="img/button_cancelar.png"></a>
+	<center style="background-color: #EAF2E3">
+		<br>
+		<a href="resultados.jsp"><button class="botont2" style="color: #F2F2F2">FINALIZAR</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="botont2" style="color: #F2F2F2">CANCELAR</button></a>
+		<br><br>
 	</center>
 </body>
 </html>
