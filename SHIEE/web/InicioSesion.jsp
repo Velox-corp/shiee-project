@@ -20,11 +20,12 @@
                 <div class="esto_no">
                     <%
                         HttpSession sesionOk = request.getSession();
+                        String u = String.valueOf(sesionOk.getAttribute("usuario"));
                         if(sesionOk.getAttribute("usuario")==null){
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-                    <a class="no " href="InicioSesion.jsp">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <a class="no " href="InicioSesion.jsp">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a>
                     <%}%>
                 </div>
             </div>

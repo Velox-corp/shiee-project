@@ -23,9 +23,9 @@ function validarFecha(element){
 	fechadiv= fechaNac.split("-")
 	año=fechadiv[0]
 	mes = fechadiv[1]
-	día = fechadiv[2]
+	dia = fechadiv[2]
 	alert(año + "/-/" + mes + "/-/"+ dia)
-	var date = new date()
+	var date = new Date()
 	if(año>date.getFullYear()){
 		alert("Año invalido, ingresar de nuevo")
 		formulario.fechaNac.focus()
