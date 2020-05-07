@@ -1,3 +1,7 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Clases.Psicologo"%>
+<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -12,23 +16,30 @@
 			<div class="imagen_inicio">
 				<img src="img/Shiee.png" width="90" height="90">
 				<div class="esto_no">
-					<p><a class="no "href="InicioSesion.html">Inicio de sesión</a> | <a class="no" href="Registro.html">Registrarse</a></p>
+					<%
+						HttpSession sesionOk = request.getSession();
+						if(sesionOk.getAttribute("usuario")==null){
+					%>
+					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+					<%  }else{%>
+					<a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+					<%}%>
 				</div>
 			</div>
 			<ul>
-				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que está en body dentro de estilo.css  y tambien el height del nav en el css -->
-				
-				<li><a class="si" href="index.html">Inicio</a></li>
+				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
+
+				<li><a class="si" href="index.jsp">Inicio</a></li>
 				<li><a class="si" href="">Información</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.html">Bitacora</a></li>
-						<li><a class="si" href="test.html">Test</a></li>
+						<li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+						<li><a class="si" href="test.jsp">Test</a></li>
 					</ul>
 				</li>
-				<li><a class="si" href="directorio.html"> Directorio </a></li>
-				<li><a class="si" href="nosotros.html"> Nosotros</a></li>
-				<li><a class="si" href="paginaAdmin.html">Sesión</a></li>
+				<li><a class="si" href="directorio.jsp"> Directorio </a></li>
+				<li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
+				<li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -38,23 +49,29 @@
 	<div class="barraBusqueda">
 		<form name="barraBusqueda" method="post">
 			<table border="0">
-				<tr>
+				<tr><!--
 					<td id="barra"><input type="text" name="buscar_paciente" ></td>
-					<td id="boton"><input type="button" value="BUSCAR"></td>
+					<td id="boton"><input type="button" value="BUSCAR"></td>-->
 					<td id="espacio"></td>
-					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.html'" name="volver"></td>
+					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.jsp'" name="volver"></td>
 				</tr> 
 			</table>
 		</form>
 	</div>
 	<div class="contenedor">
+            <%
+            Psicologo psi = new Psicologo();
+            ArrayList<Psicologo> pacientes = psi.obtenerTodosPsicologos();
+            for(Psicologo p: pacientes){
+            %>
 		<div class="usuario">
 			<img src="img/user.png" id="imgUser">
 			<div id="textoUser">
-				<h1>Psicologo ejemplo</h1>
+				<h1><%=p.getNombre_psi() +" " + p.getAppat_psi() +" " + p.getApmat_psi()%></h1>
 				<p>correoElectronico.psicologo@ejemplo.com</p>
 			</div>
 		</div>
+            <%}%>
 	</div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -32,17 +32,17 @@
             <ul>
                 <!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 
-                <li><a class="si" href="index.html">Inicio</a></li>
+                <li><a class="si" href="index.jsp">Inicio</a></li>
                 <li><a class="si" href="">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
-                        <li><a class="si" href="BitácoraInicio.html">Bitácora</a></li>
-                        <li><a class="si" href="test.html">Test</a></li>
+                        <li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+                        <li><a class="si" href="test.jsp">Test</a></li>
                     </ul>
                 </li>
-                <li><a class="si" href="directorio.html"> Directorio </a></li>
-                <li><a class="si" href="nosotros.html"> Nosotros</a></li>
-                <li><a class="si" href="paginaAdmin.html">Sesión</a></li>
+                <li><a class="si" href="directorio.jsp"> Directorio </a></li>
+                <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
+                <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
             </ul>
         </nav>
     </header>

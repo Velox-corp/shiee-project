@@ -1,30 +1,25 @@
-
-<%-- 
-    Document   : bitacora_ver
-    Created on : 6/05/2020, 02:16:53 AM
-    Author     : familia
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Bitacora</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="Source code generated using layoutit.com">
-        <meta name="author" content="LayoutIt!">
-        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+    <title>Bootstrap 4, from LayoutIt!</title>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    </head>
-    <body>
-        <header>
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+
+<body>
+    <header>
         <nav class="menu">
             <div class="imagen_inicio">
                 <img src="img/Shiee.png" width="90" height="90">
@@ -57,22 +52,26 @@
         </nav>
     </header>
 
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                    <a href="bitacora_ver.html" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
-                    <a href="bitacora_editar.html" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
-                    <a href="bitacora_nuevo.html" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
-                    <a href="bitacora_eliminar.html" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
+                <a href="bitacora_ver.html" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
+                <a href="bitacora_editar.html" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
+                <a href="bitacora_nuevo.html" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
+                <a href="bitacora_eliminar.html" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
             <div class="col-md-8">
                 <h3>
-                    Bitacora
+                    Seleccione las entradas que desee eliminar
                 </h3>
-                <div id="card-230654">
+                <div>
                     <div class="card">
                         <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
+                            <div class="row section-eliminar">
+                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
+                                <div class="fas fa-times" ></div>
+                            </div>
                         </div>
                         <div id="card-element-866869" class="collapse">
                             <div class="card-body">
@@ -86,7 +85,10 @@
                     </div>
                     <div class="card">
                         <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-873647">Regristro ejemplo</a>
+                            <div class="row section-eliminar">
+                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
+                                <div class="fas fa-times" ></div>
+                            </div>
                         </div>
                         <div id="card-element-873647" class="collapse">
                             <div class="card-body">
@@ -98,8 +100,10 @@
             </div>
         </div>
     </div>
+    <script src="js/bitacora_eliminar.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    </body>
+</body>
+
 </html>

@@ -1,11 +1,9 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="Clases.Psicologo"%>
-<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" import="java.sql.*,Clases.Paciente,java.util.ArrayList" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Psicologos</title>
+	<title>Estudiantes</title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="css/estilosAdministrador.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
@@ -45,13 +43,13 @@
 	</header>
 	<script type="text/javascript" src="js/busqueda.js"></script>
 	<!--Aquí debe de ir el nav-->
-	<div id="titulo"><h2>Psicologos Registrados</h2></div>
+	<div id="titulo"><h2>Estudiantes registrados</h2></div>
 	<div class="barraBusqueda">
 		<form name="barraBusqueda" method="post">
 			<table border="0">
 				<tr><!--
-					<td id="barra"><input type="text" name="buscar_paciente" ></td>
-					<td id="boton"><input type="button" value="BUSCAR"></td>-->
+                                    <td id="barra"><input type="search" name="buscar_paciente" ></td>
+					<td id="boton"><input type="button" value="BUSCAR" ></td>-->
 					<td id="espacio"></td>
 					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.jsp'" name="volver"></td>
 				</tr> 
@@ -60,15 +58,15 @@
 	</div>
 	<div class="contenedor">
             <%
-            Psicologo psi = new Psicologo();
-            ArrayList<Psicologo> pacientes = psi.obtenerTodosPsicologos();
-            for(Psicologo p: pacientes){
+            Paciente pac = new Paciente();
+            ArrayList<Paciente> pacientes = pac.obtenerTodosPacientes();
+            for(Paciente p: pacientes){
             %>
 		<div class="usuario">
 			<img src="img/user.png" id="imgUser">
 			<div id="textoUser">
-				<h1><%=p.getNombre_psi() +" " + p.getAppat_psi() +" " + p.getApmat_psi()%></h1>
-				<p>correoElectronico.psicologo@ejemplo.com</p>
+				<h1><%=p.getNombre_pac() +" " + p.getAppat_pac() +" " + p.getApmat_pac()%></h1>
+				<p>correoElectronico.estudiante@ejemplo.com</p>
 			</div>
 		</div>
             <%}%>
