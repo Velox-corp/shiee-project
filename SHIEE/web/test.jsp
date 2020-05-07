@@ -50,7 +50,7 @@
 			Ahorre tiempo en Word con nuevos botones que se muestran donde se necesiten. Para cambiar la forma en que se ajusta una imagen en el documento, haga clic y aparecerá un botón de opciones de diseño junto a la imagen. Cuando trabaje en una tabla, haga clic donde desee agregar una fila o columna y, a continuación, haga clic en el signo más.
 		</p>
 		<br>
-		<center><a href="cuestionario.html"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
+		<center><a href="cuestionario.jsp"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
 		<br>
 	</section>
 </body>
