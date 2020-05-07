@@ -47,15 +47,19 @@
 		<hr>
 		<div class="info-extra1">
 			<h2>Supervisión del psicologo</h2>
-			<p>Información</p>
+			<p>Con la bitácora podrás almacenar de manera sencilla las actividades asignadas por el psicologo, ya sea  apartir de texto, o, siendo más optimo, elhacerlo a mano e insertar imagenes de tus escritos</p>
 		</div>
 		<div class="info-extra2">
 			<h2>Manejo del estres</h2>
-			<p>Más información</p>
+			<p></p>
 		</div>
+                <br>
+                <hr>
+                <a href="bitacora_ver.jsp">
 		<div class="boton">
-			<a href="bitacora_ver.html"><img src="img/botonIrBitacora.png"></a>
+                    Inicie ahora
 		</div>
+                </a>
 	</section>
 	<footer></footer>
 </body>

@@ -52,4 +52,17 @@ hr {
 .boton {
     clear: both;
     text-align: center;
+    width: 35%;
+    height: 40px;
+    margin-top: 2rem;
+    font-size: 25px;
+    padding: 1rem;
+    background-color: #6BBAA7;
+    border: 5px solid white;
+    border-radius: 20px;
+}
+
+a{
+    text-decoration: none;
+    text-align:center;
 }

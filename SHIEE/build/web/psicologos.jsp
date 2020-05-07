@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Clases.Psicologo"%>
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +13,7 @@
 <body>
 	<header>
 		<nav class="menu">
-						<div class="imagen_inicio">
+			<div class="imagen_inicio">
 				<img src="img/Shiee.png" width="90" height="90">
 				<div class="esto_no">
 					<%
@@ -47,23 +49,29 @@
 	<div class="barraBusqueda">
 		<form name="barraBusqueda" method="post">
 			<table border="0">
-				<tr>
+				<tr><!--
 					<td id="barra"><input type="text" name="buscar_paciente" ></td>
-					<td id="boton"><input type="button" value="BUSCAR"></td>
+					<td id="boton"><input type="button" value="BUSCAR"></td>-->
 					<td id="espacio"></td>
-					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.html'" name="volver"></td>
+					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.jsp'" name="volver"></td>
 				</tr> 
 			</table>
 		</form>
 	</div>
 	<div class="contenedor">
+            <%
+            Psicologo psi = new Psicologo();
+            ArrayList<Psicologo> pacientes = psi.obtenerTodosPsicologos();
+            for(Psicologo p: pacientes){
+            %>
 		<div class="usuario">
 			<img src="img/user.png" id="imgUser">
 			<div id="textoUser">
-				<h1>Psicologo ejemplo</h1>
+				<h1><%=p.getNombre_psi() +" " + p.getAppat_psi() +" " + p.getApmat_psi()%></h1>
 				<p>correoElectronico.psicologo@ejemplo.com</p>
 			</div>
 		</div>
+            <%}%>
 	</div>
 </body>
 </html>

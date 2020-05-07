@@ -69,7 +69,6 @@
 				<p>correoElectronico.estudiante@ejemplo.com</p>
 			</div>
 		</div>
-                <br>
             <%}%>
 	</div>
 </body>

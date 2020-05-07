@@ -97,8 +97,10 @@ input{
 .usuario{
 	border: 4px solid white;
 	border-radius: 20px;
-	width: 50%;
-        marign: auto;
+	width: 40%;
+        margin: 1rem;
+        float: left;
+        display:inline-block;
 }
 #imgUser{
 	border-radius: 50%;	

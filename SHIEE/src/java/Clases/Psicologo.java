@@ -2,6 +2,7 @@ package Clases;
 
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Psicologo {
     
@@ -74,7 +75,6 @@ public class Psicologo {
             rs = pr.executeQuery();
             
             while(rs.next()){
-                System.out.println("Psicologo encontrado");
                 psi = new Psicologo();
                 psi.setId_psi(rs.getInt("id_psicologo"));
                 psi.setNombre_psi(rs.getString("Nombre_psi"));
@@ -109,6 +109,46 @@ public class Psicologo {
             }
             return psi;
         }
+    }
+    
+    public ArrayList<Psicologo> obtenerTodosPsicologos(){
+        ArrayList<Psicologo> listaPsicologos = new ArrayList<>();
+        try{
+            con = Conexion.getConnection();
+            q = "SELECT * FROM Psicologo";
+            pr = con.prepareStatement(q);
+            rs = pr.executeQuery();
+            while(rs.next()){
+                Psicologo psi = new Psicologo();
+                psi.setId_psi(rs.getInt("id_psicologo"));
+                psi.setNombre_psi(rs.getString("Nombre_psi"));
+                psi.setAppat_psi(rs.getString("Appat_psi"));
+                psi.setApmat_psi(rs.getString("Apmat_psi"));
+                psi.setFecha_nac_psi(rs.getString("fechaNac_psi"));
+                psi.setCedula_psi(rs.getInt("cedula_psi"));
+                psi.setUsuario_psi(rs.getString("Usuario_pac"));
+                psi.setContra_psi(rs.getString("Contra_pi"));
+                listaPsicologos.add(psi);
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Tu sql hace que sea nulo");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+        }finally{
+            try{
+                con.close();
+                pr.close();
+                rs.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+            return listaPsicologos;
+        }
+        
     }
     
     public int getId_psi() {
