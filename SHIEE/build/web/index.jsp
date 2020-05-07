@@ -1,4 +1,4 @@
-<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +34,7 @@
                 <li><a class="si" href="">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
-                        <li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+                        <li><a class="si" href="VerificarSesion">Bitácora</a></li>
                         <li><a class="si" href="test.jsp">Test</a></li>
                     </ul>
                 </li>
