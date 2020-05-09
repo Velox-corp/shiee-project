@@ -8,9 +8,9 @@ section {
 h1 {
     text-align: center;
 }
-
+/*Modificado_A*/
 hr {
-    border: 1px solid black;
+    border: 2px solid white;
     margin-top: 2.5rem;
 }
 
@@ -19,7 +19,7 @@ hr {
 
 .imagensota {
     width: 100%;
-    background-color: rgb(205, 200, 205);
+    background-color: #91E7BE;
 }
 
 
@@ -32,37 +32,13 @@ hr {
     width: 47.5%;
     padding-right: 1%;
     padding-left: 1%;
-    /*El color de fondo es temporal*/
-    background-color: rgb(25, 250, 250);
+    background-color: #91E7BE;
     float: left;
     text-align: center
 }
-
-.info-extra1 {
-    border-right: 2px solid black;
-}
-
-.info-extra2 {
-    border-left: 2px solid black;
-}
-
-
 /*Seccion del botn*/
 
 .boton {
     clear: both;
     text-align: center;
-    width: 35%;
-    height: 40px;
-    margin-top: 2rem;
-    font-size: 25px;
-    padding: 1rem;
-    background-color: #6BBAA7;
-    border: 5px solid white;
-    border-radius: 20px;
-}
-
-a{
-    text-decoration: none;
-    text-align:center;
 }

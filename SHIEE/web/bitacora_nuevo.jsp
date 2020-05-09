@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-                    <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%}%>
                 </div>
             </div>
@@ -66,12 +67,11 @@
                 <h3>
                     Escriba su bitacora o mande sus fotografias
                 </h3>
-                <form role="form" method="POST">
+                <form id="form" role="form" method="post" action="GuardarRegristro" enctype="multipart/form-data">
                     <div class="form-group">
                         <div id=imagenes-bitacora>
-                            
+                            <input accept="images/*" required="true" type="file" class="form-control-file" name="image">
                         </div>
-                        <button id="btn-mas-img" class="btn btn-outline-primary btn-sm">Añadir imagen</button>
                         <p class="help-block">
                             Elija su fotografía
                         </p>
@@ -81,16 +81,31 @@
                         <textarea id="text-area" name="textarea" class="form-control"></textarea>
                     </div>
                     <button id="boton-n-bitacora" type="button" class="btn btn-success btn-lg">
-                        Save
+                        Guardar
                     </button>
                     <button type="button" class="btn btn-lg btn-success">
-                        Cancel
+                        Cancelar
                     </button>
                 </form>
+                
+                <script language="javascript">
+                    var sub_mit = document.getElementById("boton-n-bitacora");
+                    var form = document.getElementById("form");
+                    var imagenes = document.getElementsByName("image")[0];
+                    var texto = document.getElementById("text-area").value;
+                    var files = imagenes.files[0];
+
+                    
+                    sub_mit.addEventListener("click", function(){
+                        form.requestSubmit();
+                        
+                    });
+                    
+                </script>
             </div>
         </div>
     </div>
-    <script src="js/bitacora_nuevo.js"></script>
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
