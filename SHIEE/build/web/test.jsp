@@ -36,7 +36,7 @@
 				</li>
 				<li><a class="si" href="directorio.jsp"> Directorio </a></li>
 				<li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-				<li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+				<li><a class="si" href="sesion.jsp">Sesión</a></li>
 			</ul>
 		</nav>
 	</header>

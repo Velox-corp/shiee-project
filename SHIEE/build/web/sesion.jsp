@@ -18,36 +18,41 @@
     String apmat = "";
     String f_n = "";
     int cedula = 0;
-    try{
-        Paciente pac = (Paciente)sesionUser.getAttribute("usuario");
-        if(pac!=null){
+    
+    boolean pacPrueba = Paciente.esPaciente(sesionUser.getAttribute("usuario"));
+    if(pacPrueba){
+        try{
+            Paciente pac = (Paciente)sesionUser.getAttribute("usuario");
             tipo_user = "Paciente";
             nombre = pac.getNombre_pac();
             appat = pac.getAppat_pac();
-            apmat = pac.getAppat_pac();
+            apmat = pac.getApmat_pac();
             f_n = pac.getFecha_nac_pac();
             username = pac.getUsuario_pac();
             pass = pac.getContra_pac();
+        }catch(Exception ex){
+            System.out.println("No se pudo obtener los datos");
+            ex.printStackTrace();
         }
+    }
 
-    }catch(Exception ex){
-        ex.printStackTrace();
-    }try{
-        Psicologo psi = (Psicologo)sesionUser.getAttribute("usuario");
-        if(psi!=null){
+    boolean psiPrueba = Psicologo.esPsicologo(sesionUser.getAttribute("usuario"));
+    if(psiPrueba){
+        try{
+            Psicologo psi = (Psicologo)sesionUser.getAttribute("usuario");
             tipo_user= "Psicologo";
             nombre = psi.getNombre_psi();
             appat = psi.getAppat_psi();
-            apmat = psi.getAppat_psi();
+            apmat = psi.getApmat_psi();
             f_n = psi.getFecha_nac_psi();
             username = psi.getUsuario_psi();
             pass = psi.getContra_psi();
+        }catch(Exception ex){
+            System.out.println("No se pudo obtener los datos");
+            ex.printStackTrace();
         }
-    }catch(Exception ex){
-        System.out.println("Psicologo no es");
-        ex.printStackTrace();
     }
-    if(tipo_user==null){
+    if(tipo_user==null || (!pacPrueba && !psiPrueba)){
         %>
         <jsp:forward page="SesionRequerida.jsp">
             <jsp:param name="No hay sesión" value="Para acceder es necesario tener una sesión"></jsp:param>
@@ -104,43 +109,43 @@
                 <table border="0">
                         <!--Cada tr, va a ser un ingreso-->
                         <tr>
-                            <td><input type="button" id="boton" onclick="return activarCampo('nombre')" value="Editar"></td>
+                            <td><input type="button" class="btn" onclick="return activarCampo('nombre')" value="Editar"></td>
                             <td>Nombre:</td>
                             <td><input type="text" name="nombre" id="nombre" value="<%=nombre%>" onchange="estaVacio(this)" readonly="readonly"></td>
                         </tr>
 
                         <tr>
-                            <td><input type="button" id="boton" onclick="return activarCampo('appat')" value="Editar"></td>
+                            <td><input type="button" class="btn" onclick="return activarCampo('appat')" value="Editar"></td>
                             <td>Apellido Paterno:</td>
                             <td><input type="text" name="appat" id="appat" value="<%=appat%>" readonly="readonly" onchange="estaVacio(this)" ></td>
                         </tr>
 
                         <tr>
-                            <td><input type="button" id="boton" onclick="return activarCampo('apmat')" value="Editar"></td>
+                            <td><input type="button" class="btn" onclick="return activarCampo('apmat')" value="Editar"></td>
                             <td>Apellido Materno:</td>
                             <td><input type="text" name="apmat" onchange="estaVacio(this)" id="apmat" value="<%=apmat%>" readonly="readonly"></td>
                         </tr>
 
                         <tr>
-                            <td><input type="button" id="boton" onclick="return activarCampo('fechaNac')" value="Editar"></td>
+                            <td><input type="button" class="btn" onclick="return activarCampo('fechaNac')" value="Editar"></td>
                             <td >Fecha de Nacimiento:</td>
                             <td><input type="date" name="fechaNac" onchange="validarFecha(this)" id="fechaNac" value="<%=f_n%>" readonly="readonly"></td>
                         </tr>
                         <tr>
-                            <td><input type="button" id="boton" onclick="return activarCampo('nombreUsuario')" value="Editar"></td>
+                            <td><input type="button" class="btn" onclick="return activarCampo('nombreUsuario')" value="Editar"></td>
                             <td>Usuario:</td>
                             <td><input type="text" name="nombreUsuario" onchange="validarUser(this)" id="nombreUsuario" value="<%=username%>" readonly="readonly"></td>
                         </tr>
 
                         <tr>
-                            <td colspan="3" id="nota">El nombre de Usuario debe tener un maximo de 15 caracteres</td>
+                            <td></td><td colspan="2" id="nota">El nombre de Usuario debe tener un maximo de 15 caracteres</td>
                         </tr>
                         <tr>
-                            <td><input id="boton" type="button" onclick="return activarCampo('password')" value="editar"></td>
+                            <td><input class="btn" type="button" onclick="return activarCampo('password')" value="editar"></td>
                             <td>Contraseña:</td>
                             <td><input type="password" name="password" onchange="validarCont(this)" id="password" value="<%=pass%>" readonly="readonly"></td>
                         </tr>
-                        <tr><td colspan="2" id="nota">La contraseña solo acepta letras y números, de 8 a 15 caracteres</td></tr>
+                        <tr><td></td><td colspan="2" id="nota">La contraseña solo acepta letras y números, de 8 a 15 caracteres</td></tr>
 
                         <!--
                         <tr>
@@ -157,6 +162,7 @@
                         -->
                         <tr>
                             <td><input id="boton" type="submit" value="Guardar Cambios"></td>
+                            <td>
                         </tr>
                 </table>
             </form>

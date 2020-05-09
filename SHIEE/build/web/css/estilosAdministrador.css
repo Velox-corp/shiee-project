@@ -101,6 +101,7 @@ input{
         margin: 1rem;
         float: left;
         display:inline-block;
+        text-align: center;
 }
 #imgUser{
 	border-radius: 50%;	

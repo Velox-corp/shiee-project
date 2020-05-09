@@ -15,6 +15,16 @@ public class Psicologo {
 
     public Psicologo(){}
     
+    public Psicologo(int id,String nombre, String appat, String apmat, String fecha_nac, String usuario, String contra){
+        this.id_psi = id;
+        this.nombre_psi = nombre;
+        this.appat_psi = appat;
+        this.apmat_psi = apmat;
+        this.fecha_nac_psi = fecha_nac;
+        this.usuario_psi = usuario;
+        this.contra_psi = contra;
+    }
+    
     public boolean RegistrarPsicologo(String nombre,String appat, String apmat, String fecha_nac, int cedula, String usuario_pi, String contra_pi, String cont_veri){
         boolean registro = false;
         try{
@@ -26,7 +36,7 @@ public class Psicologo {
            con = Conexion.getConnection();
            //Por el momento usare un satatement por que no se si esto se pueda hacer con un preparedStatement
            
-           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_pac, Contra_pi ) "
+           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_psi, Contra_pi ) "
                    + "values ( ?, ?, ?, ?, ?, ?, ? )";
            pr = con.prepareStatement(q);
            
@@ -65,7 +75,7 @@ public class Psicologo {
         Psicologo psi = null;
         try{
             con = Conexion.getConnection();
-            q = "SELECT * FROM Psicologo WHERE Usuario_pac = ? AND Contra_pi = ?";
+            q = "SELECT * FROM Psicologo WHERE Usuario_psi = ? AND Contra_pi = ?";
             
             pr = con.prepareStatement(q);
             
@@ -82,7 +92,7 @@ public class Psicologo {
                 psi.setApmat_psi(rs.getString("Apmat_psi"));
                 psi.setFecha_nac_psi(rs.getString("fechaNac_psi"));
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
-                psi.setUsuario_psi(rs.getString("Usuario_pac"));
+                psi.setUsuario_psi(rs.getString("Usuario_psi"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
                 break;
             }
@@ -111,6 +121,17 @@ public class Psicologo {
         }
     }
     
+    public static boolean esPsicologo(Object o){
+        boolean esPsi;
+        try{
+            Psicologo p = (Psicologo)o;
+            esPsi = true;
+        }catch(Exception ex){
+            esPsi = false;
+        }
+        return esPsi;
+    }
+    
     public ArrayList<Psicologo> obtenerTodosPsicologos(){
         ArrayList<Psicologo> listaPsicologos = new ArrayList<>();
         try{
@@ -126,7 +147,7 @@ public class Psicologo {
                 psi.setApmat_psi(rs.getString("Apmat_psi"));
                 psi.setFecha_nac_psi(rs.getString("fechaNac_psi"));
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
-                psi.setUsuario_psi(rs.getString("Usuario_pac"));
+                psi.setUsuario_psi(rs.getString("Usuario_psi"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
                 listaPsicologos.add(psi);
             }
@@ -149,6 +170,50 @@ public class Psicologo {
             return listaPsicologos;
         }
         
+    }
+    
+    public boolean editarPsicologo(Psicologo p){
+        boolean actualizado = false;
+        try{
+            con = Conexion.getConnection();
+            q = "UPDATE Psicologo SET "
+                    +"Nombre_psi = ? "
+                    + "Appat_psi = ? "
+                    + "Apmat_psi = ? "
+                    + "fechaNac_psi = ? "
+                    + "Usuario_psi = ? "
+                    + "Contra_pi = ? "
+                    + "WHERE id_psicologo = ?";
+            pr = con.prepareStatement(q);
+            pr.setString(1, p.getNombre_psi());
+            pr.setString(2, p.getAppat_psi());
+            pr.setString(3, p.getApmat_psi());
+            pr.setString(4, p.getFecha_nac_psi());
+            pr.setString(5, p.getUsuario_psi());
+            pr.setInt(6, p.getId_psi());
+            
+            if(pr.executeUpdate()==1){
+                actualizado=true;
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Tu sql hace que sea nulo");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+            actualizado = false;
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+            actualizado = false;
+        }finally{
+            try{
+                con.close();
+                pr.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+            return actualizado;
+        }
     }
     
     public int getId_psi() {

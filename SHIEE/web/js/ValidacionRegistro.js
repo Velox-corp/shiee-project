@@ -118,14 +118,14 @@ function verTipoUser () {
 }
 
 function activarCampo(nombreCampo){
-    var campoActivar = document.getElementsById(nombreCampo);
+    var campoActivar = document.getElementById(nombreCampo);
     try{
-        campoActivar.removeAttibute("readonly");
-        
+        campoActivar.removeAttibute("readOnly");
+        console.log("Se puede editar")
     }catch (exception) {
-        console.log("No exsite");
-        campoActivar.setAttibute("readonly");
-        campoActivar.readonly = "readonly";
+        console.log("No se puede editar");
+        campoActivar.setAttibute("readOnly");
+        campoActivar.readOnly = "readOnly";
     } finally {
         return true;
     }

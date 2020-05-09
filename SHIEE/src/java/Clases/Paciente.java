@@ -17,13 +17,23 @@ import java.util.*;
 public class Paciente {
    
     private int id_pac, id_pac_psi;
-    private String nombre_pac, appat_pac, apmat_pac, fecha_nac_pac, usuario_pac, contra_pac, resTest; 
+    private String nombre_pac, appat_pac, apmat_pac, fecha_nac_pac, usuario_pac, contra_pac; 
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pr = null;
     String q = "";
     
     public Paciente(){
+    }
+    //Tengo flojera, por lo que este constructor con sobrecarga será para actualizar un paciente
+    public Paciente(int id, String nombre, String appat, String apmat, String fecha_nac, String usuario, String contra){
+        this.id_pac = id;
+        this.nombre_pac = nombre;
+        this.appat_pac = appat;
+        this.apmat_pac = apmat;
+        this.fecha_nac_pac = fecha_nac;
+        this.usuario_pac = usuario;
+        this.contra_pac = contra;
     }
     
     public boolean RegistrarPaciente(String nombre,String appat, String apmat, String fecha_nac, String usuario_pac, String contra_pac, String cont_veri){
@@ -90,7 +100,6 @@ public class Paciente {
                 p.setApmat_pac(rs.getString("Apmat_pac"));
                 p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
                 p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
-                p.setResTest(rs.getString("resTest"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");
                 break;
@@ -134,7 +143,6 @@ public class Paciente {
                 p.setApmat_pac(rs.getString("Apmat_pac"));
                 p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
                 p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
-                p.setResTest(rs.getString("resTest"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");
                 listaPacientes.add(p);
@@ -176,7 +184,6 @@ public class Paciente {
                 p.setApmat_pac(rs.getString("Apmat_pac"));
                 p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
                 p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
-                p.setResTest(rs.getString("resTest"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");
                 listaPacientesPsicologo.add(p);
@@ -200,13 +207,60 @@ public class Paciente {
             return listaPacientesPsicologo;
         }
     }
-
-    public String getResTest() {
-        return resTest;
+    
+    public static boolean esPaciente(Object o){
+        boolean esPaciente = false;
+        try{
+            Paciente p = (Paciente)o;
+            esPaciente = true;
+        }catch(Exception ex){
+            esPaciente = false;
+        }
+        return esPaciente;
     }
-
-    public void setResTest(String resTest) {
-        this.resTest = resTest;
+    
+    public boolean editarPaciente(Paciente p){
+        boolean actualizado = false;
+        try{
+            con = Conexion.getConnection();
+            q = "UPDATE Paciente SET "
+                    +"Nombre_pac = ? "
+                    + "Appat_pac = ? "
+                    + "Apmat_pac = ? "
+                    + "fechaNac_pac = ? "
+                    + "Usuario_pac = ? "
+                    + "Contra_pac = ? "
+                    + "WHERE id_pac = ?";
+            pr = con.prepareStatement(q);
+            pr.setString(1, p.getNombre_pac());
+            pr.setString(2, p.getAppat_pac());
+            pr.setString(3, p.getApmat_pac());
+            pr.setString(4, p.getFecha_nac_pac());
+            pr.setString(5, p.getUsuario_pac());
+            pr.setInt(6, p.getId_pac());
+            
+            if(pr.executeUpdate()==1){
+                actualizado=true;
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Tu sql hace que sea nulo");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+            actualizado = false;
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+            actualizado = false;
+        }finally{
+            try{
+                con.close();
+                pr.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+            return actualizado;
+        }
     }
 
     public String getUsuario_pac() {
