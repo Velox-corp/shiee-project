@@ -279,6 +279,37 @@ public class Psicologo {
     public void setContra_psi(String contra_psi) {
         this.contra_psi = contra_psi;
     }
+
+    public boolean borrarPsicologo(int id) {
+        boolean borro = false;
+        try{
+            con = Conexion.getConnection();
+            q = "DELETE FROM Psicologo where psicologo_id = ?";
+            pr = con.prepareStatement(q);
+            pr.setInt(1, id);
+            if(pr.executeUpdate()==1){
+                borro=true;
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Error sql hace que sea falso");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+            borro = false;
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+            borro = false;
+        }finally{
+            try{
+                con.close();
+                pr.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+        return borro;
+        }
+    }
     
     
 }

@@ -1,22 +1,25 @@
-<%-- 
-    Document   : error
-    Created on : 8/05/2020, 09:14:11 PM
-    Author     : maste
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8" session="true" language="java"%>
+<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
-        
-        <title>--ERROR--</title>
-    </head>
-    <body>
-        <header>
-            <nav class="menu">
+
+<head>
+    <meta charset="utf-8">
+    <title>SHIEE</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/inf.css">
+    <link rel="icon" href="img/Shiee.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+    <nav class="menu">
                 <div class="imagen_inicio">
                     <img src="img/Shiee.png" width="90" height="90">
                     <div class="esto_no">
@@ -47,7 +50,9 @@
                 </ul>
             </nav>
         </header>
-        <br>
-        <h1>Ha ocurrido un error, un saludo</h1>
-    </body>
+    <section class="human">
+        
+    </section>
+</body>
+
 </html>

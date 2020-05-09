@@ -17,13 +17,14 @@
     String appat = "";
     String apmat = "";
     String f_n = "";
-    int cedula = 0;
+    int id = 0;
     
     boolean pacPrueba = Paciente.esPaciente(sesionUser.getAttribute("usuario"));
     if(pacPrueba){
         try{
             Paciente pac = (Paciente)sesionUser.getAttribute("usuario");
             tipo_user = "Paciente";
+            id = pac.getId_pac();
             nombre = pac.getNombre_pac();
             appat = pac.getAppat_pac();
             apmat = pac.getApmat_pac();
@@ -47,6 +48,7 @@
             f_n = psi.getFecha_nac_psi();
             username = psi.getUsuario_psi();
             pass = psi.getContra_psi();
+            id = psi.getId_psi();
         }catch(Exception ex){
             System.out.println("No se pudo obtener los datos");
             ex.printStackTrace();
@@ -162,7 +164,8 @@
                         -->
                         <tr>
                             <td><input id="boton" type="submit" value="Guardar Cambios"></td>
-                            <td>
+                            <td><input type="hidden" value="<%=id%>" name="id"></td>
+                            <td><input type="button" onclick="eliminaUser"></td>
                         </tr>
                 </table>
             </form>

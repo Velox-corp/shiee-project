@@ -326,5 +326,36 @@ public class Paciente {
     public void setFecha_nac_pac(String fecha_nac_pac) {
         this.fecha_nac_pac = fecha_nac_pac;
     }
+
+    public boolean borrarPaciente(int id) {
+        boolean borro = false;
+        try{
+            con = Conexion.getConnection();
+            q = "DELETE FROM Paciente where id_pac = ?";
+            pr = con.prepareStatement(q);
+            pr.setInt(1, id);
+            if(pr.executeUpdate()==1){
+                borro=true;
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Error sql hace que sea falso");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+            borro = false;
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+            borro = false;
+        }finally{
+            try{
+                con.close();
+                pr.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+        return borro;
+        }
+    }
     
 }

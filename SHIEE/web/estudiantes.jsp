@@ -14,14 +14,19 @@
 			<div class="imagen_inicio">
 				<img src="img/Shiee.png" width="90" height="90">
 				<div class="esto_no">
-					<%
-						HttpSession sesionOk = request.getSession();
-						if(sesionOk.getAttribute("usuario")==null){
-					%>
-					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-					<%  }else{%>
-					<a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-					<%}%>
+                                    <%
+                                        HttpSession sesionOk = request.getSession();
+                                        if(sesionOk.getAttribute("usuario")==null){
+                                    %>
+                                            <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                    <%  }else if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){%>
+                                            <jsp:forward page="index.jsp">
+                                                <jsp:param name="error" value="Es obligatorio identificarse"></jsp:param>
+                                            </jsp:forward>
+
+                                    <% }else {%>
+                                           <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                    <%}%>
 				</div>
 			</div>
 			<ul>

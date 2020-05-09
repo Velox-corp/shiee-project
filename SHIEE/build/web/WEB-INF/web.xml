@@ -16,6 +16,10 @@
         <servlet-name>actualizarUser</servlet-name>
         <servlet-class>Clases.actualizarUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>eliminarUser</servlet-name>
+        <servlet-class>Clases.eliminarUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrar</servlet-name>
         <url-pattern>/registrar</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>actualizarUser</servlet-name>
         <url-pattern>/actualizarUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarUser</servlet-name>
+        <url-pattern>/eliminarUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
