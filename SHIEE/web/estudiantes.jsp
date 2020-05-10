@@ -1,4 +1,4 @@
-<%@page language="java" session="true" import="java.sql.*,Clases.Paciente,java.util.ArrayList" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" import="Clases.Paciente,java.util.ArrayList" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,30 +14,35 @@
 			<div class="imagen_inicio">
 				<img src="img/Shiee.png" width="90" height="90">
 				<div class="esto_no">
-					<%
-						HttpSession sesionOk = request.getSession();
-						if(sesionOk.getAttribute("usuario")==null){
-					%>
-					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-					<%  }else{%>
-					<a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-					<%}%>
+                                    <%
+                                        HttpSession sesionOk = request.getSession();
+                                        if(sesionOk.getAttribute("usuario")==null){
+                                    %>
+                                            <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                    <%  }else if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){%>
+                                            <jsp:forward page="index.jsp">
+                                                <jsp:param name="error" value="Es obligatorio identificarse"></jsp:param>
+                                            </jsp:forward>
+
+                                    <% }else {%>
+                                           <p><a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                    <%}%>
 				</div>
 			</div>
 			<ul>
 				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 
 				<li><a class="si" href="index.jsp">Inicio</a></li>
-				<li><a class="si" href="">Información</a></li>
+				<li><a class="si" href="info.jsp">Información</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
-						<li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+						<li><a class="si" href="VerificarSesion">Bitácora</a></li>
 						<li><a class="si" href="test.jsp">Test</a></li>
 					</ul>
 				</li>
 				<li><a class="si" href="directorio.jsp"> Directorio </a></li>
 				<li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-				<li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+				<li><a class="si" href="sesion.jsp">Sesión</a></li>
 			</ul>
 		</nav>
 	</header>

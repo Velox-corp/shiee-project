@@ -1,17 +1,26 @@
-<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Administrador de Usuarios</title>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" type="text/css" href="css/estilosAdministrador.css">
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>SHIEE</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/inf.css">
+    <link rel="icon" href="img/Shiee.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-	<header>
-		<nav class="menu">
-                    <div class="imagen_inicio">
+    <header>
+    <nav class="menu">
+                <div class="imagen_inicio">
                     <img src="img/Shiee.png" width="90" height="90">
                     <div class="esto_no">
                         <%
@@ -37,20 +46,13 @@
                     </li>
                     <li><a class="si" href="directorio.jsp"> Directorio </a></li>
                     <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-                    <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+                    <li><a class="si" href="sesion.jsp">Sesión</a></li>
                 </ul>
-		</nav>
-	</header>
-	<!--AquÃ­ va a ir el nav de siempre-->
-	<div id="titulo"><h2>Página de administrador</h2></div>
-	<div class="acomodo">
-		<div class="seleccionEst">
-			<a href="estudiantes.jsp"><div id="est"></div></a>
-		</div>
-
-		<div class="seleccionPsi">
-			<a href="psicologos.jsp"><div id="psi"></div></a>
-		</div>
-	</div>
+            </nav>
+        </header>
+    <section class="human">
+        
+    </section>
 </body>
+
 </html>

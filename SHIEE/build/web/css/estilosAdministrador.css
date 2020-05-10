@@ -101,6 +101,7 @@ input{
         margin: 1rem;
         float: left;
         display:inline-block;
+        text-align: center;
 }
 #imgUser{
 	border-radius: 50%;	
@@ -108,7 +109,25 @@ input{
 #imgUser,#textoUser{
 	float: left;
 	margin: 1rem;
+        font-size: 20px;
 }
 p{
 	font-size: 4vh;
+}
+.mensaje{
+    box-sizing: border-box;
+    width: 40%;
+    border: 1px solid white;
+    padding: 1rem;
+    margin-left: 30%;
+    border-radius: 30px;
+}
+.btn{
+    box-sizing: border-box;
+    width:60%;
+    margin-left: 20%;
+    border-radius: 50px;
+}
+.upps{
+    font-size: 40px;
 }

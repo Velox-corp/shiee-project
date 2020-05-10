@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
     <header>
         <nav class="menu">
             <div class="imagen_inicio">
@@ -25,7 +25,11 @@
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
+<<<<<<< HEAD
                     <a class="no " href="InicioSesion.jsp">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a>
+=======
+                    <a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+>>>>>>> e29a4cff23781b71db8ea6d4134cce2825b71dec
                     <%}%>
                 </div>
             </div>
@@ -33,16 +37,16 @@
                 <!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 
                 <li><a class="si" href="index.jsp">Inicio</a></li>
-                <li><a class="si" href="">Información</a></li>
+                <li><a class="si" href="info.jsp">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
-                        <li><a class="si" href="BitácoraInicio.jsp">Bitácora</a></li>
+                        <li><a class="si" href="VerificarSesion">Bitácora</a></li>
                         <li><a class="si" href="test.jsp">Test</a></li>
                     </ul>
                 </li>
                 <li><a class="si" href="directorio.jsp"> Directorio </a></li>
                 <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-                <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+                <li><a class="si" href="sesion.jsp">Sesión</a></li>
             </ul>
         </nav>
     </header>

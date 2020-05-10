@@ -1,10 +1,9 @@
-package Clases;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Clases;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author maste
  */
-public class SInicioSesion extends HttpServlet {
+public class actualizarUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,55 +31,53 @@ public class SInicioSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         try (PrintWriter out = response.getWriter()) {
-            String username = request.getParameter("usuario");
-            String password = request.getParameter("password");
-            Paciente i1 = new Paciente();
-            Psicologo i2 = new Psicologo();
-            
-            i1 = i1.inicioSesionPaciente(username,password); //Si es un paciente
-            
-            try{
-            i2 = i2.inicioSesionPsicologo(username, password); //O un psicologo
-            }catch(NullPointerException nEx){
-                System.out.println("No funciono, un saludo");
-                i2 = null;
+            HttpSession sesionUser = request.getSession();
+            String nombre = request.getParameter("nombre");
+            String appat = request.getParameter("appat");
+            String apmat = request.getParameter("apmat");
+            String fecha_nac = request.getParameter("fechaNac");
+            String user = request.getParameter("nombreUsuario");
+            String pass = request.getParameter("contraseña");
+            boolean esPac = Paciente.esPaciente(sesionUser.getAttribute("usuario"));
+            boolean actualizoUser = false;
+            if(esPac){
+                Paciente pold =  new Paciente();
+                int id = ((Paciente)sesionUser.getAttribute("usuario")).getId_pac();
+                Paciente pnew = new Paciente(id,nombre, appat, apmat, fecha_nac, user, pass);
+                if(pold.editarPaciente(pnew)){
+                    actualizoUser = true;
+                    response.sendRedirect("sesion.jsp");
+                }
+                
             }
-            System.out.println("ver como psicologo ocurrio");
-            //No es niguno de los 2
-            if(i1== null && i2 == null){
-                System.out.println("No existe");
-                response.sendRedirect("InicioSesion.jsp");
-            //Es paciente
-            }else if(i1 != null && i2 == null){
-                System.out.println("Es un estudiante");
-                HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("usuario", i1);
-                response.sendRedirect("index.jsp");
-            //Es psicologo
-            }else if(i1 == null && i2 != null){
-                System.out.println("Es un psicologo");
-                response.sendRedirect("index.jsp");
-                HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("usuario", i2);
-            }else{
-                //Meter página de errores
+            boolean esPsi = Psicologo.esPsicologo(sesionUser.getAttribute("usuario"));
+            if(esPsi){
+                Psicologo pold = new Psicologo();
+                int id = ((Psicologo)sesionUser.getAttribute("usuario")).getId_psi();
+                Psicologo pnew = new Psicologo(id, nombre, appat, apmat, fecha_nac, user, pass);
+                if(pold.editarPsicologo(pnew)){
+                    actualizoUser = true;
+                    response.sendRedirect("sesion.jsp");
+                }
+                       
             }
+            
+            if(!actualizoUser){
+                response.sendRedirect("error.jsp");
+            }
+            
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SInicioSesion</title>");            
+            out.println("<title>Servlet actualizarUser</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SInicioSesion at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet actualizarUser at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        }catch(NullPointerException ex){
-            System.out.println("Peto de alguna forma con un nulo");
-            ex.printStackTrace();
-            ex.getMessage();
         }
     }
 
@@ -120,7 +117,7 @@ public class SInicioSesion extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Verifica que el usaurio existe en la bd, y de ahí crea la sesión, donde se almacena los datos del usuario";
+        return "Short description";
     }// </editor-fold>
 
 }

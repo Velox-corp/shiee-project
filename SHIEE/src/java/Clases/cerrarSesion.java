@@ -1,10 +1,9 @@
-package Clases;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Clases;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author maste
  */
-public class SInicioSesion extends HttpServlet {
-
+public class cerrarSesion extends HttpServlet {
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,55 +31,22 @@ public class SInicioSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         try (PrintWriter out = response.getWriter()) {
-            String username = request.getParameter("usuario");
-            String password = request.getParameter("password");
-            Paciente i1 = new Paciente();
-            Psicologo i2 = new Psicologo();
             
-            i1 = i1.inicioSesionPaciente(username,password); //Si es un paciente
-            
-            try{
-            i2 = i2.inicioSesionPsicologo(username, password); //O un psicologo
-            }catch(NullPointerException nEx){
-                System.out.println("No funciono, un saludo");
-                i2 = null;
-            }
-            System.out.println("ver como psicologo ocurrio");
-            //No es niguno de los 2
-            if(i1== null && i2 == null){
-                System.out.println("No existe");
-                response.sendRedirect("InicioSesion.jsp");
-            //Es paciente
-            }else if(i1 != null && i2 == null){
-                System.out.println("Es un estudiante");
-                HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("usuario", i1);
-                response.sendRedirect("index.jsp");
-            //Es psicologo
-            }else if(i1 == null && i2 != null){
-                System.out.println("Es un psicologo");
-                response.sendRedirect("index.jsp");
-                HttpSession sesion = request.getSession(true);
-                sesion.setAttribute("usuario", i2);
-            }else{
-                //Meter página de errores
-            }
+            HttpSession sesionACerrar = request.getSession();
+            sesionACerrar.setAttribute("usuario", null);
+            sesionACerrar.invalidate();
+            response.sendRedirect("InicioSesion.jsp");
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SInicioSesion</title>");            
+            out.println("<title>Servlet cerrarSesion</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SInicioSesion at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet cerrarSesion at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        }catch(NullPointerException ex){
-            System.out.println("Peto de alguna forma con un nulo");
-            ex.printStackTrace();
-            ex.getMessage();
         }
     }
 
@@ -120,7 +86,7 @@ public class SInicioSesion extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Verifica que el usaurio existe en la bd, y de ahí crea la sesión, donde se almacena los datos del usuario";
+        return "Con este servlet se borra los datos almacenados en la sesión, y luego esta se invalida,  y se retorna al inicio de sesión";
     }// </editor-fold>
 
 }

@@ -1,17 +1,23 @@
-<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%-- 
+    Document   : error
+    Created on : 8/05/2020, 09:14:11 PM
+    Author     : maste
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true" language="java"%>
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Administrador de Usuarios</title>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" type="text/css" href="css/estilosAdministrador.css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
-</head>
-<body>
-	<header>
-		<nav class="menu">
-                    <div class="imagen_inicio">
+        
+        <title>--ERROR--</title>
+    </head>
+    <body>
+        <header>
+            <nav class="menu">
+                <div class="imagen_inicio">
                     <img src="img/Shiee.png" width="90" height="90">
                     <div class="esto_no">
                         <%
@@ -37,20 +43,11 @@
                     </li>
                     <li><a class="si" href="directorio.jsp"> Directorio </a></li>
                     <li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-                    <li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
+                    <li><a class="si" href="sesion.jsp">Sesión</a></li>
                 </ul>
-		</nav>
-	</header>
-	<!--AquÃ­ va a ir el nav de siempre-->
-	<div id="titulo"><h2>Página de administrador</h2></div>
-	<div class="acomodo">
-		<div class="seleccionEst">
-			<a href="estudiantes.jsp"><div id="est"></div></a>
-		</div>
-
-		<div class="seleccionPsi">
-			<a href="psicologos.jsp"><div id="psi"></div></a>
-		</div>
-	</div>
-</body>
+            </nav>
+        </header>
+        <br>
+        <h1>Ha ocurrido un error, un saludo</h1>
+    </body>
 </html>

@@ -111,7 +111,7 @@ public class registrar extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Lee los datos otrogados, y con estos va a crear un Paciente o psicologo y lo guarda en la bd";
     }// </editor-fold>
 
 }

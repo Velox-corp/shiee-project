@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Necesita Inciar Sesion</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/estilosAdministrador.css">
     <link rel="icon" href="img/Shiee.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-                    <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%}%>
                 </div>
                 </div>
@@ -36,7 +37,7 @@
                 <!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 
                 <li><a class="si" href="index.jsp">Inicio</a></li>
-                <li><a class="si" href="">Información</a></li>
+                <li><a class="si" href="info.jsp">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
                         <li><a class="si" href="VerificarSesion">Bitácora</a></li>
@@ -49,7 +50,14 @@
             </ul>
             </nav>
         </header>
-        <h1>Necesita iniciar sesiñon Para poder acceder a este módulo</h1>
-        <a href='InicioSesion.jsp'>Iniciar Sesión</a>
+        <div class="mensaje">
+            <p class="upps">¡LO SIENTO!</p>
+            <p>Necesitas iniciar sesión para acceder a esté modulo.</p>
+            <a href='InicioSesion.jsp'>
+                <div class="btn">
+                    Iniciar Sesión
+                </div>
+            </a>
+        </div>
     </body>
 </html>
