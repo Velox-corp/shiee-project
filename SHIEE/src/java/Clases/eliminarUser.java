@@ -53,7 +53,8 @@ public class eliminarUser extends HttpServlet {
             }
             
             if(borroUser){
-                response.sendRedirect("InicioSesion.jsp");
+                System.out.println("Se borro el usaurio, pero en la sesión siguen sus datos, así que a cerrarla");
+                response.sendRedirect("cerrarSesion");
             }else{
                 response.sendRedirect("error.jsp");
             }
@@ -108,7 +109,7 @@ public class eliminarUser extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "En este Servlet se obtiene el id del usuario, el cual se va a usar para identificarlo y borrarlo de la bd";
     }// </editor-fold>
 
 }

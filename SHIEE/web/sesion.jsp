@@ -80,11 +80,12 @@
                 <div class="esto_no">
                     <%
                         HttpSession sesionOk = request.getSession();
+                        response.sendRedirect("SesionRequerida.jsp");
                         if(sesionOk.getAttribute("usuario")==null){
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-                    <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%}%>
                 </div>
             </div>
@@ -92,7 +93,7 @@
                 <!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 
                 <li><a class="si" href="index.jsp">Inicio</a></li>
-                <li><a class="si" href="">Información</a></li>
+                <li><a class="si" href="info.jsp">Información</a></li>
                 <li><a class="si" href=""> Servicios </a>
                     <ul id="submenu">
                         <li><a class="si" href="VerificarSesion">Bitácora</a></li>

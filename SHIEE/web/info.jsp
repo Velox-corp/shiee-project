@@ -1,4 +1,4 @@
-<%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +29,7 @@
                         %>
                         <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                         <%  }else{%>
-                        <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                        <a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                         <%}%>
                     </div>
                 </div>
