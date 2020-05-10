@@ -61,7 +61,7 @@
     <div class="flexslider">
         <ul class="slides">
             <li>
-                <img src="img/b_1.jpg" alt="">
+                <img src="img/b_4.jpg" alt="">
                 <section class="flex-caption">
                     <p>
                         LOREM IPSUM 1
@@ -69,19 +69,19 @@
                 </section>
             </li>
             <li>
-                <img src="img/b_2.jpg" alt="">
+                <img src="img/b_3.jpg" alt="">
                 <section class="flex-caption">
                     <p>LOREM IPSUM 2</p>
                 </section>
             </li>
             <li>
-                <img src="img/b_4.jpg" alt="">
+                <img src="img/b_1.jpg" alt="">
                 <section class="flex-caption">
                     <p>LOREM IPSUM 3</p>
                 </section>
             </li>
             <li>
-                <img src="img/b_3.jpg" alt="">
+                <img src="img/b_2.jpg" alt="">
                 <section class="flex-caption">
                     <p>LOREM IPSUM 3</p>
                 </section>
