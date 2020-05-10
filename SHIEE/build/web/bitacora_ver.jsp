@@ -88,8 +88,6 @@
                             Iterator<Registro> re2 = re.iterator();
                             while(re2.hasNext()){
                                 r = re2.next();
-                                byte[] imgData = new byte[r.getImg().available()];
-                                response.setContentType("text/html");
                                 //Obtener parametros para hacer imagenes
                                 //Ya todo lo demas
                                 String text = r.getTexto();
@@ -97,20 +95,22 @@
                     %>
                     <div class="card">
                         <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
+                            <a class="card-link collapsed" data-toggle="collapse" 
+                               data-parent="#card-230654" href="#card-element-866869">Regristro <%= date %> </a>
                         </div>
                         <div id="card-element-866869" class="collapse">
-                            <div class="card-body">
+                            <div class="card-body centrar-img" >
                                 <h5>Notas</h5>
                                 <p>
                                     <%
                                         if(text!=null){
                                     %>
+                                        <%= text %>
                                     <%
                                         }
                                     %>
                                 </p>
-                                <img src ="imageServlet?id=<%= r.getId_regristro() %>">
+                                <img class="centrar-img" src ="imageServlet?id=<%= r.getId_regristro() %>">
                             </div>
                         </div>
                     </div>

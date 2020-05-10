@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Clases.Registro"%>
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,45 +65,78 @@
                 <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
             <div class="col-md-8">
-                <h3>
-                    Seleccione las entradas que desee eliminar
-                </h3>
                 <div>
+                    <%
+                        try{
+                            Registro r = new Registro();
+                            ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                            Iterator<Registro> re2 = re.iterator();
+                            if(re2.hasNext()){
+                                %>
+                                <h3 class="text-center">
+                                    Seleccione las entradas que desee eliminar
+                                </h3>
+                                <%
+                                while(re2.hasNext()){
+                                    r = re2.next();
+                                    //Obtener parametros para hacer imagenes
+                                    //Ya todo lo demas
+                                    String text = r.getTexto();
+                                    String date = r.getFecha_regristro();
+                            
+                    %>
                     <div class="card">
                         <div class="card-header">
-                            <div class="row section-eliminar">
-                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
-                                <div class="fas fa-times" ></div>
+                            <div class="row section-eliminar" id="<%= r.getId_regristro() %>">
+                                <a class="card-link collapsed" data-toggle="collapse"
+                                   data-parent="#card-230654" href="#card-element-866869">Regristro <%= date %></a>
+                                   <a href="BorrarRegistro?id=<%= r.getId_regristro() %>"><div class="fas fa-times" ></div></a>
                             </div>
                         </div>
                         <div id="card-element-866869" class="collapse">
-                            <div class="card-body">
+                            <div class="card-body centrar-img" >
                                 <h5>Notas</h5>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, doloribus. Nam, laboriosam corporis et quo obcaecati nobis, labore iste praesentium esse placeat optio numquam aperiam blanditiis porro similique officia
-                                    eum.
+                                <p>
+                                    <%
+                                        if(text!=null){
+                                    %>
+                                        <%= text %>
+                                    <%
+                                        }
+                                    %>
                                 </p>
-                                <img src="img/prueba.jpg" width="320" height="210">
+                                <img class="centrar-img" src ="imageServlet?id=<%= r.getId_regristro() %>">
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row section-eliminar">
-                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
-                                <div class="fas fa-times" ></div>
-                            </div>
-                        </div>
-                        <div id="card-element-873647" class="collapse">
-                            <div class="card-body">
-                                Prueba
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                                }
+                            }else{
+                                %>
+                                <h3 class="text-center">Todavia no hay registros en tu bitacora</h3>
+                                <%
+                            }
+                        }catch(Exception e){
+                            System.out.println("Chale a lo mejor y no hay mada");
+                            e.printStackTrace();
+                            System.out.println(e.getMessage());
+                            System.out.println(e.getLocalizedMessage());
+                        }
+                    %>
+                    
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/bitacora_eliminar.js"></script>
+    <script>
+        var iconos = Array.prototype.slice.call(document.getElementsByClassName("fa-times"));
+        var ids = [];
+        iconos.forEach(element => {
+            element.addEventListener("click", function () {
+                element.parentNode.parentNode.parentNode.remove();
+            })
+        });
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>

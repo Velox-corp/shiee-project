@@ -140,6 +140,41 @@ public class Registro {
             return null;
         }
     }
+    
+    public void deleteRebyId(int id_registro){
+         try {
+            this.id_regristro = id_registro;
+            con = Conexion.getConnection();
+            q = "DELETE FROM Registros WHERE id_regristro = ?";
+            pr = con.prepareStatement(q);
+            pr.setInt(1, this.id_regristro);
+            pr.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public Registro getRebyId(int id_registro){
+        try {
+            this.id_regristro = id_registro;
+            con = Conexion.getConnection();
+            q = "SELECT * FROM Registros WHERE id_regristro = ?";
+            pr = con.prepareStatement(q);
+            pr.setInt(1, this.id_regristro);
+            rs = pr.executeQuery();
+            if(rs.next()){
+                return (Registro) rs;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
     public Connection getCon() {
         return con;
     }

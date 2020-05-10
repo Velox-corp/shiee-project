@@ -442,3 +442,12 @@ img.imagen {
 .w3-teal {
   background-color: #6BBAA7;
 }
+
+.centrar-img{
+    justify-content: center;
+    text-align: center;
+}
+
+.centrar-img img{
+    max-width: 100%;
+}
