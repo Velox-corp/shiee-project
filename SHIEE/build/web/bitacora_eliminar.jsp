@@ -30,7 +30,7 @@
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-                    <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%}%>
                 </div>
             </div>
@@ -56,10 +56,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <a href="bitacora_ver.html" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
-                <a href="bitacora_editar.html" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
-                <a href="bitacora_nuevo.html" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
-                <a href="bitacora_eliminar.html" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
+                <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
+                <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
+                <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
+                <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
             <div class="col-md-8">
                 <h3>

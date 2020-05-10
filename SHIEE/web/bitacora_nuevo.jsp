@@ -58,16 +58,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <a href="bitacora_ver.html" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
-                <a href="bitacora_editar.html" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
-                <a href="bitacora_nuevo.html" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
-                <a href="bitacora_eliminar.html" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
+                <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
+                <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
+                <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
+                <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 center-block">
                 <h3>
                     Escriba su bitacora o mande sus fotografias
                 </h3>
-                <form id="form" role="form" method="post" action="GuardarRegristro" enctype="multipart/form-data">
+                <form id="form" role="form" method="post" 
+                      action="GuardarRegristro" enctype="multipart/form-data" 
+                      class="center-block">
                     <div class="form-group">
                         <div id=imagenes-bitacora>
                             <input accept="images/*" required="true" type="file" class="form-control-file" name="image">
@@ -78,14 +80,10 @@
                         <label for="text-area">
                             Texto
                         </label>
-                        <textarea id="text-area" name="textarea" class="form-control"></textarea>
+                        <textarea id="text-area" name="textarea" class="form-control col-md-8"></textarea>
                     </div>
-                    <button id="boton-n-bitacora" type="button" class="btn btn-success btn-lg">
-                        Guardar
-                    </button>
-                    <button type="button" class="btn btn-lg btn-success">
-                        Cancelar
-                    </button>
+                    <input id="boton-n-bitacora" type="button" class="col-4 btn btn-lg btn-success" value="Guardar">
+                    <input id="boton-c-bitacora" type="reset" class="col-4 btn btn-lg btn-success" value="Cancelar">
                 </form>
                 
                 <script language="javascript">
@@ -94,11 +92,10 @@
                     var imagenes = document.getElementsByName("image")[0];
                     var texto = document.getElementById("text-area").value;
                     var files = imagenes.files[0];
-
+                    
                     
                     sub_mit.addEventListener("click", function(){
-                        form.requestSubmit();
-                        
+                        form.requestSubmit();        
                     });
                     
                 </script>

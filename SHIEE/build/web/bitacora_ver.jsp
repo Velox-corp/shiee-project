@@ -1,4 +1,15 @@
 
+
+<%@page import="javax.sql.rowset.serial.SerialException"%>
+<%@page import="javax.sql.rowset.serial.SerialBlob"%>
+<%@page import="java.sql.Blob"%>
+<%@page import="java.io.OutputStream"%>
+<%@page import="sun.misc.IOUtils"%>
+<%@page import="javafx.scene.image.Image"%>
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Clases.Registro"%>
 <%-- 
     Document   : bitacora_ver
     Created on : 6/05/2020, 02:16:53 AM
@@ -35,7 +46,7 @@
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-                    <a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                    <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%}%>
                 </div>
             </div>
@@ -60,16 +71,30 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                    <a href="bitacora_ver.html" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
-                    <a href="bitacora_editar.html" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
-                    <a href="bitacora_nuevo.html" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
-                    <a href="bitacora_eliminar.html" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
+                    <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
+                    <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
+                    <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
+                    <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
             <div class="col-md-8">
                 <h3>
                     Bitacora
-                </h3>
+                 </h3>
                 <div id="card-230654">
+                    <%
+                        try{
+                            Registro r = new Registro();
+                            ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                            Iterator<Registro> re2 = re.iterator();
+                            while(re2.hasNext()){
+                                r = re2.next();
+                                byte[] imgData = new byte[r.getImg().available()];
+                                response.setContentType("text/html");
+                                //Obtener parametros para hacer imagenes
+                                //Ya todo lo demas
+                                String text = r.getTexto();
+                                String date = r.getFecha_regristro();
+                    %>
                     <div class="card">
                         <div class="card-header">
                             <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-866869">Regristro ejemplo</a>
@@ -77,23 +102,29 @@
                         <div id="card-element-866869" class="collapse">
                             <div class="card-body">
                                 <h5>Notas</h5>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, doloribus. Nam, laboriosam corporis et quo obcaecati nobis, labore iste praesentium esse placeat optio numquam aperiam blanditiis porro similique officia
-                                    eum.
+                                <p>
+                                    <%
+                                        if(text!=null){
+                                    %>
+                                    <%
+                                        }
+                                    %>
                                 </p>
-                                <img src="img/prueba.jpg" width="320" height="210">
+                                <img src ="imageServlet?id=<%= r.getId_regristro() %>">
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-element-873647">Regristro ejemplo</a>
-                        </div>
-                        <div id="card-element-873647" class="collapse">
-                            <div class="card-body">
-                                Prueba
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                            }
+                        }
+
+                        catch(Exception e){
+                            System.out.println("Chale a lo mejor y no hay mada");
+                            e.printStackTrace();
+                            System.out.println(e.getMessage());
+                            System.out.println(e.getLocalizedMessage());
+                        }
+                    %>
                 </div>
             </div>
         </div>
