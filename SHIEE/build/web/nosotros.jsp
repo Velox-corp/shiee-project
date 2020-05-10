@@ -19,7 +19,7 @@
 					%>
 					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
 					<%  }else{%>
-					<a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+					<a class="no " href="cerrarSsesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
 					<%}%>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 				<!--Dependiendo de la dimension de la imagen va a cambiar la propiedad padding-top que estÃ¡ en body dentro de estilo.css  y tambien el height del nav en el css -->
 
 				<li><a class="si" href="index.jsp">Inicio</a></li>
-				<li><a class="si" href="">Información</a></li>
+				<li><a class="si" href="info.jsp">Información</a></li>
 				<li><a class="si" href=""> Servicios </a>
 					<ul id="submenu">
 						<li><a class="si" href="VerificarSesion">Bitácora</a></li>
@@ -60,32 +60,32 @@
 			<center>
 				<article class="col">
 					<img src="img/Shiee.png" width="70" height="70">
-					<p>Nombre</p>
+					<p>Cortes Gamboa Alicia</p>
 					<a href=""><img src="img/mas.png"></a>
 				</article>
 				<article class="col">
 					<img src="img/Shiee.png" width="70" height="70">
-					<p>Nombre</p>
+					<p>Jarillo Hernández Armando Damián</p>
 					<a href=""><img src="img/mas.png"></a>
 				</article>
 				<article class="col">
 					<img src="img/Shiee.png" width="70" height="70">
-					<p>Nombre</p>
+					<p>García Lucero Uzias</p>
 					<a href=""><img src="img/mas.png"></a>
 				</article>
 				<article class="col">
 					<img src="img/Shiee.png" width="70" height="70">
-					<p>Nombre</p>
+					<p>Quintana Romero Roberto</p>
 					<a href=""><img src="img/mas.png"></a>
 				</article>
 				<article class="col">
 					<img src="img/Shiee.png" width="70" height="70">
-					<p>Nombre</p>
+					<p>Sánchez Gonzáles Daniel Ivan</p>
 					<a href=""><img src="img/mas.png"></a>
 				</article>
 				<article class="col">
 					<img src="img/Shiee.png" width="70" height="70">
-					<p>Nombre</p>
+					<p>Tenorio Aspiros Luis Fernando</p>
 					<a href=""><img src="img/mas.png"></a>
 				</article>
 			</center>
