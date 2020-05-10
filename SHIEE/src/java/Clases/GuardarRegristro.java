@@ -84,6 +84,7 @@ public class GuardarRegristro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            /*
             HttpSession sesionOk = request.getSession();
             if(sesionOk.getAttribute("usuario")==null){
                 Paciente p = (Paciente) sesionOk.getAttribute("usuario");
@@ -98,6 +99,15 @@ public class GuardarRegristro extends HttpServlet {
             }else{
                 System.out.println("Hijole, alguien se metio sin regirstrarse");
             }
+            */
+            Part img = request.getPart("image");
+            String text = request.getParameter("textarea");
+            Calendar c1 = Calendar.getInstance();
+            String Date = Integer.toString(c1.get(Calendar.YEAR)) + "-" 
+                    + Integer.toString(c1.get(Calendar.MONTH)) + "-" 
+                    + Integer.toString(c1.get(Calendar.DATE));
+            Registro r = new Registro();
+            r.BuildRegrsitro(img, text, Date, 7);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(GuardarRegristro.class.getName()).log(Level.SEVERE, null, ex);
         }

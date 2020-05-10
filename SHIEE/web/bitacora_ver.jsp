@@ -77,54 +77,62 @@
                     <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
             </div>
             <div class="col-md-8">
-                <h3>
-                    Bitacora
-                 </h3>
-                <div id="card-230654">
-                    <%
-                        try{
-                            Registro r = new Registro();
-                            ArrayList<Registro> re = r.obtenerListaReUsuario(7);
-                            Iterator<Registro> re2 = re.iterator();
-                            while(re2.hasNext()){
-                                r = re2.next();
-                                //Obtener parametros para hacer imagenes
-                                //Ya todo lo demas
-                                String text = r.getTexto();
-                                String date = r.getFecha_regristro();
-                    %>
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" 
-                               data-parent="#card-230654" href="#card-element-866869">Regristro <%= date %> </a>
-                        </div>
-                        <div id="card-element-866869" class="collapse">
-                            <div class="card-body centrar-img" >
-                                <h5>Notas</h5>
-                                <p>
-                                    <%
-                                        if(text!=null){
+                <div class="view">
+                    <div id="card-230654"> 
+                        <%
+                            try{
+                                Registro r = new Registro();
+                                ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                                Iterator<Registro> re2 = re.iterator();
+                                if(re2.hasNext()){
                                     %>
-                                        <%= text %>
+                                    <h3 class="text-center">
+                                        Bitácora
+                                    </h3>
                                     <%
-                                        }
-                                    %>
-                                </p>
-                                <img class="centrar-img" src ="imageServlet?id=<%= r.getId_regristro() %>">
+                                    while(re2.hasNext()){
+                                    r = re2.next();
+                                    //Obtener parametros para hacer imagenes
+                                    //Ya todo lo demas
+                                    String text = r.getTexto();
+                                    String date = r.getFecha_regristro();
+
+                        %>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-<%= r.getId_regristro() %>-<%= r.getId_paciente() %>">Regristro <%= date %></a>
+                            </div>
+                                <div id="card-<%= r.getId_regristro() %>-<%= r.getId_paciente() %>" class="collapse">
+                                <div class="card-body centrar-img">
+                                    <h5>Notas</h5>
+                                        <%
+                                            if(text!=null){
+                                        %>
+                                            <%= text %>
+                                        <%
+                                            }
+                                        %>
+                                    <img class="centrar-img" src ="imageServlet?id=<%= r.getId_regristro() %>">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <%
+                        <%
+                                    }
+                                }else{
+                                    %>
+                                    <h3 class="text-center">Todavía no hay registros en tu bitácora</h3>
+                                    <%
+                                }
                             }
-                        }
 
-                        catch(Exception e){
-                            System.out.println("Chale a lo mejor y no hay mada");
-                            e.printStackTrace();
-                            System.out.println(e.getMessage());
-                            System.out.println(e.getLocalizedMessage());
-                        }
-                    %>
+                            catch(Exception e){
+                                System.out.println("Chale a lo mejor y no hay mada");
+                                e.printStackTrace();
+                                System.out.println(e.getMessage());
+                                System.out.println(e.getLocalizedMessage());
+                            }
+                        %>
+                    </div>
                 </div>
             </div>
         </div>

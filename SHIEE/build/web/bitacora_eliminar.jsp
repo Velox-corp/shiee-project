@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+    <title>Eliminar registros</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -113,7 +113,7 @@
                                 }
                             }else{
                                 %>
-                                <h3 class="text-center">Todavia no hay registros en tu bitacora</h3>
+                                <h3 class="text-center">Todavía no hay registros en tu bitácora</h3>
                                 <%
                             }
                         }catch(Exception e){

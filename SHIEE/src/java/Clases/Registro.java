@@ -175,6 +175,24 @@ public class Registro {
         }
     }
     
+    public void modifyRebyId(int id_registro, Part img, String texto){
+        try {
+            this.img = img.getInputStream();
+            this.texto = texto;
+            this.id_regristro = id_registro;
+            con = Conexion.getConnection();
+            q = "UPDATE Registros SET img = ?, texto = ? WHERE id_regristro = ?";
+            pr = con.prepareStatement(q);
+            pr.setBlob(1, this.img);
+            pr.setString(2, this.texto);
+            pr.setInt(3, this.id_regristro);
+            pr.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+    
     public Connection getCon() {
         return con;
     }
