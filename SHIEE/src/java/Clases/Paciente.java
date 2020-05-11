@@ -357,5 +357,40 @@ public class Paciente {
         return borro;
         }
     }
+
+    boolean guardarPsicologo(int id_pac, int id_psi) {
+        boolean guardo = false;
+        try{
+            con = Conexion.getConnection();
+            q = "UPDATE Paciente SET"
+                    +"psicologo_id_FK = ?"
+                    +" WHERE id_pac = ?";
+            pr= con.prepareStatement(q);
+            pr.setInt(1,id_psi);
+            pr.setInt(2,id_pac);
+            if(pr.executeUpdate()==1){
+                guardo = true;
+            }
+        }catch(SQLException sqlex){
+            System.out.println("Error sql hace que sea falso");
+            sqlex.printStackTrace();
+            sqlex.getMessage();
+            guardo = false;
+        }catch (ClassNotFoundException cnfex) {
+            cnfex.getMessage();
+            cnfex.printStackTrace();
+            System.out.println("El driver hace que sea nulo");
+            guardo = false;
+        }finally{
+            try{
+                con.close();
+                pr.close();
+            }catch(SQLException sqle){
+                sqle.printStackTrace();
+            }
+        return guardo;
+        }
+
+    }
     
 }

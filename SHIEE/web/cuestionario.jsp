@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>TEST</title>
+	<link rel="icon" href="img/Shiee.png" type="image/png" />
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">

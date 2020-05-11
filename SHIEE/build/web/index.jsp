@@ -58,58 +58,79 @@
         </nav>
     </header>
     <!--Slidershow-->
-    <div class="flexslider">
+    <div class="flexslider"  style="background-color: #B4DBC0">
         <ul class="slides">
             <li>
                 <img src="img/b_4.jpg" alt="">
                 <section class="flex-caption">
-                    <p>
-                        LOREM IPSUM 1
+                    <p style="background-color: rgba(31, 120, 140,0.6)">
+                        ¡REGISTRATE!
                     </p>
+                    <p style="font-size:2vw; margin-top: 8vw; font-family:'Darker Grotesque',sans-serif">
+                        COMIENCE A DISFRUTAR DE TODO EL CONTENIDO
+                    </p>
+                    <p style="margin-top: 13.5vw"><a href="Registro.jsp" class="botonts">Regístrarse</a></p>
                 </section>
             </li>
             <li>
                 <img src="img/b_3.jpg" alt="">
                 <section class="flex-caption">
-                    <p>LOREM IPSUM 2</p>
-                </section>
-            </li>
-            <li>
-                <img src="img/b_1.jpg" alt="">
-                <section class="flex-caption">
-                    <p>LOREM IPSUM 3</p>
+                    <p style="background-color: rgba(242, 165, 22,0.6)">
+                        NOSOTROS
+                    </p>
+                    <p style="font-size:2vw; margin-top: 8vw; font-family:'Darker Grotesque',sans-serif">
+                        MISIÓN, VISIÓN, OBJETIVO...
+                    </p>
+                    <p style="margin-top: 13.5vw"><a href="nosotros.jsp" class="botonts3">Conócenos</a></p>
                 </section>
             </li>
             <li>
                 <img src="img/b_2.jpg" alt="">
                 <section class="flex-caption">
-                    <p>LOREM IPSUM 3</p>
+                    <p style="background-color: rgba(24, 89, 14,0.6)">
+                        INFÓRMATE
+                    </p>
+                    <p style="font-size:2vw; margin-top: 6.5vw; font-family:'Darker Grotesque',sans-serif">
+                        EL ESTRÉS ES UN PROBLEMA DE SALUD PÚBLICA EN TODO EL MUNDO DEBIDO A QUE AFECTA A TODA LA POBLACIÓN, ES DECIR,
+                        SIN DISTINCIÓN DE EDAD, SEXO, RAZA O NIVEL SOCIOECONÓMICO
+                    </p>
+                    <p style="margin-top: 13.5vw"><a href="info.jsp" class="botonts2">Informarme</button></a></p>
+                </section>
+            </li>
+            <li>
+                <img src="img/b_1.jpg" alt="">
+                <section class="flex-caption">
+                    <p style="background-color: rgba(44, 89, 37,0.6)">
+                       TEST
+                    </p>
+                    <p style="font-size:2vw; margin-top: 8vw; font-family:'Darker Grotesque',sans-serif">
+                       ¡REALIZA TU TEST DEL ESTRÉS AHORA!
+                    </p>
+                    <p style="margin-top: 13.5vw"><a href="test.jsp" class="botonts4">Realizar Test</button></a></p>
                 </section>
             </li>
         </ul>
     </div>
-    <!--Fin/Agregar Imagenes/Agregar Fonts/ Agregar js/ Agregar Scripts-->
-    <section id="seccion">
-        <center>
-            <article id="izquierda">
-                <h1>Aplicaciones recomendadas</h1><br>
-                <p>Aplicación</p>
-                <br><br>
-                <p>Aplicación</p>
-                <br> <br>
-                <p>Aplicación</p>
-        </article>
+    <article id="izquierda_2">
+        <div class="container">
+            <figure class="snip0015">
+                <img src="img/p_1.jpg" alt="sample38"/>
+                    <figcaption>
+                        <h2><a href="https://www.mexicoviajes.com.mx/post/los-mejores-lugares-de-m%C3%A9xico-para-un-relax-total" target="blank" class="info link titulo">LOS MEJORES LUGARES DE MÉXICO PARA UN RELAX TOTAL...</a></h2>
+                    </figcaption>			
+            </figure>
+        </div>
+    </article>
 
-
-        <aside id="derecha">
-                <h1>Psicologos y terapeutas</h1><br>
-                <p>Nombre</p><p>Correo</p><p>Numero</p>
-                
-                <p>Nombre</p><p>Correo</p><p>Numero</p>
-                
-                <p>Nombre</p><p>Correo</p><p>Numero</p>
-        </aside>
-        </center>
-    </section>
+    <aside id="derecha_2">
+        <div class="container">
+            <figure class="snip0015">
+                <img src="img/p_2.jpg" alt="sample38"/>
+                <figcaption>
+                    <h2><span><a href="https://www.calm.com/" class="info link titulo" target="blank">Calm: la aplicación n.º 1 para la meditación y el sueño</a></span></h2>
+                </figcaption>			
+            </figure>
+        </div>
+    </aside>
 </body>
 </html>

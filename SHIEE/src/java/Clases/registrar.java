@@ -42,6 +42,9 @@ public class registrar extends HttpServlet {
             contraseña = request.getParameter("password");
             contraseña_veri = request.getParameter("password_verificar");
             boolean estado = false;
+            if(contraseña != contraseña_veri){
+                response.sendRedirect("Registro.jsp");
+            }
             tipo_user = request.getParameter("tipoUser");
             System.out.println(tipo_user);
             switch(tipo_user){

@@ -1,8 +1,12 @@
+<%@page import="Clases.Paciente"%>
+<%@page import="Clases.Psicologo"%>
+<%@page import="java.util.ArrayList"%>
 <%@page language="java" session="true"pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Directorio</title>
+	<link rel="icon" href="img/Shiee.png" type="image/png" />
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
@@ -53,15 +57,22 @@
 		</article>
 
 
-		<aside id="derecha">
+		
 			
-				<h1>Psicologos y terapeutas</h1>
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Nombre</p><p>Correo</p><p>Numero</p>
-			
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Nombre</p><p>Correo</p><p>Numero</p>
-			
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Nombre</p><p>Correo</p><p>Numero</p>
-		</aside>
+				<h1>Psicologos y terapeutas</h1><%
+                                Psicologo quieroPsicologos = new Psicologo();
+                                 ArrayList<Psicologo> psicologosRegistrados = quieroPsicologos.obtenerTodosPsicologos();
+                                 for(Psicologo psi: psicologosRegistrados){%>
+                                 
+                                     <img src="img/Shiee.png" width="70" height="90" class="imagen">
+                                     <strong><%=psi.getAppat_psi()%></strong> <strong><%=psi.getApmat_psi()%></strong> <strong><%=psi.getNombre_psi()%></strong> 
+                                     <p><% if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ %>
+                                        <a href="asign arPsi?id='<%=psi.getId_psi()%>'">Hacer mi psicologo</a>
+                                        <%}%>
+                                    </p>
+                                 
+                                <%}%>
+		
 		</center>
 	</section>
 </body>
