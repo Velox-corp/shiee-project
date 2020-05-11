@@ -35,7 +35,8 @@ public class asignarPsi extends HttpServlet {
             int id_psi = Integer.parseInt(request.getParameter("id"));
             boolean tagud;
             HttpSession sesUser = request.getSession();
-            Paciente pacSoli = (Paciente)request.getSession();
+            Paciente pacSoli = (Paciente)sesUser.getAttribute("usuario");
+            System.out.println(pacSoli.getId_pac());
             int id_pac = pacSoli.getId_pac();
             tagud = pacSoli.guardarPsicologo(id_pac, id_psi);
             if(tagud){

@@ -57,21 +57,20 @@
 
 
 		
-			
+                    <article>
 				<h1>Psicologos y terapeutas</h1><%
                                 Psicologo quieroPsicologos = new Psicologo();
                                  ArrayList<Psicologo> psicologosRegistrados = quieroPsicologos.obtenerTodosPsicologos();
                                  for(Psicologo psi: psicologosRegistrados){%>
-                                 
-                                     <img src="img/Shiee.png" width="70" height="90" class="imagen">
-                                     <strong><%=psi.getAppat_psi()%></strong> <strong><%=psi.getApmat_psi()%></strong> <strong><%=psi.getNombre_psi()%></strong> 
+                                 <div class="psicologo">
+                                     <%=psi.getAppat_psi()%> <%=psi.getApmat_psi()%> <%=psi.getNombre_psi()%>
                                      <p><% if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ %>
-                                        <a href="asign arPsi?id='<%=psi.getId_psi()%>'">Hacer mi psicologo</a>
+                                        <a href="asignarPsi?id=<%=psi.getId_psi()%>">Hacer mi psicologo</a>
                                         <%}%>
                                     </p>
-                                 
+                                 </div>
                                 <%}%>
-		
+                    </article>
 		</center>
 	</section>
 </body>
