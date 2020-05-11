@@ -56,10 +56,11 @@
 			<table border="0">
 				<tr><!--
                                     <td id="barra"><input type="search" name="buscar_paciente" ></td>
-					<td id="boton"><input type="button" value="BUSCAR" ></td>-->
+					<td id="boton"><input type="button" value="BUSCAR" ></td
 					<td id="espacio"></td>
 					<td id="boton"><input type="button" value="VOLVER" onclick="window.location.href='paginaAdmin.jsp'" name="volver"></td>
-				</tr> 
+                                    -->
+        </tr> 
 			</table>
 		</form>
 	</div>
