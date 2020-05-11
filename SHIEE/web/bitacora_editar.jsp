@@ -1,3 +1,4 @@
+<%@page import="Clases.Paciente"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.Registro"%>
@@ -55,6 +56,9 @@
             </ul>
         </nav>
     </header>
+    <%
+        if(sesionOk.getAttribute("usuario")!=null){
+    %>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -69,7 +73,8 @@
                         <%
                             try{
                                 Registro r = new Registro();
-                                ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                                Paciente p = (Paciente) sesionOk.getAttribute("usuario");
+                                ArrayList<Registro> re = r.obtenerListaReUsuario(p.getId_pac());
                                 Iterator<Registro> re2 = re.iterator();
                                 if(re2.hasNext()){
                         %>
@@ -153,6 +158,14 @@
             </div>
         </div>
     </div>
+    <%
+        //Nota esta llave es para el if de verificar la sesion
+        }else{
+    %>
+    <h2>No se ha registrado</h2>
+    <%
+        }
+    %>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
