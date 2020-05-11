@@ -1,5 +1,6 @@
 
 
+<%@page import="Clases.Paciente"%>
 <%@page import="javax.sql.rowset.serial.SerialException"%>
 <%@page import="javax.sql.rowset.serial.SerialBlob"%>
 <%@page import="java.sql.Blob"%>
@@ -68,6 +69,9 @@
         </nav>
     </header>
 
+    <%
+    if(sesionOk.getAttribute("usuario")!=null){
+    %>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -81,8 +85,9 @@
                     <div id="card-230654"> 
                         <%
                             try{
+                                Paciente p = (Paciente)sesionOk.getAttribute("usuario");
                                 Registro r = new Registro();
-                                ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                                ArrayList<Registro> re = r.obtenerListaReUsuario(p.getId_pac());
                                 Iterator<Registro> re2 = re.iterator();
                                 if(re2.hasNext()){
                                     %>
@@ -137,6 +142,14 @@
             </div>
         </div>
     </div>
+    <%
+        //Nota esta llave es para el if de verificar la sesion
+        }else{
+    %>
+    <h2>No se ha registrado</h2>
+    <%
+        }
+    %>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>

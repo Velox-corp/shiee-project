@@ -54,7 +54,9 @@
         </nav>
     </header>
 
-
+    <%
+        if(sesionOk.getAttribute("usuario")!=null){
+    %>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
@@ -102,6 +104,14 @@
             </div>
         </div>
     </div>
+    <%
+        //Nota esta llave es para el if de verificar la sesion
+        }else{
+    %>
+    <h2>No se ha registrado</h2>
+    <%
+        }
+    %>
     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -1,3 +1,4 @@
+<%@page import="Clases.Paciente"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.Registro"%>
@@ -54,22 +55,25 @@
             </ul>
         </nav>
     </header>
-
-
+    
+    <%
+        if(sesionOk.getAttribute("usuario")!=null){
+    %>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
-                <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
-                <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
-                <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
+                <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver registros</a>
+                <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar registro</a>
+                <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo registro</a>
+                <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar registros</a>
             </div>
             <div class="col-md-8">
                 <div>
                     <%
                         try{
+                            Paciente p = (Paciente) sesionOk.getAttribute("usuario");
                             Registro r = new Registro();
-                            ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                            ArrayList<Registro> re = r.obtenerListaReUsuario(p.getId_pac());
                             Iterator<Registro> re2 = re.iterator();
                             if(re2.hasNext()){
                                 %>
@@ -128,6 +132,14 @@
             </div>
         </div>
     </div>
+    <%
+    //Nota esta llave es para el if de verificar la sesion
+    }else{
+    %>
+    <h2>No se ha inicado sesion</h2>
+    <%
+        }
+    %>
     <script>
         var iconos = Array.prototype.slice.call(document.getElementsByClassName("fa-times"));
         var ids = [];
