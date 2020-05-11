@@ -224,11 +224,11 @@ public class Paciente {
         try{
             con = Conexion.getConnection();
             q = "UPDATE Paciente SET "
-                    +"Nombre_pac = ? "
-                    + "Appat_pac = ? "
-                    + "Apmat_pac = ? "
-                    + "fechaNac_pac = ? "
-                    + "Usuario_pac = ? "
+                    +"Nombre_pac = ?, "
+                    + "Appat_pac = ?, "
+                    + "Apmat_pac = ?, "
+                    + "fechaNac_pac = ?, "
+                    + "Usuario_pac = ?, "
                     + "Contra_pac = ? "
                     + "WHERE id_pac = ?";
             pr = con.prepareStatement(q);
@@ -237,7 +237,8 @@ public class Paciente {
             pr.setString(3, p.getApmat_pac());
             pr.setString(4, p.getFecha_nac_pac());
             pr.setString(5, p.getUsuario_pac());
-            pr.setInt(6, p.getId_pac());
+            pr.setString(6, p.getContra_pac());
+            pr.setInt(7, p.getId_pac());
             
             if(pr.executeUpdate()==1){
                 actualizado=true;
@@ -362,8 +363,8 @@ public class Paciente {
         boolean guardo = false;
         try{
             con = Conexion.getConnection();
-            q = "UPDATE Paciente SET"
-                    +"psicologo_id_FK = ?"
+            q = "UPDATE Paciente SET "
+                    +"psicologo_id_FK = ? "
                     +" WHERE id_pac = ?";
             pr= con.prepareStatement(q);
             pr.setInt(1,id_psi);

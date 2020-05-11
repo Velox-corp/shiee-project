@@ -51,10 +51,10 @@
             </nav>
         </header>
         <div class="mensaje">
-            <p class="upps">¡LO SIENTO!</p>
-            <p>Necesitas iniciar sesión para acceder a esté modulo.</p>
+            <p class="upps">¡LO SIENTO!</p><br>
+            <p>Necesitas iniciar sesión para acceder a esté modulo.</p><br>
             <a href='InicioSesion.jsp'>
-                <div class="btn">
+                <div class="botonsr">
                     Iniciar Sesión
                 </div>
             </a>

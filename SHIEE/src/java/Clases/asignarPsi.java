@@ -35,14 +35,18 @@ public class asignarPsi extends HttpServlet {
             int id_psi = Integer.parseInt(request.getParameter("id"));
             boolean tagud;
             HttpSession sesUser = request.getSession();
-            Paciente pacSoli = (Paciente)request.getSession();
-            int id_pac = pacSoli.getId_pac();
-            tagud = pacSoli.guardarPsicologo(id_pac, id_psi);
-            if(tagud){
-                pacSoli.setId_pac_psi(id_psi);
-                //en la bd ya se guardo, pero se tiene que recargar manualmnete la sesión
-                sesUser.setAttribute("usuario", pacSoli);
-                response.sendRedirect("test.jsp");}
+            if(Paciente.esPaciente(sesUser.getAttribute("usuario"))){
+                Paciente pacSoli = (Paciente)sesUser.getAttribute("usuario");
+                int id_pac = pacSoli.getId_pac();
+                tagud = pacSoli.guardarPsicologo(id_pac, id_psi);
+                if(tagud){
+                    pacSoli.setId_pac_psi(id_psi);
+                    //en la bd ya se guardo, pero se tiene que recargar manualmnete la sesión
+                    sesUser.setAttribute("usuario", pacSoli);
+                    response.sendRedirect("test.jsp");}
+            }else{
+                response.sendRedirect("error.jsp");
+            }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");

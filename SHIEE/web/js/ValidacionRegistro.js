@@ -120,10 +120,8 @@ function verTipoUser () {
 function activarCampo(nombreCampo){
     var campoActivar = document.getElementById(nombreCampo);
     try{
-        campoActivar.readOnly = false;
-        console.log("Se puede editar")
+        campoActivar.readOnly = campoActivar.readOnly==false ? true : false;
     }catch (exception) {
-        console.log("No se puede editar");
         campoActivar.readOnly= true;
     } finally {
         return true;

@@ -39,24 +39,31 @@ public class actualizarUser extends HttpServlet {
             String fecha_nac = request.getParameter("fechaNac");
             String user = request.getParameter("nombreUsuario");
             String pass = request.getParameter("contraseña");
+            int id = Integer.parseInt(request.getParameter("id"));
             boolean esPac = Paciente.esPaciente(sesionUser.getAttribute("usuario"));
             boolean actualizoUser = false;
             if(esPac){
                 Paciente pold =  new Paciente();
-                int id = ((Paciente)sesionUser.getAttribute("usuario")).getId_pac();
+                pold = (Paciente)sesionUser.getAttribute("usuario");
                 Paciente pnew = new Paciente(id,nombre, appat, apmat, fecha_nac, user, pass);
                 if(pold.editarPaciente(pnew)){
                     actualizoUser = true;
+                    try{
+                        pnew.setId_pac_psi(pold.getId_pac_psi());
+                    }catch(NullPointerException e){
+                        System.out.println("No tiene psicologo");
+                    }
+                    sesionUser.setAttribute("usuario", pnew);
                     response.sendRedirect("sesion.jsp");
                 }
                 
             }
             boolean esPsi = Psicologo.esPsicologo(sesionUser.getAttribute("usuario"));
             if(esPsi){
-                Psicologo pold = new Psicologo();
-                int id = ((Psicologo)sesionUser.getAttribute("usuario")).getId_psi();
+                Psicologo pold = (Psicologo)sesionUser.getAttribute("usuario");
                 Psicologo pnew = new Psicologo(id, nombre, appat, apmat, fecha_nac, user, pass);
                 if(pold.editarPsicologo(pnew)){
+                    sesionUser.setAttribute("usuario", pnew);
                     actualizoUser = true;
                     response.sendRedirect("sesion.jsp");
                 }

@@ -22,6 +22,7 @@
     boolean pacPrueba = Paciente.esPaciente(sesionUser.getAttribute("usuario"));
     if(pacPrueba){
         try{
+            System.out.println("Espaciente");
             Paciente pac = (Paciente)sesionUser.getAttribute("usuario");
             tipo_user = "Paciente";
             id = pac.getId_pac();
@@ -40,6 +41,7 @@
     boolean psiPrueba = Psicologo.esPsicologo(sesionUser.getAttribute("usuario"));
     if(psiPrueba){
         try{
+            System.out.println("Es psicologo");
             Psicologo psi = (Psicologo)sesionUser.getAttribute("usuario");
             tipo_user= "Psicologo";
             nombre = psi.getNombre_psi();
@@ -54,12 +56,8 @@
             ex.printStackTrace();
         }
     }
-    if(tipo_user==null || (!pacPrueba && !psiPrueba)){
-        %>
-        <jsp:forward page="SesionRequerida.jsp">
-            <jsp:param name="No hay sesión" value="Para acceder es necesario tener una sesión"></jsp:param>
-        </jsp:forward>
-<%
+    if(!pacPrueba && !psiPrueba){
+        response.sendRedirect("SesionRequerida.jsp");
     }
 %>
 <!DOCTYPE html>
@@ -81,8 +79,8 @@
                 <div class="esto_no">
                     <%
                         HttpSession sesionOk = request.getSession();
-                        response.sendRedirect("SesionRequerida.jsp");
                         if(sesionOk.getAttribute("usuario")==null){
+                        response.sendRedirect("SesionRequerida.jsp");
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
@@ -166,9 +164,17 @@
                         -->
                         <tr>
                             <td><input id="boton" type="submit" value="Guardar Cambios"></td>
-                            <td><input type="hidden" value="<%=id%>" name="id"></td>
-                            <td><input type="button" onclick="eliminaUser"></td>
+                            <td ><input type="hidden" value="<%=id%>" name="id"></td>
                         </tr>
+                </table>
+            </form>
+            <br>
+            <form method="post" action="eliminarUser">
+                <table>
+                    <tr><td></td>
+                        <td ><input type="hidden" value="<%=id%>" name="id"></td>
+                        <td><input type="submit"  value="Eliminar cuenta" class="btn" ></td>
+                    </tr>
                 </table>
             </form>
         </div>

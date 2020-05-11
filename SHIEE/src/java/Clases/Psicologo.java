@@ -177,11 +177,11 @@ public class Psicologo {
         try{
             con = Conexion.getConnection();
             q = "UPDATE Psicologo SET "
-                    +"Nombre_psi = ? "
-                    + "Appat_psi = ? "
-                    + "Apmat_psi = ? "
-                    + "fechaNac_psi = ? "
-                    + "Usuario_psi = ? "
+                    +"Nombre_psi = ?, "
+                    + "Appat_psi = ?, "
+                    + "Apmat_psi = ?, "
+                    + "fechaNac_psi = ?, "
+                    + "Usuario_psi = ?, "
                     + "Contra_pi = ? "
                     + "WHERE id_psicologo = ?";
             pr = con.prepareStatement(q);
@@ -190,7 +190,8 @@ public class Psicologo {
             pr.setString(3, p.getApmat_psi());
             pr.setString(4, p.getFecha_nac_psi());
             pr.setString(5, p.getUsuario_psi());
-            pr.setInt(6, p.getId_psi());
+            pr.setString(6, p.getContra_psi());
+            pr.setInt(7, p.getId_psi());
             
             if(pr.executeUpdate()==1){
                 actualizado=true;
