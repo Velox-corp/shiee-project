@@ -8,17 +8,21 @@ package Clases;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author familia
  */
-@WebServlet(name = "BorrarRegistro", urlPatterns = {"/BorrarRegistro"})
-public class BorrarRegistro extends HttpServlet {
+//@WebServlet(name = "editarRegistro", urlPatterns = {"/editarRegistro"})
+@WebServlet("/editarRegistro")
+@MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
+public class editarRegistro extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +41,10 @@ public class BorrarRegistro extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet BorrarRegistro</title>");            
+            out.println("<title>Servlet editarRegistro</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet BorrarRegistro at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet editarRegistro at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -56,18 +60,23 @@ public class BorrarRegistro extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            int id = Integer.parseInt(request.getParameter("id"));
+            System.out.println(request.getParameter("id"));
+            int id_registro = Integer.parseInt(request.getParameter("id"));
+            Part img = request.getPart("image");
+            String text = request.getParameter("text-area");
             Registro r = new Registro();
-            r.deleteRebyId(id);
+            r.modifyRebyId(id_registro, img, text);
+            System.out.println("Todo esta ok");            
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println(e.getLocalizedMessage());
-            e.printStackTrace();       
+            e.printStackTrace();
         }finally{
-            response.sendRedirect("bitacora_eliminar.jsp");
+            response.sendRedirect("bitacora_editar.jsp");
         }
     }
 
@@ -82,7 +91,20 @@ public class BorrarRegistro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+                try {
+                    int id_registro = Integer.parseInt(request.getParameter("id"));
+                    Part img = request.getPart("image");
+                    String text = request.getParameter("text-area");
+                    Registro r = new Registro();
+                    r.modifyRebyId(id_registro, img, text);
+                    System.out.println("Todo esta ok");            
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    System.out.println(e.getLocalizedMessage());
+                    e.printStackTrace();
+                }finally{
+                    response.sendRedirect("bitacora_editar.jsp");
+                }
     }
 
     /**
