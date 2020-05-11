@@ -64,63 +64,91 @@
                 <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar registros</a>
             </div>
             <div class="col-md-8">
-                <div id="card-230654">
-                    <%
-                        try{
-                            Registro r = new Registro();
-                            ArrayList<Registro> re = r.obtenerListaReUsuario(7);
-                            Iterator<Registro> re2 = re.iterator();
-                            if(re2.hasNext()){
-                                %>
-                                <h3 class="text-center">
-                                    Bitácora
-                                </h3>
-                                <%
-                                while(re2.hasNext()){
-                                r = re2.next();
-                                //Obtener parametros para hacer imagenes
-                                //Ya todo lo demas
-                                String text = r.getTexto();
-                                String date = r.getFecha_regristro();
-                            
-                    %>
-                    <div class="card">
-                        <div class="card-header">
-                            <a class="card-link collapsed" data-toggle="collapse" 
-                               data-parent="#card-230654" href="#card-element-866869">Regristro <%= date %> </a>
-                        </div>
-                        <div id="card-element-866869" class="collapse">
-                            <div class="card-body centrar-img" >
-                                <h5>Notas</h5>
-                                <p>
-                                    <%
-                                        if(text!=null){
-                                    %>
-                                        <%= text %>
-                                    <%
-                                        }
-                                    %>
-                                </p>
-                                <img class="centrar-img" src ="imageServlet?id=<%= r.getId_regristro() %>">
+                <div class="view">
+                    <div id="card-230654"> 
+                        <%
+                            try{
+                                Registro r = new Registro();
+                                ArrayList<Registro> re = r.obtenerListaReUsuario(7);
+                                Iterator<Registro> re2 = re.iterator();
+                                if(re2.hasNext()){
+                        %>
+                        <h3 class="text-center">
+                            Bitácora
+                        </h3>
+                        <%
+                                    while(re2.hasNext()){
+                                    r = re2.next();
+                                    //Ya todo lo demas
+                                    String date = r.getFecha_regristro();
+
+                        %>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-230654" href="#card-<%= r.getId_regristro() %>-<%= r.getId_paciente() %>">Regristro <%= date %></a>
+                            </div>
+                                <div id="card-<%= r.getId_regristro() %>-<%= r.getId_paciente() %>" class="collapse">
+                                <div class="card-body centrar-img">
+                                    <h5>Notas</h5>
+                                    <h3>
+                                        Reescriba sus registros
+                                    </h3>
+                                    <% int id_r = r.getId_regristro(); %>
+                                    <form id="form" role="form" method="post" action="editarRegistro" enctype="multipart/form-data" 
+                                          class="center-block" name="forms">
+                                        <div class="form-group">
+                                            <input type="text" name="id" readonly value="<%= id_r %>">
+                                            <div id=imagenes-bitacora>
+                                                <input accept="images/*" required="true" type="file" class="form-control-file" name="image">
+                                            </div>
+                                            <p class="help-block">
+                                                Elija su nueva fotografía
+                                            </p>
+                                            <label for="text-area">
+                                                Texto
+                                            </label>
+                                            <textarea id="text-area" name="textarea" class="form-control col-md-8"></textarea>
+                                        </div>
+                                        <input id="boton-n-bitacora" type="button" 
+                                               class="col-4 btn btn-lg btn-success" value="Guardar" name="btn-sub">
+                                        <input id="boton-c-bitacora" type="reset" class="col-4 btn btn-lg btn-success" value="Cancelar">
+                                    </form>
+                                    <script language="javascript">
+                                        var sub_mit = document.getElementsByName("btn-sub");
+                                        var forms = document.getElementsByName("forms");
+                                        var imagenes = document.getElementsByName("image")[0];
+                                        var texto = document.getElementById("text-area").value;
+                                        var files = imagenes.files[0];
+                                        
+                                        sub_mit.forEach(item => {
+                                            var n = 0;
+                                            item.addEventListener("click", function(){
+                                                forms[n].requestSubmit();
+                                                n += 1;
+                                            });
+                                        });
+
+                                    </script>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <%
+                        <%
+                                    }
+                                }else{
+                                    %>
+                                    <h3 class="text-center">Todavía no hay registros en tu bitácora</h3>
+                                    <%
                                 }
-                            }else{
-                                %>
-                                <h3 class="text-center">Todavía no hay registros en tu bitácora</h3>
-                                <%
                             }
-                        }
 
-                        catch(Exception e){
-                            System.out.println("Chale a lo mejor y no hay mada");
-                            e.printStackTrace();
-                            System.out.println(e.getMessage());
-                            System.out.println(e.getLocalizedMessage());
-                        }
-                    %>
+                            catch(Exception e){
+                                System.out.println("Chale a lo mejor y no hay mada");
+                                e.printStackTrace();
+                                System.out.println(e.getMessage());
+                                System.out.println(e.getLocalizedMessage());
+                            }
+                        %>
+                    </div>
                 </div>
             </div>
         </div>

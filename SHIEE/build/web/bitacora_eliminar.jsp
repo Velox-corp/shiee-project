@@ -89,11 +89,11 @@
                         <div class="card-header">
                             <div class="row section-eliminar" id="<%= r.getId_regristro() %>">
                                 <a class="card-link collapsed" data-toggle="collapse"
-                                   data-parent="#card-230654" href="#card-element-866869">Regristro <%= date %></a>
+                                   data-parent="#card-230654" href="#card-<%= r.getId_regristro() %>-<%= r.getId_paciente() %>">Regristro <%= date %></a>
                                    <a href="BorrarRegistro?id=<%= r.getId_regristro() %>"><div class="fas fa-times" ></div></a>
                             </div>
                         </div>
-                        <div id="card-element-866869" class="collapse">
+                        <div id="card-<%= r.getId_regristro() %>-<%= r.getId_paciente() %>" class="collapse">
                             <div class="card-body centrar-img" >
                                 <h5>Notas</h5>
                                 <p>
