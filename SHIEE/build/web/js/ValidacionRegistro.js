@@ -24,14 +24,14 @@ function validarFecha(element){
 	año=fechadiv[0]
 	mes = fechadiv[1]
 	dia = fechadiv[2]
-	alert(año + "/-/" + mes + "/-/"+ dia)
+	//alert(año + "/-/" + mes + "/-/"+ dia)
 	var date = new Date()
 	if(año>date.getFullYear()){
 		alert("Año invalido, ingresar de nuevo")
 		formulario.fechaNac.focus()
 		return false
 	}else{
-		alert(año + "Es valido?")
+	//	alert(año + "Es valido?")
 	}
 	if( (dia>31 && ( mes==1 || mes ==3 || mes==5 || mes==5||mes==7 || mes==8 || mes==10 || mes==12) ) 
 		|| (dia >30) && ( mes !=2 && !( mes==1 || mes ==3 || mes==5 || mes==5||mes==7 || mes==8 || mes==10 || mes==12) ) 

@@ -24,6 +24,10 @@
         <servlet-name>cerrarSesion</servlet-name>
         <servlet-class>Clases.cerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>asignarPsi</servlet-name>
+        <servlet-class>Clases.asignarPsi</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrar</servlet-name>
         <url-pattern>/registrar</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>cerrarSesion</servlet-name>
         <url-pattern>/cerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>asignarPsi</servlet-name>
+        <url-pattern>/asignarPsi</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

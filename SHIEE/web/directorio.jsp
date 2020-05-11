@@ -1,3 +1,6 @@
+<%@page import="Clases.Paciente"%>
+<%@page import="Clases.Psicologo"%>
+<%@page import="java.util.ArrayList"%>
 <%@page language="java" session="true"pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
@@ -53,15 +56,22 @@
 		</article>
 
 
-		<aside id="derecha">
+		
 			
-				<h1>Psicologos y terapeutas</h1>
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Nombre</p><p>Correo</p><p>Numero</p>
-			
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Nombre</p><p>Correo</p><p>Numero</p>
-			
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Nombre</p><p>Correo</p><p>Numero</p>
-		</aside>
+				<h1>Psicologos y terapeutas</h1><%
+                                Psicologo quieroPsicologos = new Psicologo();
+                                 ArrayList<Psicologo> psicologosRegistrados = quieroPsicologos.obtenerTodosPsicologos();
+                                 for(Psicologo psi: psicologosRegistrados){%>
+                                 
+                                     <img src="img/Shiee.png" width="70" height="90" class="imagen">
+                                     <strong><%=psi.getAppat_psi()%></strong> <strong><%=psi.getApmat_psi()%></strong> <strong><%=psi.getNombre_psi()%></strong> 
+                                     <p><% if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ %>
+                                        <a href="asign arPsi?id='<%=psi.getId_psi()%>'">Hacer mi psicologo</a>
+                                        <%}%>
+                                    </p>
+                                 
+                                <%}%>
+		
 		</center>
 	</section>
 </body>

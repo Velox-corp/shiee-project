@@ -1,3 +1,4 @@
+<%@page import="Clases.Psicologo"%>
 <%@page language="java" session="true" import="Clases.Paciente,java.util.ArrayList" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
@@ -17,11 +18,12 @@
                                     <%
                                         HttpSession sesionOk = request.getSession();
                                         if(sesionOk.getAttribute("usuario")==null){
+                                            response.sendRedirect("SesionRequerida.jsp");
                                     %>
                                             <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                                     <%  }else if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){%>
                                             <jsp:forward page="index.jsp">
-                                                <jsp:param name="error" value="Es obligatorio identificarse"></jsp:param>
+                                                <jsp:param name="error" value="No eres um psicologo"></jsp:param>
                                             </jsp:forward>
 
                                     <% }else {%>
@@ -63,15 +65,17 @@
 	</div>
 	<div class="contenedor">
             <%
+                Psicologo psi = (Psicologo)sesionOk.getAttribute("usuario");
             Paciente pac = new Paciente();
-            ArrayList<Paciente> pacientes = pac.obtenerTodosPacientes();
+            ArrayList<Paciente> pacientes = pac.obtenerPacientesPsicologo(psi.getId_psi());
             for(Paciente p: pacientes){
             %>
 		<div class="usuario">
 			<img src="img/user.png" id="imgUser">
 			<div id="textoUser">
 				<h1><%=p.getNombre_pac() +" " + p.getAppat_pac() +" " + p.getApmat_pac()%></h1>
-				<p>correoElectronico.estudiante@ejemplo.com</p>
+                                <p><a href="?id=<%= p.getId_pac()%>">Ver Resultados Test</a></p>
+                                <p><a href="?id=<%=p.getId_pac()%>"</p>
 			</div>
 		</div>
             <%}%>
