@@ -166,22 +166,96 @@ img.imagen {
 .vision {
     float: right;
 }
+/*Modificaco2-----------------------------------*/
 
-.mi,
-.vi,
-.con {
-    border: solid black;
+#izquierda_3,
+#derecha_3 {
+    display: inline-table;
+    width: 42vw;
+    font-family: 'Darker Grotesque',sans-serif;
+    color: #0D0D0D;
     padding: 1rem;
-    margin: 1rem;
+}
+
+#izquierda_3 h1,
+#derecha_3 h1{
+    text-align: center;
+    border-radius: 15px;
+}
+
+.container_2 {
+  display: inline-table;
+  position: absolute;
+  width: 42vw;
+}
+
+.container_4 {
+    border-radius: 15px;
+    background-color: #B4DBC0;
+    padding: 1rem;
+    margin-left: 5vw;
+}
+
+.container_4 img{
+    width: 10vw;
+    margin-left: 14vw;
+    background-color: #EAF2E3;
+    border-radius: 50%;
+}
+
+.container_3 {
+    margin-left: 9vw;
 }
 
 .col {
-    border: solid black;
+    border: solid #6BBAA7;
     padding: 2rem;
     margin: 1rem;
     display: inline-table;
-    width: 10%;
+    width: 18vw;
+    background-color: rgba(102, 185, 191, 0.6);
+    border-radius: 15px;
+    text-align: center;
 }
+
+.col img{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 15px;
+}
+
+.col h1{
+    color: white;
+    margin: 0;
+    margin-top: 1vw;
+}
+
+.col p{
+    margin-top: 1vw;
+    text-align: left;
+    font-size: 1.2vw;
+}
+
+.oculta {
+  background-color: #6BBAA7;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2vw;
+  color: white;
+  border-radius: 12px;
+  border: 2px solid #6BBAA7;
+  transition-duration: 0.4s;
+  font-family: 'IBM Plex Sans Condensed',sans-serif;
+}
+
+.oculta:hover {
+  background-color: transparent;
+  border-color: white;
+}
+
+/*f------------------------------------------------------------------*/
 
 .seccion_inicio {
     height: 200px;
@@ -195,11 +269,12 @@ img.imagen {
     font-family: 'IBM Plex Sans Condensed';
     font-size: 30px;
 }
-
+/*M_A*/
 .se_te {
     background-color: #91E7BE;
+    font-size: 1vw;
 }
-
+/*F*/
 .mide {
     color: #52658F;
     font-family: 'IBM Plex Sans Condensed', sans-serif;

@@ -4,14 +4,29 @@ aside{
 	border-radius: 25px ;
 	text-align: center;
 	margin-right: 1rem;
+        background-color: #B4DBC0;
 }
-.opcion{
-	text-align: center;
-	margin: 1.25rem;
-	border: 1.5px solid black;
-	background-color: #F5E6F4;
-	border-radius: 20px;
+
+.opcion {
+  background-color: #6BBAA7;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2vw;
+  color: white;
+  border-radius: 12px;
+  border: 2px solid #6BBAA7;
+  transition-duration: 0.4s;
+  font-family: 'IBM Plex Sans Condensed',sans-serif;
+  margin: 1vw;
 }
+
+.opcion:hover {
+  background-color: transparent;
+  border-color: white;
+}
+
 aside,section{
 	float: left;
 }

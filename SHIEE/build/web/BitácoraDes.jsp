@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Bitácora</title>
+	<link rel="icon" href="img/Shiee.png" type="image/png" />
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="css/estilosBitacoraB.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
@@ -41,8 +42,8 @@
             </ul>
 		</nav>
 	</header>
-	<aside>
-		<h1>Menú</h1>
+	<aside style="border-color: white">
+                <h1 class="titulo">Menú</h1>
 		<div class="opcion">Ver Registros</div>
 		<div class="opcion">Hacer nuevos registros</div>
 		<div class="opcion">Editar Registros</div>

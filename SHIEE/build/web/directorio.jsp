@@ -44,17 +44,19 @@
             </ul>
         </nav>
     </header>
-	<section id="seccion">
+	<article id="izquierda_2">
+		<div class="container">
+		    <figure class="snip0015">
+			<h1 class="titulo">APPS</h1>
+			<img src="img/app.jpg" alt="sample38"/>
+			    <figcaption>
+				<h2><a href="https://psicologiaymente.com/psicologia/apps-para-relajarse" target="blank" class="info link titulo">Apps Recomendadas</a></h2>
+			    </figcaption>			
+		    </figure>
+		</div>
+	    </article>	
+	    <section>
 		<center>
-			<article id="izquierda">
-			
-				<h1>Aplicaciones recomendadas</h1>
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Aplicación</p>
-			<br><br>
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Aplicación</p>
-			<br> <br>
-			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Aplicación</p>
-		</article>		
                     <article>
 				<h1>Psicologos y terapeutas</h1><%
                                 Psicologo quieroPsicologos = new Psicologo();
@@ -70,6 +72,6 @@
                                 <%}%>
                     </article>
 		</center>
-	</section>
+	   </section>
 </body>
 </html>

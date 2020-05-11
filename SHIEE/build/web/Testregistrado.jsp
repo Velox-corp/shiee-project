@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test</title>
+	<title>Resultados test</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
@@ -36,20 +36,11 @@
 				</li>
 				<li><a class="si" href="directorio.jsp"> Directorio </a></li>
 				<li><a class="si" href="nosotros.jsp"> Nosotros</a></li>
-				<li><a class="si" href="sesion.jsp">Sesión</a></li>
+				<li><a class="si" href="paginaAdmin.jsp">Sesión</a></li>
 			</ul>
 		</nav>
 	</header>
-	<section class="se_te">
-                <br>
-		<center><h1 class="mide">MIDE TU NIVEL DE ESTRÉS CON ESTE SIMPLE TEST</h1></center>
-		<p class="cuerpo">
-                    A continuación se te realizaran algunas preguntas, las cuales te sugerimos contestes con la mayor sinceridad posible, tus resultados se harán visibles una vez que se evaluen tus respuestas <br>
-                    Una vez que termines da click en el boton que dice Finalizar, y nosotros nos encargaremos del resto
-		</p>
-		<br>
-		<center><a href="STest"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
-		<br>
-	</section>
-</body>
+                                
+                                <h1>Lo sentimos, esta cuenta ya tiene un test, no puedes realizar más</h1>
+    </body>
 </html>
