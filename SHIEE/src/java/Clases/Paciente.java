@@ -363,8 +363,8 @@ public class Paciente {
         boolean guardo = false;
         try{
             con = Conexion.getConnection();
-            q = "UPDATE Paciente SET"
-                    +"psicologo_id_FK = ?"
+            q = "UPDATE Paciente SET "
+                    +"psicologo_id_FK = ? "
                     +" WHERE id_pac = ?";
             pr= con.prepareStatement(q);
             pr.setInt(1,id_psi);

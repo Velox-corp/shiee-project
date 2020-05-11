@@ -1,7 +1,7 @@
 <%@page import="Clases.Paciente"%>
 <%@page import="Clases.Psicologo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page language="java" session="true"pageEncoding="UTF-8" contentType="text/html"%>
+<%@page language="java" session="true" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
                         if(sesionOk.getAttribute("usuario")==null){
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-                    <%  }else{%>
+                    <%  }else{ System.out.println(sesionOk.getAttribute("usuario"));%>
                     <a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%}%>
                 </div>
@@ -54,10 +54,7 @@
 			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Aplicación</p>
 			<br> <br>
 			<p><img src="img/Shiee.png" width="70" height="90" class="imagen">Aplicación</p>
-		</article>
-
-
-		
+		</article>		
                     <article>
 				<h1>Psicologos y terapeutas</h1><%
                                 Psicologo quieroPsicologos = new Psicologo();

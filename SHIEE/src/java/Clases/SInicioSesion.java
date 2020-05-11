@@ -57,12 +57,15 @@ public class SInicioSesion extends HttpServlet {
                 System.out.println("Es un estudiante");
                 HttpSession sesion = request.getSession(true);
                 sesion.setAttribute("usuario", i1);
+                System.out.println(i1);
+                System.out.println(i1.getId_pac());
                 response.sendRedirect("index.jsp");
             //Es psicologo
             }else if(i1 == null && i2 != null){
                 System.out.println("Es un psicologo");
                 response.sendRedirect("estudiantes.jsp");
                 HttpSession sesion = request.getSession(true);
+                System.out.println(i2);
                 sesion.setAttribute("usuario", i2);
             }else{
                 //Meter página de errores
