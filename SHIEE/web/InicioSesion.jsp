@@ -38,7 +38,8 @@
 
                 <li><a class="si" href="index.jsp">Inicio</a></li>
                 <li><a class="si" href="info.jsp">Información</a></li>
-                <li><a class="si" href=""> Servicios </a>
+                <li><a class="si" href=""> Servicios
+                    </a>
                     <ul id="submenu">
                         <li><a class="si" href="VerificarSesion">Bitácora</a></li>
                         <li><a class="si" href="test.jsp">Test</a></li>
