@@ -114,7 +114,7 @@ public class GuardarRegristro extends HttpServlet {
             Logger.getLogger(GuardarRegristro.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        processRequest(request, response);
+        response.sendRedirect("bitacora_nuevo.jsp");
         
     }
 
