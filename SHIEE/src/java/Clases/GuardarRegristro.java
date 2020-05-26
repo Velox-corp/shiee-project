@@ -112,6 +112,10 @@ public class GuardarRegristro extends HttpServlet {
             r.BuildRegrsitro(img, text, Date, p.getId_pac());
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(GuardarRegristro.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(GuardarRegristro.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(GuardarRegristro.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         response.sendRedirect("bitacora_nuevo.jsp");

@@ -25,7 +25,7 @@ public class Registro {
     private InputStream img;
     private String fecha_regristro;
     
-    public boolean BuildRegrsitro(Part img, String texto, String fecha, int id_Paciente) throws IOException, ClassNotFoundException{
+    public boolean BuildRegrsitro(Part img, String texto, String fecha, int id_Paciente) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{
         boolean b = false;
         try {
             this.id_paciente = id_Paciente;

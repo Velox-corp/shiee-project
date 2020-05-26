@@ -1,12 +1,10 @@
 
-
 <%@page import="Clases.Paciente"%>
 <%@page import="javax.sql.rowset.serial.SerialException"%>
 <%@page import="javax.sql.rowset.serial.SerialBlob"%>
 <%@page import="java.sql.Blob"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="sun.misc.IOUtils"%>
-<%@page import="javafx.scene.image.Image"%>
 <%@page import="javax.imageio.ImageIO"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
