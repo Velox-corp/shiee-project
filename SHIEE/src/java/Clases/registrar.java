@@ -58,13 +58,18 @@ public class registrar extends HttpServlet {
                     System.out.println(cedula);
                     estado = psi.RegistrarPsicologo(nombre, appat, apmat, fecha_nac, cedula, usuario, contraseña, contraseña_veri);
                     break;
-            }            
-            if(estado){
-                System.out.println("C registró");
-                response.sendRedirect("InicioSesion.jsp");
-            }else{
-                System.out.println("No se registro"); 
-                response.sendRedirect("Registro.jsp");
+            }
+            try {
+                if(estado){
+                    System.out.println("C registró");
+                    response.sendRedirect(request.getContextPath() + "/InicioSesion.jsp");
+                }else{
+                    System.out.println("No se registro"); 
+                    response.sendRedirect(request.getContextPath() + "/Registro.jsp");
+                }                
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
             out.println("<!DOCTYPE html>");
             out.println("<html>");

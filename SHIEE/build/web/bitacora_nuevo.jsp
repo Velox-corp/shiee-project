@@ -1,6 +1,7 @@
-<%@page import="Clases.Paciente"%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
+<%@page import="Clases.Paciente"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,10 +62,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver regristros</a>
-                <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar regristro</a>
-                <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo regristro</a>
-                <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar regristros</a>
+                <a href="bitacora_ver.jsp" class="btn btn-block btn-lg btn-outline-primary">Ver registros</a>
+                <a href="bitacora_editar.jsp" class="btn btn-block btn-outline-primary btn-lg">Editar registro</a>
+                <a href="bitacora_nuevo.jsp" class="btn btn-block btn-lg btn-outline-primary">Nuevo registro</a>
+                <a href="bitacora_eliminar.jsp" class="btn btn-block btn-lg btn-outline-primary">Eliminar registros</a>
             </div>
             <div class="col-md-8 center-block">
                 <h3>

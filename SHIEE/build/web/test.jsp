@@ -1,3 +1,4 @@
+
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
 					%>
 					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
 					<%  }else{%>
-					<a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                        <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
 					<%}%>
 				</div>
 			</div>
@@ -48,7 +49,7 @@
                     Una vez que termines da click en el boton que dice Finalizar, y nosotros nos encargaremos del resto
 		</p>
 		<br>
-		<center><a href="STest"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
+		<center><a href="<%= request.getContextPath() %>/STest"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
 		<br>
 	</section>
 </body>
