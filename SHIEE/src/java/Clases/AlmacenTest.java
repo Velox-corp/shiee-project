@@ -114,24 +114,14 @@ public class AlmacenTest extends HttpServlet {
                             p9_s4 = request.getParameter("s4_p9");
                             obji.InsertSec4(p1_s4, p2_s4, p3_s4, p4_s4, p5_s4, p6_s4, p7_s4, p8_s4, p9_s4, ab);
                             response.sendRedirect("resultados.jsp");
-                        
                     }
                     
-                }catch(Exception ex){
+                 }catch(Exception ex){
                     System.out.println("Paciente no es");
+                    System.out.println(ex.getMessage());
                     ex.printStackTrace();
                 }
             }
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet VerificarSesion</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet VerificarSesion at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

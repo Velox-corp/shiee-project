@@ -497,7 +497,7 @@
 	<br>
 	<center style="background-color: #EAF2E3">
 		<br>
-		<a href="AlmacenTest"><button class="botont2" style="color: #F2F2F2">FINALIZAR</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="botont2" style="color: #F2F2F2">CANCELAR</button></a>
+                <a href="<%= request.getContextPath() %>/AlmacenTest"><button class="botont2" style="color: #F2F2F2">FINALIZAR</button></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="botont2" style="color: #F2F2F2">CANCELAR</button></a>
 		<br><br>
 	</center>
 </body>
