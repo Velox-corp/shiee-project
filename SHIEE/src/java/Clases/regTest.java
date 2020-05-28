@@ -124,6 +124,8 @@ public class regTest {
                 break;
             }
         } catch (Exception e){
+            System.out.println(e.getMessage());
+            System.out.println(e.getLocalizedMessage());
             e.printStackTrace();
         }finally{
             try{
