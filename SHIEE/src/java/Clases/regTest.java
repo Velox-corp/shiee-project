@@ -86,7 +86,7 @@ public class regTest {
         try {
             //recio
             con = Conexion.getConnection();
-            q = "INSERT INTO Test (Paciente_id_pac) values (?)";
+            q = "INSERT INTO Test (Paciente_id) values (?)";
             pr = con.prepareStatement(q);
             pr.setInt(1,id);
             pr.executeUpdate();
@@ -144,7 +144,7 @@ public class regTest {
         obtener = 0;
         try {
             con = Conexion.getConnection();
-            q = "SELECT * FROM Test WHERE Paciente_id_pac = ?";
+            q = "SELECT * FROM Test WHERE Paciente_id = ?";
             pr = con.prepareStatement(q);
             
             pr.setInt(1, id);

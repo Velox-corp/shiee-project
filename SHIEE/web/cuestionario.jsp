@@ -63,11 +63,11 @@
 				</tr>
 				<tr>
 					<td>¿Cómo calificarias el nivel de preocupación o nerviosismo durante el semestre?</td>
-					<td id="col_res"><input type="radio" name="s1_p1"></td>
-					<td id="col_res"><input type="radio" name="s1_p1"></td>
-					<td id="col_res"><input type="radio" name="s1_p1"></td>
-					<td id="col_res"><input type="radio" name="s1_p1"></td>
-					<td id="col_res"><input type="radio" name="s1_p1" required></td>
+                                        <td id="col_res"><input type="radio" name="s1_p1" value="1"></td>
+					<td id="col_res"><input type="radio" name="s1_p1" value="2"></td>
+					<td id="col_res"><input type="radio" name="s1_p1" value="3"></td>
+					<td id="col_res"><input type="radio" name="s1_p1" value="4"></td>
+					<td id="col_res"><input type="radio" name="s1_p1" value="5" required></td>
 				</tr>
 				<tr>
 					<td colspan="6">Enumera las 3 materias que te producen un mayor nivel de preocupación y explica ¿porque?</td>
@@ -99,115 +99,115 @@
 				</tr>
 				<tr>
 					<td>La competencia con los compañeros de grupo (ambiente escolar)</td>
-					<td id="col_res"><input type="radio" name="s2_p1"></td>
-					<td id="col_res"><input type="radio" name="s2_p1"></td>
-					<td id="col_res"><input type="radio" name="s2_p1"></td>
-					<td id="col_res"><input type="radio" name="s2_p1"></td>
-					<td id="col_res"><input type="radio" name="s2_p1" required></td>
+					<td id="col_res"><input type="radio" name="s2_p1" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p1" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p1" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p1" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p1" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Exceso de responsabilidad personal por cumplir con las obligaciones escolares</td>
-					<td id="col_res"><input type="radio" name="s2_p2"></td>
-					<td id="col_res"><input type="radio" name="s2_p2"></td>
-					<td id="col_res"><input type="radio" name="s2_p2"></td>
-					<td id="col_res"><input type="radio" name="s2_p2"></td>
-					<td id="col_res"><input type="radio" name="s2_p2" required></td>
+					<td id="col_res"><input type="radio" name="s2_p2" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p2" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p2" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p2" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p2" value="S"required></td>
 				</tr>
 				<tr>
 					<td>Sobrecarga de tareas y trabajos escolares</td>
-					<td id="col_res"><input type="radio" name="s2_p3"></td>
-					<td id="col_res"><input type="radio" name="s2_p3"></td>
-					<td id="col_res"><input type="radio" name="s2_p3"></td>
-					<td id="col_res"><input type="radio" name="s2_p3"></td>
-					<td id="col_res"><input type="radio" name="s2_p3" required></td>
+					<td id="col_res"><input type="radio" name="s2_p3" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p3" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p3" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p3" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p3" value="S" required></td>
 				</tr>
 				<tr>
 					<td>La personalidad y el caracter del profesor</td>
-					<td id="col_res"><input type="radio" name="s2_p4"></td>
-					<td id="col_res"><input type="radio" name="s2_p4"></td>
-					<td id="col_res"><input type="radio" name="s2_p4"></td>
-					<td id="col_res"><input type="radio" name="s2_p4"></td>
-					<td id="col_res"><input type="radio" name="s2_p4" required></td>
+					<td id="col_res"><input type="radio" name="s2_p4" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p4" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p4" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p4" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p4" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Las evaluaciones parciales a lo largo del semestre (examenes, ensayos, trabajos de investigacion, practicas, etc)</td>
-					<td id="col_res"><input type="radio" name="s2_p5"></td>
-					<td id="col_res"><input type="radio" name="s2_p5"></td>
-					<td id="col_res"><input type="radio" name="s2_p5"></td>
-					<td id="col_res"><input type="radio" name="s2_p5"></td>
-					<td id="col_res"><input type="radio" name="s2_p5" required></td>
+					<td id="col_res"><input type="radio" name="s2_p5" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p5" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p5" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p5" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p5" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Las evaluaciones finales (examenes extraordinarios, ETS, etc.)</td>
-					<td id="col_res"><input type="radio" name="s2_p6"></td>
-					<td id="col_res"><input type="radio" name="s2_p6"></td>
-					<td id="col_res"><input type="radio" name="s2_p6"></td>
-					<td id="col_res"><input type="radio" name="s2_p6"></td>
-					<td id="col_res"><input type="radio" name="s2_p6" required></td>
+					<td id="col_res"><input type="radio" name="s2_p6" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p6" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p6" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p6" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p6" value="S" required></td>
 				</tr>
 				<tr>
 					<td>El tipo de trabajo que te piden los profesores (consulta de temas, fichas de trabajo, ensayos, mapas conceptuales, etc)</td>
-					<td id="col_res"><input type="radio" name="s2_p7"></td>
-					<td id="col_res"><input type="radio" name="s2_p7"></td>
-					<td id="col_res"><input type="radio" name="s2_p7"></td>
-					<td id="col_res"><input type="radio" name="s2_p7"></td>
-					<td id="col_res"><input type="radio" name="s2_p7" required></td>
+					<td id="col_res"><input type="radio" name="s2_p7" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p7" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p7" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p7" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p7" value="S" required></td>
 				</tr>
 				<tr>
 					<td>No entender los temas que se abordan en la clase</td>
-					<td id="col_res"><input type="radio" name="s2_p8"></td>
-					<td id="col_res"><input type="radio" name="s2_p8"></td>
-					<td id="col_res"><input type="radio" name="s2_p8"></td>
-					<td id="col_res"><input type="radio" name="s2_p8"></td>
-					<td id="col_res"><input type="radio" name="s2_p8" required></td>
+					<td id="col_res"><input type="radio" name="s2_p8" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p8" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p8" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p8" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p8" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Participación en clase (responder a preguntas, exposiciones, etc.)</td>
-					<td id="col_res"><input type="radio" name="s2_p9"></td>
-					<td id="col_res"><input type="radio" name="s2_p9"></td>
-					<td id="col_res"><input type="radio" name="s2_p9"></td>
-					<td id="col_res"><input type="radio" name="s2_p9"></td>
-					<td id="col_res"><input type="radio" name="s2_p9" required></td>
+					<td id="col_res"><input type="radio" name="s2_p9" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p9" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p9" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p9" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p9" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Tiempo limitado para hacer trabajos o prácticas</td>
-					<td id="col_res"><input type="radio" name="s2_p10"></td>
-					<td id="col_res"><input type="radio" name="s2_p10"></td>
-					<td id="col_res"><input type="radio" name="s2_p10"></td>
-					<td id="col_res"><input type="radio" name="s2_p10"></td>
-					<td id="col_res"><input type="radio" name="s2_p10" required></td>
+					<td id="col_res"><input type="radio" name="s2_p10" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p10" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p10" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p10" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p10" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Entrega de Proyecto Aula</td>
-					<td id="col_res"><input type="radio" name="s2_p11"></td>
-					<td id="col_res"><input type="radio" name="s2_p11"></td>
-					<td id="col_res"><input type="radio" name="s2_p11"></td>
-					<td id="col_res"><input type="radio" name="s2_p11"></td>
-					<td id="col_res"><input type="radio" name="s2_p11" required></td>
+					<td id="col_res"><input type="radio" name="s2_p11" value="N"></td>
+					<td id="col_res"><input type="radio" name="s2_p11" value="R"></td>
+					<td id="col_res"><input type="radio" name="s2_p11" value="A"></td>
+					<td id="col_res"><input type="radio" name="s2_p11" value="C"></td>
+					<td id="col_res"><input type="radio" name="s2_p11" value="S" required></td>
 				</tr>
 				<tr>
 					<td>Elaboración del trabajo de Expobátiz</td>
-					<td id="col_res"><input type="radio" name="s2_p12"></td>
-					<td id="col_res"><input type="radio" name="s2_p12"></td>
-					<td id="col_res"><input type="radio" name="s2_p12"></td>
-					<td id="col_res"><input type="radio" name="s2_p12"></td>
-					<td id="col_res"><input type="radio" name="s2_p12" required></td>
+					<td id="col_res"><input type="radio" name="s2_p12"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s2_p12"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s2_p12"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s2_p12"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s2_p12"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Adeudar materias</td>
-					<td id="col_res"><input type="radio" name="s2_p13"></td>
-					<td id="col_res"><input type="radio" name="s2_p13"></td>
-					<td id="col_res"><input type="radio" name="s2_p13"></td>
-					<td id="col_res"><input type="radio" name="s2_p13"></td>
-					<td id="col_res"><input type="radio" name="s2_p13" required></td>
+					<td id="col_res"><input type="radio" name="s2_p13"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s2_p13"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s2_p13"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s2_p13"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s2_p13"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Participacion en Olimpiadas, interpolitecnicos, etc.</td>
-					<td id="col_res"><input type="radio" name="s2_p14"></td>
-					<td id="col_res"><input type="radio" name="s2_p14"></td>
-					<td id="col_res"><input type="radio" name="s2_p14"></td>
-					<td id="col_res"><input type="radio" name="s2_p14"></td>
-					<td id="col_res"><input type="radio" name="s2_p14" required></td>
+					<td id="col_res"><input type="radio" name="s2_p14"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s2_p14"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s2_p14"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s2_p14"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s2_p14"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td colspan="6">Otra:</td>
@@ -239,51 +239,51 @@
 				</tr>
 				<tr>
 					<td>Trastornos en el sueño (insomnio o pesadillas)</td>
-					<td id="col_res"><input type="radio" name="s3_p1"></td>
-					<td id="col_res"><input type="radio" name="s3_p1"></td>
-					<td id="col_res"><input type="radio" name="s3_p1"></td>
-					<td id="col_res"><input type="radio" name="s3_p1"></td>
-					<td id="col_res"><input type="radio" name="s3_p1" required></td>
+					<td id="col_res"><input type="radio" name="s3_p1"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p1"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p1"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p1"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p1"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Fatiga crónica</td>
-					<td id="col_res"><input type="radio" name="s3_p2"></td>
-					<td id="col_res"><input type="radio" name="s3_p2"></td>
-					<td id="col_res"><input type="radio" name="s3_p2"></td>
-					<td id="col_res"><input type="radio" name="s3_p2"></td>
-					<td id="col_res"><input type="radio" name="s3_p2" required></td>
+					<td id="col_res"><input type="radio" name="s3_p2"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p2"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p2"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p2"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p2"  value="S" required></td>
 				</tr>
 				<tr>
 					<td>Dolores de cabeza o migraña</td>
-					<td id="col_res"><input type="radio" name="s3_p3"></td>
-					<td id="col_res"><input type="radio" name="s3_p3"></td>
-					<td id="col_res"><input type="radio" name="s3_p3"></td>
-					<td id="col_res"><input type="radio" name="s3_p3"></td>
-					<td id="col_res"><input type="radio" name="s3_p3" required></td>
+					<td id="col_res"><input type="radio" name="s3_p3"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p3"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p3"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p3"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p3"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Problemas de digestión, dolor abdominal o diarrea</td>
-					<td id="col_res"><input type="radio" name="s3_p4"></td>
-					<td id="col_res"><input type="radio" name="s3_p4"></td>
-					<td id="col_res"><input type="radio" name="s3_p4"></td>
-					<td id="col_res"><input type="radio" name="s3_p4"></td>
-					<td id="col_res"><input type="radio" name="s3_p4" required></td>
+					<td id="col_res"><input type="radio" name="s3_p4"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p4"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p4"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p4"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p4"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Rascarse, morderse las uñas, frotarse, etc.</td>
-					<td id="col_res"><input type="radio" name="s3_p5"></td>
-					<td id="col_res"><input type="radio" name="s3_p5"></td>
-					<td id="col_res"><input type="radio" name="s3_p5"></td>
-					<td id="col_res"><input type="radio" name="s3_p5"></td>
-					<td id="col_res"><input type="radio" name="s3_p5" required></td>
+					<td id="col_res"><input type="radio" name="s3_p5"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p5"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p5"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p5"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p5"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Somnolencia o mayor necesidad de dormir</td>
-					<td id="col_res"><input type="radio" name="s3_p6"></td>
-					<td id="col_res"><input type="radio" name="s3_p6"></td>
-					<td id="col_res"><input type="radio" name="s3_p6"></td>
-					<td id="col_res"><input type="radio" name="s3_p6"></td>
-					<td id="col_res"><input type="radio" name="s3_p6" required></td>
+					<td id="col_res"><input type="radio" name="s3_p6"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p6"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p6"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p6"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p6"  value="S"  required></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
@@ -292,59 +292,59 @@
 				<tr><td></td></tr>
 				<tr>
 					<td>Inquietud (incapacidad de relajarse y estar tranquilo</td>
-					<td id="col_res"><input type="radio" name="s3_p7"></td>
-					<td id="col_res"><input type="radio" name="s3_p7"></td>
-					<td id="col_res"><input type="radio" name="s3_p7"></td>
-					<td id="col_res"><input type="radio" name="s3_p7"></td>
-					<td id="col_res"><input type="radio" name="s3_p7" required></td>
+					<td id="col_res"><input type="radio" name="s3_p7"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p7"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p7"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p7"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p7"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Sentimientos de depresion y tristeza (decaido)</td>
-					<td id="col_res"><input type="radio" name="s3_p8"></td>
-					<td id="col_res"><input type="radio" name="s3_p8"></td>
-					<td id="col_res"><input type="radio" name="s3_p8"></td>
-					<td id="col_res"><input type="radio" name="s3_p8"></td>
-					<td id="col_res"><input type="radio" name="s3_p8" required></td>
+					<td id="col_res"><input type="radio" name="s3_p8"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p8"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p8"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p8"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p8"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Ansiedad angustia o desesperacion</td>
-					<td id="col_res"><input type="radio" name="s3_p9"></td>
-					<td id="col_res"><input type="radio" name="s3_p9"></td>
-					<td id="col_res"><input type="radio" name="s3_p9"></td>
-					<td id="col_res"><input type="radio" name="s3_p9"></td>
-					<td id="col_res"><input type="radio" name="s3_p9" required></td>
+					<td id="col_res"><input type="radio" name="s3_p9"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p9"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p9"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p9"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p9"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Problemas de concentracion</td>
-					<td id="col_res"><input type="radio" name="s3_p10"></td>
-					<td id="col_res"><input type="radio" name="s3_p10"></td>
-					<td id="col_res"><input type="radio" name="s3_p10"></td>
-					<td id="col_res"><input type="radio" name="s3_p10"></td>
-					<td id="col_res"><input type="radio" name="s3_p10" required></td>
+					<td id="col_res"><input type="radio" name="s3_p10"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p10"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p10"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p10"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p10"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Sensacion de tener la mente vacia</td>
-					<td id="col_res"><input type="radio" name="s3_p11"></td>
-					<td id="col_res"><input type="radio" name="s3_p11"></td>
-					<td id="col_res"><input type="radio" name="s3_p11"></td>
-					<td id="col_res"><input type="radio" name="s3_p11"></td>
-					<td id="col_res"><input type="radio" name="s3_p11" required></td>
+					<td id="col_res"><input type="radio" name="s3_p11"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p11"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p11"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p11"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p11"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Problemas de memoria</td>
-					<td id="col_res"><input type="radio" name="s3_p12"></td>
-					<td id="col_res"><input type="radio" name="s3_p12"></td>
-					<td id="col_res"><input type="radio" name="s3_p12"></td>
-					<td id="col_res"><input type="radio" name="s3_p12"></td>
-					<td id="col_res"><input type="radio" name="s3_p12" required></td>
+					<td id="col_res"><input type="radio" name="s3_p12"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p12"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p12"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p12"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p12"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Sentimiento de agresividad o aumento de irritabilidad</td>
-					<td id="col_res"><input type="radio" name="s3_p13"></td>
-					<td id="col_res"><input type="radio" name="s3_p13"></td>
-					<td id="col_res"><input type="radio" name="s3_p13"></td>
-					<td id="col_res"><input type="radio" name="s3_p13"></td>
-					<td id="col_res"><input type="radio" name="s3_p13" required></td>
+					<td id="col_res"><input type="radio" name="s3_p13"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p13"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p13"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p13"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p13"  value="S"  required></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
@@ -353,43 +353,43 @@
 				<tr><td></td></tr>
 				<tr>
 					<td>Conflictos o tendencias a polemizar o discutir</td>
-					<td id="col_res"><input type="radio" name="s3_p14"></td>
-					<td id="col_res"><input type="radio" name="s3_p14"></td>
-					<td id="col_res"><input type="radio" name="s3_p14"></td>
-					<td id="col_res"><input type="radio" name="s3_p14"></td>
-					<td id="col_res"><input type="radio" name="s3_p14" required></td>
+					<td id="col_res"><input type="radio" name="s3_p14"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p14"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p14"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p14"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p14"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Aislamiento de los demás</td>
-					<td id="col_res"><input type="radio" name="s3_p15"></td>
-					<td id="col_res"><input type="radio" name="s3_p15"></td>
-					<td id="col_res"><input type="radio" name="s3_p15"></td>
-					<td id="col_res"><input type="radio" name="s3_p15"></td>
-					<td id="col_res"><input type="radio" name="s3_p15" required></td>
+					<td id="col_res"><input type="radio" name="s3_p15"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p15"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p15"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p15"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p15"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Absentismo de las clases</td>
-					<td id="col_res"><input type="radio" name="s3_p16"></td>
-					<td id="col_res"><input type="radio" name="s3_p16"></td>
-					<td id="col_res"><input type="radio" name="s3_p16"></td>
-					<td id="col_res"><input type="radio" name="s3_p16"></td>
-					<td id="col_res"><input type="radio" name="s3_p16" required></td>
+					<td id="col_res"><input type="radio" name="s3_p16"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p16"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p16"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p16"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p16"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Desgano para realizar las labores escolares</td>
-					<td id="col_res"><input type="radio" name="s3_p17"></td>
-					<td id="col_res"><input type="radio" name="s3_p17"></td>
-					<td id="col_res"><input type="radio" name="s3_p17"></td>
-					<td id="col_res"><input type="radio" name="s3_p17"></td>
-					<td id="col_res"><input type="radio" name="s3_p17" required></td>
+					<td id="col_res"><input type="radio" name="s3_p17"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p17"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p17"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p17"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p17"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Aumento o reducción del consumo de alimentos</td>
-					<td id="col_res"><input type="radio" name="s3_p18"></td>
-					<td id="col_res"><input type="radio" name="s3_p18"></td>
-					<td id="col_res"><input type="radio" name="s3_p18"></td>
-					<td id="col_res"><input type="radio" name="s3_p18"></td>
-					<td id="col_res"><input type="radio" name="s3_p18" required></td>
+					<td id="col_res"><input type="radio" name="s3_p18"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s3_p18"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s3_p18"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s3_p18"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s3_p18"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td colspan="6">Otras (especifica)</td>
@@ -421,67 +421,67 @@
 				</tr>
 				<tr>
 					<td>Habilidad asertiva (defender nuestras preferencias e ideas o sentimientos  sin dañar a otros)</td>
-					<td id="col_res"><input type="radio" name="s4_p1"></td>
-					<td id="col_res"><input type="radio" name="s4_p1"></td>
-					<td id="col_res"><input type="radio" name="s4_p1"></td>
-					<td id="col_res"><input type="radio" name="s4_p1"></td>
-					<td id="col_res"><input type="radio" name="s4_p1" required></td>
+					<td id="col_res"><input type="radio" name="s4_p1"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p1"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p1"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p1"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p1"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Elaboración de un plan y ejecución de sus tareas</td>
-					<td id="col_res"><input type="radio" name="s4_p2"></td>
-					<td id="col_res"><input type="radio" name="s4_p2"></td>
-					<td id="col_res"><input type="radio" name="s4_p2"></td>
-					<td id="col_res"><input type="radio" name="s4_p2"></td>
-					<td id="col_res"><input type="radio" name="s4_p2" required></td>
+					<td id="col_res"><input type="radio" name="s4_p2"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p2"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p2"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p2"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p2"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Tomar la situación con sentido del humor</td>
-					<td id="col_res"><input type="radio" name="s4_p3"></td>
-					<td id="col_res"><input type="radio" name="s4_p3"></td>
-					<td id="col_res"><input type="radio" name="s4_p3"></td>
-					<td id="col_res"><input type="radio" name="s4_p3"></td>
-					<td id="col_res"><input type="radio" name="s4_p3" required></td>
+					<td id="col_res"><input type="radio" name="s4_p3"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p3"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p3"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p3"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p3"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Elogios a sí mismo</td>
-					<td id="col_res"><input type="radio" name="s4_p4"></td>
-					<td id="col_res"><input type="radio" name="s4_p4"></td>
-					<td id="col_res"><input type="radio" name="s4_p4"></td>
-					<td id="col_res"><input type="radio" name="s4_p4"></td>
-					<td id="col_res"><input type="radio" name="s4_p4" required></td>
+					<td id="col_res"><input type="radio" name="s4_p4"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p4"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p4"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p4"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p4"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Distracción evasiva</td>
-					<td id="col_res"><input type="radio" name="s4_p5"></td>
-					<td id="col_res"><input type="radio" name="s4_p5"></td>
-					<td id="col_res"><input type="radio" name="s4_p5"></td>
-					<td id="col_res"><input type="radio" name="s4_p5"></td>
-					<td id="col_res"><input type="radio" name="s4_p5" required></td>
+					<td id="col_res"><input type="radio" name="s4_p5"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p5"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p5"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p5"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p5"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>La religiosidad (oraciones o asistencias a misa)</td>
-					<td id="col_res"><input type="radio" name="s4_p6"></td>
-					<td id="col_res"><input type="radio" name="s4_p6"></td>
-					<td id="col_res"><input type="radio" name="s4_p6"></td>
-					<td id="col_res"><input type="radio" name="s4_p6"></td>
-					<td id="col_res"><input type="radio" name="s4_p6" required></td>
+					<td id="col_res"><input type="radio" name="s4_p6"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p6"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p6"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p6"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p6"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Busqueda de información sobre la situación</td>
-					<td id="col_res"><input type="radio" name="s4_p7"></td>
-					<td id="col_res"><input type="radio" name="s4_p7"></td>
-					<td id="col_res"><input type="radio" name="s4_p7"></td>
-					<td id="col_res"><input type="radio" name="s4_p7"></td>
-					<td id="col_res"><input type="radio" name="s4_p7" required></td>
+					<td id="col_res"><input type="radio" name="s4_p7"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p7"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p7"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p7"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p7"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Ventilación y confidencias (verbalización de la situación que preocupa)</td>
-					<td id="col_res"><input type="radio" name="s4_p8"></td>
-					<td id="col_res"><input type="radio" name="s4_p8"></td>
-					<td id="col_res"><input type="radio" name="s4_p8"></td>
-					<td id="col_res"><input type="radio" name="s4_p8"></td>
-					<td id="col_res"><input type="radio" name="s4_p8" required></td>
+					<td id="col_res"><input type="radio" name="s4_p8"  value="N" ></td>
+					<td id="col_res"><input type="radio" name="s4_p8"  value="R" ></td>
+					<td id="col_res"><input type="radio" name="s4_p8"  value="A" ></td>
+					<td id="col_res"><input type="radio" name="s4_p8"  value="C" ></td>
+					<td id="col_res"><input type="radio" name="s4_p8"  value="S"  required></td>
 				</tr>
 				<tr>
 					<td>Otras (especifica):</td>

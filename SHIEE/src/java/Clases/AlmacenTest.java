@@ -262,17 +262,6 @@ public class AlmacenTest extends HttpServlet {
                                 puntaje += 4;
                             }
                             
-                            if(p9_s4.equals("S")){
-                                puntaje += 0;
-                            } else if(p9_s4.equals("C")){
-                                puntaje += 1;
-                            } else if(p9_s4.equals("A")){
-                                puntaje += 2;
-                            } else if(p9_s4.equals("R")){
-                                puntaje += 3;
-                            } else if(p9_s4.equals("N")){
-                                puntaje += 4;
-                            }
                     }
                     response.sendRedirect("resultados.jsp?v="+puntaje);
         }catch(Exception ex){
