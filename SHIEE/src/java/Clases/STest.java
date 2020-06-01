@@ -42,6 +42,7 @@ public class STest extends HttpServlet {
             HttpSession verificador_sesion = request.getSession();
             if(verificador_sesion.getAttribute("usuario")==null){
                 response.sendRedirect("SesionRequerida.jsp");
+                
             }else{
                 try{
                     Paciente pac = (Paciente)verificador_sesion.getAttribute("usuario");

@@ -29,17 +29,29 @@ public class AlmacenTest extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             HttpSession verificador_sesion = request.getSession();
             if(verificador_sesion.getAttribute("usuario")==null){
-                response.sendRedirect("SesionRequerida.jsp");
+               response.sendRedirect("SesionRequerida.jsp");
             }else{
                 try{
                     Paciente pac = (Paciente)verificador_sesion.getAttribute("usuario");
-                    
+                    int puntaje = 0;
                     Paciente obj = new Paciente();
                     if(pac!=null){
                         //response.sendRedirect("cuestionario.jsp");
@@ -113,31 +125,163 @@ public class AlmacenTest extends HttpServlet {
                             p8_s4 = request.getParameter("s4_p8");
                             p9_s4 = request.getParameter("s4_p9");
                             obji.InsertSec4(p1_s4, p2_s4, p3_s4, p4_s4, p5_s4, p6_s4, p7_s4, p8_s4, p9_s4, ab);
-                            response.sendRedirect("resultados.jsp");
+                            
+                            //a partir de aqui va lo del puntaje, si no funciona es porque paso algo muy raro
+                            //seccion 1 
+                            puntaje += Integer.parseInt(p1_s1);
+                            //seccion dos
+                            if(p1_s2.equals("S")){puntaje += 0;} else if(p1_s2.equals("C")){puntaje += 1;} else if(p1_s2.equals("A")){puntaje += 2;} else if(p1_s2.equals("R")){puntaje += 3;} else if(p1_s2.equals("N")){puntaje += 4;}
+                            if(p2_s2.equals("S")){puntaje += 0;} else if(p2_s2.equals("C")){puntaje += 1;} else if(p2_s2.equals("A")){puntaje += 2;} else if(p2_s2.equals("R")){puntaje += 3;} else if(p2_s2.equals("N")){puntaje += 4;}
+                            if(p3_s2.equals("S")){puntaje += 0;} else if(p3_s2.equals("C")){puntaje += 1;} else if(p3_s2.equals("A")){puntaje += 2;} else if(p3_s2.equals("R")){puntaje += 3;} else if(p3_s2.equals("N")){puntaje += 4;}
+                            if(p4_s2.equals("S")){puntaje += 0;} else if(p4_s2.equals("C")){puntaje += 1;} else if(p4_s2.equals("A")){puntaje += 2;} else if(p4_s2.equals("R")){puntaje += 3;} else if(p4_s2.equals("N")){puntaje += 4;}
+                            if(p5_s2.equals("S")){puntaje += 0;} else if(p5_s2.equals("C")){puntaje += 1;} else if(p5_s2.equals("A")){puntaje += 2;} else if(p5_s2.equals("R")){puntaje += 3;} else if(p5_s2.equals("N")){puntaje += 4;}
+                            if(p6_s2.equals("S")){puntaje += 0;} else if(p6_s2.equals("C")){puntaje += 1;} else if(p6_s2.equals("A")){puntaje += 2;} else if(p6_s2.equals("R")){puntaje += 3;} else if(p6_s2.equals("N")){puntaje += 4;}
+                            if(p7_s2.equals("S")){puntaje += 0;} else if(p7_s2.equals("C")){puntaje += 1;} else if(p7_s2.equals("A")){puntaje += 2;} else if(p7_s2.equals("R")){puntaje += 3;} else if(p7_s2.equals("N")){puntaje += 4;}
+                            if(p8_s2.equals("S")){puntaje += 0;} else if(p8_s2.equals("C")){puntaje += 1;} else if(p8_s2.equals("A")){puntaje += 2;} else if(p8_s2.equals("R")){puntaje += 3;} else if(p8_s2.equals("N")){puntaje += 4;}
+                            if(p9_s2.equals("S")){puntaje += 0;} else if(p9_s2.equals("C")){puntaje += 1;} else if(p9_s2.equals("A")){puntaje += 2;} else if(p9_s2.equals("R")){puntaje += 3;} else if(p9_s2.equals("N")){puntaje += 4;}
+                            if(p10_s2.equals("S")){puntaje += 0;} else if(p10_s2.equals("C")){puntaje += 1;} else if(p10_s2.equals("A")){puntaje += 2;} else if(p10_s2.equals("R")){puntaje += 3;} else if(p10_s2.equals("N")){puntaje += 4;}
+                            if(p11_s2.equals("S")){puntaje += 0;} else if(p11_s2.equals("C")){puntaje += 1;} else if(p11_s2.equals("A")){puntaje += 2;} else if(p11_s2.equals("R")){puntaje += 3;} else if(p11_s2.equals("N")){puntaje += 4;}
+                            if(p12_s2.equals("S")){puntaje += 0;} else if(p12_s2.equals("C")){puntaje += 1;} else if(p12_s2.equals("A")){puntaje += 2;} else if(p12_s2.equals("R")){puntaje += 3;} else if(p12_s2.equals("N")){puntaje += 4;}
+                            if(p13_s2.equals("S")){puntaje += 0;} else if(p13_s2.equals("C")){puntaje += 1;} else if(p13_s2.equals("A")){puntaje += 2;} else if(p13_s2.equals("R")){puntaje += 3;} else if(p13_s2.equals("N")){puntaje += 4;}
+                            if(p14_s2.equals("S")){puntaje += 0;} else if(p14_s2.equals("C")){puntaje += 1;} else if(p14_s2.equals("A")){puntaje += 2;} else if(p14_s2.equals("R")){puntaje += 3;} else if(p14_s2.equals("N")){puntaje += 4;}
+                            if(p15_s2.equals("S")){puntaje += 0;} else if(p15_s2.equals("C")){puntaje += 1;} else if(p15_s2.equals("A")){puntaje += 2;} else if(p15_s2.equals("R")){puntaje += 3;} else if(p15_s2.equals("N")){puntaje += 4;}
+                            //seccion 3
+                            if(p1_s3.equals("S")){puntaje += 0;} else if(p1_s3.equals("C")){puntaje += 1;} else if(p1_s3.equals("A")){puntaje += 2;} else if(p1_s3.equals("R")){puntaje += 3;} else if(p1_s3.equals("N")){puntaje += 4;}
+                            if(p2_s3.equals("S")){puntaje += 0;} else if(p2_s3.equals("C")){puntaje += 1;} else if(p2_s3.equals("A")){puntaje += 2;} else if(p2_s3.equals("R")){puntaje += 3;} else if(p2_s3.equals("N")){puntaje += 4;}
+                            if(p3_s3.equals("S")){puntaje += 0;} else if(p3_s3.equals("C")){puntaje += 1;} else if(p3_s3.equals("A")){puntaje += 2;} else if(p3_s3.equals("R")){puntaje += 3;} else if(p3_s3.equals("N")){puntaje += 4;}
+                            if(p4_s3.equals("S")){puntaje += 0;} else if(p4_s3.equals("C")){puntaje += 1;} else if(p4_s3.equals("A")){puntaje += 2;} else if(p4_s3.equals("R")){puntaje += 3;} else if(p4_s3.equals("N")){puntaje += 4;}
+                            if(p5_s3.equals("S")){puntaje += 0;} else if(p5_s3.equals("C")){puntaje += 1;} else if(p5_s3.equals("A")){puntaje += 2;} else if(p5_s3.equals("R")){puntaje += 3;} else if(p5_s3.equals("N")){puntaje += 4;}
+                            if(p6_s3.equals("S")){puntaje += 0;} else if(p6_s3.equals("C")){puntaje += 1;} else if(p6_s3.equals("A")){puntaje += 2;} else if(p6_s3.equals("R")){puntaje += 3;} else if(p6_s3.equals("N")){puntaje += 4;}
+                            if(p7_s3.equals("S")){puntaje += 0;} else if(p7_s3.equals("C")){puntaje += 1;} else if(p7_s3.equals("A")){puntaje += 2;} else if(p7_s3.equals("R")){puntaje += 3;} else if(p7_s3.equals("N")){puntaje += 4;}
+                            if(p8_s3.equals("S")){puntaje += 0;} else if(p8_s3.equals("C")){puntaje += 1;} else if(p8_s3.equals("A")){puntaje += 2;} else if(p8_s3.equals("R")){puntaje += 3;} else if(p8_s3.equals("N")){puntaje += 4;}
+                            if(p9_s3.equals("S")){puntaje += 0;} else if(p9_s3.equals("C")){puntaje += 1;} else if(p9_s3.equals("A")){puntaje += 2;} else if(p9_s3.equals("R")){puntaje += 3;} else if(p9_s3.equals("N")){puntaje += 4;}
+                            if(p10_s3.equals("S")){puntaje += 0;} else if(p10_s3.equals("C")){puntaje += 1;} else if(p10_s3.equals("A")){puntaje += 2;} else if(p10_s3.equals("R")){puntaje += 3;} else if(p10_s3.equals("N")){puntaje += 4;}
+                            if(p11_s3.equals("S")){puntaje += 0;} else if(p11_s3.equals("C")){puntaje += 1;} else if(p11_s3.equals("A")){puntaje += 2;} else if(p11_s3.equals("R")){puntaje += 3;} else if(p11_s3.equals("N")){puntaje += 4;}
+                            if(p12_s3.equals("S")){puntaje += 0;} else if(p12_s3.equals("C")){puntaje += 1;} else if(p12_s3.equals("A")){puntaje += 2;} else if(p12_s3.equals("R")){puntaje += 3;} else if(p12_s3.equals("N")){puntaje += 4;}
+                            if(p13_s3.equals("S")){puntaje += 0;} else if(p13_s3.equals("C")){puntaje += 1;} else if(p13_s3.equals("A")){puntaje += 2;} else if(p13_s3.equals("R")){puntaje += 3;} else if(p13_s3.equals("N")){puntaje += 4;}
+                            if(p14_s3.equals("S")){puntaje += 0;} else if(p14_s3.equals("C")){puntaje += 1;} else if(p14_s3.equals("A")){puntaje += 2;} else if(p14_s3.equals("R")){puntaje += 3;} else if(p14_s3.equals("N")){puntaje += 4;}
+                            if(p15_s3.equals("S")){puntaje += 0;} else if(p15_s3.equals("C")){puntaje += 1;} else if(p15_s3.equals("A")){puntaje += 2;} else if(p15_s3.equals("R")){puntaje += 3;} else if(p15_s3.equals("N")){puntaje += 4;}
+                            if(p16_s3.equals("S")){puntaje += 0;} else if(p16_s3.equals("C")){puntaje += 1;} else if(p16_s3.equals("A")){puntaje += 2;} else if(p16_s3.equals("R")){puntaje += 3;} else if(p16_s3.equals("N")){puntaje += 4;}
+                            if(p17_s3.equals("S")){puntaje += 0;} else if(p17_s3.equals("C")){puntaje += 1;} else if(p17_s3.equals("A")){puntaje += 2;} else if(p17_s3.equals("R")){puntaje += 3;} else if(p17_s3.equals("N")){puntaje += 4;}
+                            if(p18_s3.equals("S")){puntaje += 0;} else if(p18_s3.equals("C")){puntaje += 1;} else if(p18_s3.equals("A")){puntaje += 2;} else if(p18_s3.equals("R")){puntaje += 3;} else if(p18_s3.equals("N")){puntaje += 4;}
+                            if(p19_s3.equals("S")){puntaje += 0;} else if(p19_s3.equals("C")){puntaje += 1;} else if(p19_s3.equals("A")){puntaje += 2;} else if(p19_s3.equals("R")){puntaje += 3;} else if(p19_s3.equals("N")){puntaje += 4;}
+                            //seccion 4 aqui van alreves
+                            if(p1_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p1_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p1_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p1_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p1_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p2_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p2_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p2_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p2_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p2_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p3_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p3_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p3_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p3_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p3_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p4_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p4_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p4_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p4_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p4_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p5_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p5_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p5_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p5_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p5_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p6_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p6_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p6_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p6_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p6_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p7_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p7_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p7_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p7_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p7_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p8_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p8_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p8_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p8_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p8_s4.equals("N")){
+                                puntaje += 4;
+                            }
+                            
+                            if(p9_s4.equals("S")){
+                                puntaje += 0;
+                            } else if(p9_s4.equals("C")){
+                                puntaje += 1;
+                            } else if(p9_s4.equals("A")){
+                                puntaje += 2;
+                            } else if(p9_s4.equals("R")){
+                                puntaje += 3;
+                            } else if(p9_s4.equals("N")){
+                                puntaje += 4;
+                            }
                     }
-                    
-                 }catch(Exception ex){
-                    System.out.println("Paciente no es");
-                    System.out.println(ex.getMessage());
-                    ex.printStackTrace();
-                }
-            }
+                    response.sendRedirect("resultados.jsp?v="+puntaje);
+        }catch(Exception ex){
+            System.out.println("Paciente no es");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+ }
     }
 
     /**
@@ -148,11 +292,6 @@ public class AlmacenTest extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     /**
      * Returns a short description of the servlet.
