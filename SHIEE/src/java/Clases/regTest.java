@@ -111,7 +111,7 @@ public class regTest {
         c = 0;
         try {
             con = Conexion.getConnection();
-            q = "SELECT * FROM Test WHERE Paciente_id_pac = ?";
+            q = "SELECT * FROM Test WHERE Paciente_id = ?";
             pr = con.prepareStatement(q);
             
             pr.setInt(1, c);
