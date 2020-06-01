@@ -42,9 +42,13 @@
 	</header>
 	<section>
 		<center>
+                    <% 
+                    String elid;
+                    elid = request.getParameter("v");
+                    %>
 			<h1>RESULTADOS DEL TEST</h1>
 			<p>A traves del test que has contestado, hemos determinado que tienes un</p>
-			<h2>(aqui va el nivel de estres)</h2>
+			<h2>(pendiente al psicologo, preeliminar de <%=elid%> / 164)</h2>
 			<br>
 			<p>Te recomendamos visitar nuestra sección de Directorio y probar nuestra bitacora</p>
 		</center>
