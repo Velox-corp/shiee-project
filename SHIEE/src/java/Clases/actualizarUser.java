@@ -45,7 +45,8 @@ public class actualizarUser extends HttpServlet {
             if(esPac){
                 Paciente pold =  new Paciente();
                 pold = (Paciente)sesionUser.getAttribute("usuario");
-                Paciente pnew = new Paciente(id,nombre, appat, apmat, fecha_nac, user, pass);
+                char sexo = pold.getSexo_pac();
+                Paciente pnew = new Paciente(id,nombre, appat, apmat, fecha_nac, user, pass,sexo);
                 if(pold.editarPaciente(pnew)){
                     actualizoUser = true;
                     try{
@@ -61,7 +62,8 @@ public class actualizarUser extends HttpServlet {
             boolean esPsi = Psicologo.esPsicologo(sesionUser.getAttribute("usuario"));
             if(esPsi){
                 Psicologo pold = (Psicologo)sesionUser.getAttribute("usuario");
-                Psicologo pnew = new Psicologo(id, nombre, appat, apmat, fecha_nac, user, pass);
+                char sexo = pold.getSexo_psi();
+                Psicologo pnew = new Psicologo(id, nombre, appat, apmat, fecha_nac, user, pass, sexo);
                 if(pold.editarPsicologo(pnew)){
                     sesionUser.setAttribute("usuario", pnew);
                     actualizoUser = true;

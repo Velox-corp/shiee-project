@@ -10,6 +10,13 @@ function estaVacio (element) {
 		return false
 	}
 }
+
+function nodefault(input){
+    var index = input.select.selectedIndex;
+    if(index == 0){
+        alert("Ingrese un sexo");
+    }
+}
 function validarFecha(element){
 	let fechaNac = element.value
 	//Primero, ver que sea una fecha

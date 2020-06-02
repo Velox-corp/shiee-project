@@ -33,7 +33,7 @@ public class registrar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String nombre, appat, apmat,fecha_nac, usuario, contraseña, contraseña_veri, tipo_user;
+            String nombre, appat, apmat,fecha_nac, usuario, contraseña, contraseña_veri, tipo_user, sexo;
             nombre = request.getParameter("nombre");
             appat = request.getParameter("appat");
             apmat = request.getParameter("apmat");
@@ -41,6 +41,7 @@ public class registrar extends HttpServlet {
             usuario = request.getParameter("nombreUsuario");
             contraseña = request.getParameter("password");
             contraseña_veri = request.getParameter("password_verificar");
+            sexo = request.getParameter("sexo");
             boolean estado = false;
             if(contraseña != contraseña_veri){
                 response.sendRedirect("Registro.jsp");
@@ -50,13 +51,13 @@ public class registrar extends HttpServlet {
             switch(tipo_user){
                 case "Estudiante":
                     Paciente p = new Paciente();
-                    estado = p.RegistrarPaciente(nombre, appat, apmat, fecha_nac, usuario, contraseña, contraseña_veri);
+                    estado = p.RegistrarPaciente(nombre, appat, apmat, fecha_nac, usuario, contraseña, contraseña_veri,sexo);
                     break;
                 case "Psicologo":
                     Psicologo psi = new Psicologo();
                     int cedula = Integer.parseInt(request.getParameter("cedula"));
                     System.out.println(cedula);
-                    estado = psi.RegistrarPsicologo(nombre, appat, apmat, fecha_nac, cedula, usuario, contraseña, contraseña_veri);
+                    estado = psi.RegistrarPsicologo(nombre, appat, apmat, fecha_nac, cedula, usuario, contraseña, contraseña_veri,sexo);
                     break;
             }
             try {
