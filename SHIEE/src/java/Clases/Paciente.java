@@ -18,10 +18,19 @@ public class Paciente {
    
     private int id_pac, id_pac_psi;
     private String nombre_pac, appat_pac, apmat_pac, fecha_nac_pac, usuario_pac, contra_pac; 
+    private char sexo_pac;
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pr = null;
     String q = "";
+
+    public char getSexo_pac() {
+        return sexo_pac;
+    }
+
+    public void setSexo_pac(char sexo_pac) {
+        this.sexo_pac = sexo_pac;
+    }
     
     public Paciente(){
     }

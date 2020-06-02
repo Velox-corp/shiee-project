@@ -40,7 +40,7 @@ CREATE TABLE `paciente` (
   `psicologo_id_FK` int(11) DEFAULT NULL,
   `Contra_pac` varchar(45) DEFAULT NULL,
   `Usuario_pac` varchar(45) DEFAULT NULL,
-  `sexo` char not null,
+  `sexo_pac` char not null,
   PRIMARY KEY (`id_pac`),
   KEY `psicologo_id_FK` (`psicologo_id_FK`),
   CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`psicologo_id_FK`) REFERENCES `psicologo` (`id_psicologo`)
@@ -73,6 +73,7 @@ CREATE TABLE `psicologo` (
   `cedula_psi` varchar(45) DEFAULT NULL,
   `Contra_pi` varchar(45) DEFAULT NULL,
   `Usuario_pi` varchar(45) DEFAULT NULL,
+  `sexo_psi` char not null,
   PRIMARY KEY (`id_psicologo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

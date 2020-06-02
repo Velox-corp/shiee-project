@@ -8,6 +8,8 @@ public class Psicologo {
     
     private int id_psi, cedula_psi;
     private String nombre_psi, appat_psi, apmat_psi, fecha_nac_psi, usuario_psi, contra_psi; 
+    private char sexo_psi;
+    
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pr = null;
@@ -310,6 +312,14 @@ public class Psicologo {
             }
         return borro;
         }
+    }
+
+    public char getSexo_psi() {
+        return sexo_psi;
+    }
+
+    public void setSexo_psi(char sexo_psi) {
+        this.sexo_psi = sexo_psi;
     }
     
     
