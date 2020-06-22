@@ -25,11 +25,7 @@
                     %>
                     <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
                     <%  }else{%>
-<<<<<<< HEAD
-                    <a class="no " href="InicioSesion.jsp">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a>
-=======
                     <a class="no " href="cerrarSesion">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
->>>>>>> e29a4cff23781b71db8ea6d4134cce2825b71dec
                     <%}%>
                 </div>
             </div>

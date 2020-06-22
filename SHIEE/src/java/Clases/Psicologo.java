@@ -39,7 +39,7 @@ public class Psicologo {
            con = Conexion.getConnection();
            //Por el momento usare un satatement por que no se si esto se pueda hacer con un preparedStatement
            
-           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_psi, Contra_pi, sexo_psi ) "
+           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_pi, Contra_pi, sexo_psi ) "
                    + "values ( ?, ?, ?, ?, ?, ?, ?, ? )";
            pr = con.prepareStatement(q);
            
@@ -79,7 +79,7 @@ public class Psicologo {
         Psicologo psi = null;
         try{
             con = Conexion.getConnection();
-            q = "SELECT * FROM Psicologo WHERE Usuario_psi = ? AND Contra_pi = ?";
+            q = "SELECT * FROM Psicologo WHERE Usuario_pi = ? AND Contra_pi = ?";
             
             pr = con.prepareStatement(q);
             
@@ -96,7 +96,7 @@ public class Psicologo {
                 psi.setApmat_psi(rs.getString("Apmat_psi"));
                 psi.setFecha_nac_psi(rs.getString("fechaNac_psi"));
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
-                psi.setUsuario_psi(rs.getString("Usuario_psi"));
+                psi.setUsuario_psi(rs.getString("Usuario_pi"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
                 psi.setSexo_psi(rs.getString("sexo_psi").charAt(0));
                 break;

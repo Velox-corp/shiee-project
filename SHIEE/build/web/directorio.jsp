@@ -44,6 +44,24 @@
             </ul>
         </nav>
     </header>
+	    <section>
+		<center>
+                    <article>
+                            <h1>Psicologos y terapeutas</h1><%
+                            Psicologo quieroPsicologos = new Psicologo();
+                            ArrayList<Psicologo> psicologosRegistrados = quieroPsicologos.obtenerTodosPsicologos();
+                            for(Psicologo psi: psicologosRegistrados){%>
+                            <div class="psicologo">
+                                <%=psi.getAppat_psi()%> <%=psi.getApmat_psi()%> <%=psi.getNombre_psi()%>
+                                <p><% if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ %>
+                                    <a href="asignarPsi?id=<%=psi.getId_psi()%>">Hacer mi psicologo</a>
+                                    <%}%>
+                                </p>
+                             </div>
+                            <%}%>
+                    </article>
+		</center>
+	   </section>
 	<article id="izquierda_2">
 		<div class="container">
 		    <figure class="snip0015">
@@ -55,23 +73,5 @@
 		    </figure>
 		</div>
 	    </article>	
-	    <section>
-		<center>
-                    <article>
-				<h1>Psicologos y terapeutas</h1><%
-                                Psicologo quieroPsicologos = new Psicologo();
-                                 ArrayList<Psicologo> psicologosRegistrados = quieroPsicologos.obtenerTodosPsicologos();
-                                 for(Psicologo psi: psicologosRegistrados){%>
-                                 <div class="psicologo">
-                                     <%=psi.getAppat_psi()%> <%=psi.getApmat_psi()%> <%=psi.getNombre_psi()%>
-                                     <p><% if(Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ %>
-                                        <a href="asignarPsi?id=<%=psi.getId_psi()%>">Hacer mi psicologo</a>
-                                        <%}%>
-                                    </p>
-                                 </div>
-                                <%}%>
-                    </article>
-		</center>
-	   </section>
 </body>
 </html>
