@@ -18,15 +18,24 @@ public class Paciente {
    
     private int id_pac, id_pac_psi;
     private String nombre_pac, appat_pac, apmat_pac, fecha_nac_pac, usuario_pac, contra_pac; 
+    private char sexo_pac;
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pr = null;
     String q = "";
+
+    public char getSexo_pac() {
+        return sexo_pac;
+    }
+
+    public void setSexo_pac(char sexo_pac) {
+        this.sexo_pac = sexo_pac;
+    }
     
     public Paciente(){
     }
     //Tengo flojera, por lo que este constructor con sobrecarga será para actualizar un paciente
-    public Paciente(int id, String nombre, String appat, String apmat, String fecha_nac, String usuario, String contra){
+    public Paciente(int id, String nombre, String appat, String apmat, String fecha_nac, String usuario, String contra, char sexo){
         this.id_pac = id;
         this.nombre_pac = nombre;
         this.appat_pac = appat;
@@ -34,9 +43,10 @@ public class Paciente {
         this.fecha_nac_pac = fecha_nac;
         this.usuario_pac = usuario;
         this.contra_pac = contra;
+        this.sexo_pac = sexo;
     }
     
-    public boolean RegistrarPaciente(String nombre,String appat, String apmat, String fecha_nac, String usuario_pac, String contra_pac, String cont_veri){
+    public boolean RegistrarPaciente(String nombre,String appat, String apmat, String fecha_nac, String usuario_pac, String contra_pac, String cont_veri, String sexo_pac){
         boolean registro = false;
         try{
             //Primero verificar las entradas, pero de momento solo podré el de la contraseña
@@ -46,8 +56,8 @@ public class Paciente {
             }
             System.out.println(contra_pac);
            con = Conexion.getConnection();
-           q = "INSERT INTO Paciente ( Nombre_pac, Appat_pac, Apmat_pac, fechaNac_pac,Contra_pac, Usuario_pac ) "
-                   + "values ( ?, ?, ?, ?, ?, ? )";
+           q = "INSERT INTO Paciente ( Nombre_pac, Appat_pac, Apmat_pac, fechaNac_pac,Contra_pac, Usuario_pac, sexo_pac ) "
+                   + "values ( ?, ?, ?, ?, ?, ?, ? )";
            pr = con.prepareStatement(q);
            pr.setString(1,nombre);
            pr.setString(2, appat);
@@ -55,6 +65,7 @@ public class Paciente {
            pr.setString(4, fecha_nac);
            pr.setString(5, contra_pac);
            pr.setString(6, usuario_pac);
+           pr.setString(7, sexo_pac);
            
            if(pr.executeUpdate()==1){
                registro = true;
@@ -102,6 +113,7 @@ public class Paciente {
                 p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");
+                p.setSexo_pac(rs.getString("sexo_pac").charAt(0));
                 break;
             }
         }catch(SQLException sqlex){
@@ -145,6 +157,7 @@ public class Paciente {
                 p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");
+                p.setSexo_pac(rs.getString("sexo_pac").charAt(0));
                 listaPacientes.add(p);
             }
         }catch(SQLException sqlex){
@@ -186,6 +199,7 @@ public class Paciente {
                 p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
                 p.setUsuario_pac(rs.getString("Usuario_pac"));
                 p.setContra_pac("Contra_pac");
+                p.setSexo_pac(rs.getString("sexo_pac").charAt(0));
                 listaPacientesPsicologo.add(p);
             }
         }catch(SQLException sqlex){

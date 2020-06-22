@@ -1,4 +1,5 @@
 
+<%@page import="Clases.Paciente"%>
 <%@page language="java" session="true" import="java.sql.*" pageEncoding="UTF-8" contentType="text/html"%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,7 @@
 				<div class="esto_no">
 					<%
 						HttpSession sesionOk = request.getSession();
+                                                if(!Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ response.sendRedirect("index.jsp");
 						if(sesionOk.getAttribute("usuario")==null){
 					%>
 					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>

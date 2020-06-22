@@ -8,6 +8,8 @@ public class Psicologo {
     
     private int id_psi, cedula_psi;
     private String nombre_psi, appat_psi, apmat_psi, fecha_nac_psi, usuario_psi, contra_psi; 
+    private char sexo_psi;
+    
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pr = null;
@@ -15,7 +17,7 @@ public class Psicologo {
 
     public Psicologo(){}
     
-    public Psicologo(int id,String nombre, String appat, String apmat, String fecha_nac, String usuario, String contra){
+    public Psicologo(int id,String nombre, String appat, String apmat, String fecha_nac, String usuario, String contra, char sexo){
         this.id_psi = id;
         this.nombre_psi = nombre;
         this.appat_psi = appat;
@@ -23,9 +25,10 @@ public class Psicologo {
         this.fecha_nac_psi = fecha_nac;
         this.usuario_psi = usuario;
         this.contra_psi = contra;
+        this.sexo_psi = sexo;
     }
     
-    public boolean RegistrarPsicologo(String nombre,String appat, String apmat, String fecha_nac, int cedula, String usuario_pi, String contra_pi, String cont_veri){
+    public boolean RegistrarPsicologo(String nombre,String appat, String apmat, String fecha_nac, int cedula, String usuario_pi, String contra_pi, String cont_veri, String sexo_pi){
         boolean registro = false;
         try{
             //Primero verificar las entradas, pero de momento solo podré el de la contraseña
@@ -36,8 +39,8 @@ public class Psicologo {
            con = Conexion.getConnection();
            //Por el momento usare un satatement por que no se si esto se pueda hacer con un preparedStatement
            
-           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_psi, Contra_pi ) "
-                   + "values ( ?, ?, ?, ?, ?, ?, ? )";
+           q = "INSERT INTO Psicologo ( Nombre_psi, Appat_psi, Apmat_psi, fechaNac_psi, cedula_psi, Usuario_psi, Contra_pi, sexo_psi ) "
+                   + "values ( ?, ?, ?, ?, ?, ?, ?, ? )";
            pr = con.prepareStatement(q);
            
            pr.setString(1,nombre);
@@ -47,6 +50,7 @@ public class Psicologo {
            pr.setInt(5, cedula);
            pr.setString(6, usuario_pi);
            pr.setString(7, contra_pi);
+           pr.setString(8, sexo_pi);
            if(pr.executeUpdate()==1){
                registro=true;
            }
@@ -94,6 +98,7 @@ public class Psicologo {
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
                 psi.setUsuario_psi(rs.getString("Usuario_psi"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
+                psi.setSexo_psi(rs.getString("sexo_psi").charAt(0));
                 break;
             }
         }catch(SQLException sqlex){
@@ -149,6 +154,7 @@ public class Psicologo {
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
                 psi.setUsuario_psi(rs.getString("Usuario_psi"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
+                psi.setSexo_psi(rs.getString("sexo_psi").charAt(0));
                 listaPsicologos.add(psi);
             }
         }catch(SQLException sqlex){
@@ -310,6 +316,14 @@ public class Psicologo {
             }
         return borro;
         }
+    }
+
+    public char getSexo_psi() {
+        return sexo_psi;
+    }
+
+    public void setSexo_psi(char sexo_psi) {
+        this.sexo_psi = sexo_psi;
     }
     
     

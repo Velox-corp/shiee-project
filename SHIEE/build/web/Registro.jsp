@@ -69,6 +69,15 @@
 					<td >Fecha de Nacimiento:</td>
 					<td><input type="date" name="fechaNac" onchange="validarFecha(this)"></td>
 				</tr>
+                                <tr>
+					<td>Sexo:</td>
+                                        <td><select name="sexo" readonly="readonly" onchange="nodafult(this)">
+                                                <option>Sin_especificar</option>
+                                                <option>M</option>
+                                                <option>F</option>
+                                            </select>
+                                        </td>
+				</tr>
 				<tr>
 					<td>Usuario:</td>
 					<td><input type="text" name="nombreUsuario" onchange="validarUser(this)"></td>
