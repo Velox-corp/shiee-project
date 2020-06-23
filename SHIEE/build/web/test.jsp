@@ -12,18 +12,18 @@
 <body>
 	<header>
 		<nav class="menu">
-						<div class="imagen_inicio">
+				<div class="imagen_inicio">
 				<img src="img/Shiee.png" width="90" height="90">
 				<div class="esto_no">
-					<%
-						HttpSession sesionOk = request.getSession();
-                                                if(!Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ response.sendRedirect("index.jsp");
-						if(sesionOk.getAttribute("usuario")==null){
-					%>
-					<p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-					<%  }else{%>
-                                        <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
-					<%}%>
+                                    <%
+                                    HttpSession sesionOk = request.getSession();
+                                    if(!Paciente.esPaciente(sesionOk.getAttribute("usuario"))){ response.sendRedirect("index.jsp");
+                                    %>
+                                    <p><a class="no " href="InicioSesion.jsp">Inicio de sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                    <%  }else{%>
+                                    <p><a class="no " href="">Cerrar sesión</a> | <a class="no" href="Registro.jsp">Registrarse</a></p>
+                                    <%}%>
+                               
 				</div>
 			</div>
 			<ul>
@@ -43,6 +43,7 @@
 			</ul>
 		</nav>
 	</header>
+
 	<section class="se_te">
                 <br>
 		<center><h1 class="mide">MIDE TU NIVEL DE ESTRÉS CON ESTE SIMPLE TEST</h1></center>
@@ -54,5 +55,5 @@
 		<center><a href="<%= request.getContextPath() %>/STest"><button class="botont" style="color: #F2F2F2">Iniciar Test</button></a></center>
 		<br>
 	</section>
+
 </body>
-</html>

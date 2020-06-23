@@ -152,7 +152,7 @@ public class Psicologo {
                 psi.setApmat_psi(rs.getString("Apmat_psi"));
                 psi.setFecha_nac_psi(rs.getString("fechaNac_psi"));
                 psi.setCedula_psi(rs.getInt("cedula_psi"));
-                psi.setUsuario_psi(rs.getString("Usuario_psi"));
+                psi.setUsuario_psi(rs.getString("Usuario_pi"));
                 psi.setContra_psi(rs.getString("Contra_pi"));
                 psi.setSexo_psi(rs.getString("sexo_psi").charAt(0));
                 listaPsicologos.add(psi);

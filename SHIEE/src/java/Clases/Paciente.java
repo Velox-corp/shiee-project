@@ -16,13 +16,13 @@ import java.util.*;
 
 public class Paciente {
    
-    private int id_pac, id_pac_psi;
-    private String nombre_pac, appat_pac, apmat_pac, fecha_nac_pac, usuario_pac, contra_pac; 
-    private char sexo_pac;
-    Connection con = null;
-    ResultSet rs = null;
-    PreparedStatement pr = null;
-    String q = "";
+    private static int id_pac, id_pac_psi;
+    private static String nombre_pac, appat_pac, apmat_pac, fecha_nac_pac, usuario_pac, contra_pac; 
+    private static char sexo_pac;
+    static Connection con = null;
+    static ResultSet rs = null;
+    static PreparedStatement pr = null;
+    static String q = "";
 
     public char getSexo_pac() {
         return sexo_pac;
@@ -138,6 +138,32 @@ public class Paciente {
             }
             return p;
         }
+    }
+    
+    public static Paciente obtenerPaciente(int id){
+        Paciente p = new Paciente();
+        try {
+            con = Conexion.getConnection();
+            q = "SELECT * FROM Paciente where id=?";
+            pr.setInt(1, id);
+            pr = con.prepareStatement(q);
+            rs = pr.executeQuery();
+            while(rs.next()){
+                p.setId_pac(rs.getInt("id_pac"));
+                p.setNombre_pac(rs.getString("Nombre_pac"));
+                p.setAppat_pac(rs.getString("Appat_pac"));
+                p.setApmat_pac(rs.getString("Apmat_pac"));
+                p.setFecha_nac_pac(rs.getString("fechaNac_pac"));
+                p.setId_pac_psi(rs.getInt("psicologo_id_FK"));
+                p.setUsuario_pac(rs.getString("Usuario_pac"));
+                p.setContra_pac("Contra_pac");
+                p.setSexo_pac(rs.getString("sexo_pac").charAt(0));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getMessage();
+        }
+        return p;
     }
     
     public ArrayList<Paciente> obtenerTodosPacientes(){

@@ -57,6 +57,10 @@ public class asignarPsi extends HttpServlet {
             out.println("<h1>Servlet asignarPsi at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+        }catch(Exception e){
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.out.println(e.getLocalizedMessage());
         }
     }
 

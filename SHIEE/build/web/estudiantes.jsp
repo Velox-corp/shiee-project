@@ -75,8 +75,8 @@
 			<img src="img/user.png" id="imgUser">
 			<div id="textoUser">
 				<h1><%=p.getNombre_pac() +" " + p.getAppat_pac() +" " + p.getApmat_pac()%></h1>
-                                <p><a href="?id=<%= p.getId_pac()%>">Ver Resultados Test</a></p>
-                                <p><a href="?id=<%=p.getId_pac()%>">Ver resultados bitácora</a></p>
+                                <p><a href="ver_resultados_test.jsp?id=<%= p.getId_pac()%>">Ver Resultados Test</a></p>
+                                <p><a href="ver_bitacora_paciente.jsp?id=<%=p.getId_pac()%>">Ver resultados bitácora</a></p>
 			</div>
 		</div>
             <%}%>

@@ -5,6 +5,11 @@
 <head>
 	<title>Resultados test</title>
 	<meta charset="utf-8">
+        <meta name="description" content="Source code generated using layoutit.com">
+        <meta name="author" content="LayoutIt!">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cormorant+Infant:wght@300&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Courgette&family=Darker+Grotesque:wght@600&family=Grand+Hotel&family=Simonetta&display=swap" rel="stylesheet">
 </head>
@@ -44,14 +49,14 @@
 	<section>
 		<center>
                     <% 
-                    String elid;
-                    elid = request.getParameter("v");
+                    int elid;
+                    elid = 69;
                     %>
 			<h1>RESULTADOS DEL TEST</h1>
-			<p>A traves del test que has contestado, hemos determinado que tienes un</p>
+			<p>A traves del test que ha contestado el paciente, hemos determinado que tiene un</p>
 			<h2>(pendiente al psicologo, preeliminar de <%=elid%> / 164)</h2>
 			<br>
-			<p>Te recomendamos visitar nuestra sección de Directorio y probar nuestra bitacora</p>
+			<a class="btn btn-primary align-content-center btn-sm" href="estudiantes.jsp">Volver</a>
 		</center>
 	</section>
 </body>
